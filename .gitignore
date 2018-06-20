@@ -1,2 +1,2 @@
-git rm --cached Examples\
-Examples\
+git rm --cached Examples/
+Examples/
