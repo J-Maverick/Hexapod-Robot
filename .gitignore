@@ -1,4 +1,2 @@
-git rm --cached \Examples\*
-git rm --cached *\vectorDefsMM30.m
 \Examples\*
 *\vectorDefsMM30.m
