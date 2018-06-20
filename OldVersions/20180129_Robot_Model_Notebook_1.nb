@@ -1,0 +1,3128 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    138148,       3119]
+NotebookOptionsPosition[    135418,       3029]
+NotebookOutlinePosition[    135792,       3045]
+CellTagsIndexPosition[    135749,       3042]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Graphical construction of robot", "Title",
+ CellChangeTimes->{{3.726236832740719*^9, 3.726236857797224*^9}, {
+  3.726247755240987*^9, 3.726247789136376*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   GeometricTransformation3DBox[{{
+      Polygon3DBox[{{3., 1.5, -0.375}, {3., -1.5, -0.375}, {
+       1.5, -4.098076211353316, -0.375}, {-1.5, -4.098076211353316, -0.375}, \
+{-3., -1.5, -0.375}, {-3., 1.5, -0.375}, {-1.5, 4.098076211353316, -0.375}, {
+       1.5, 4.098076211353316, -0.375}}], 
+      Polygon3DBox[{{3., 1.5, 0.375}, {3., -1.5, 0.375}, {
+       1.5, -4.098076211353316, 0.375}, {-1.5, -4.098076211353316, 
+       0.375}, {-3., -1.5, 0.375}, {-3., 1.5, 0.375}, {-1.5, 
+       4.098076211353316, 0.375}, {1.5, 4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{3., 1.5, -0.375}, {3., -1.5, -0.375}, {3., -1.5, 
+       0.375}, {3., 1.5, 0.375}}], 
+      Polygon3DBox[{{-3., 1.5, -0.375}, {-3., -1.5, -0.375}, {-3., -1.5, 
+       0.375}, {-3., 1.5, 0.375}}], 
+      Polygon3DBox[{{-1.5, 4.098076211353316, -0.375}, {1.5, 
+       4.098076211353316, -0.375}, {1.5, 4.098076211353316, 0.375}, {-1.5, 
+       4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{-1.5, -4.098076211353316, -0.375}, {
+       1.5, -4.098076211353316, -0.375}, {1.5, -4.098076211353316, 
+       0.375}, {-1.5, -4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{1.5, 4.098076211353316, -0.375}, {3., 1.5, -0.375}, {3., 
+       1.5, 0.375}, {1.5, 4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{1.5, -4.098076211353316, -0.375}, {3., -1.5, -0.375}, {
+       3., -1.5, 0.375}, {1.5, -4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{-1.5, -4.098076211353316, -0.375}, {-3., -1.5, -0.375}, \
+{-3., -1.5, 0.375}, {-1.5, -4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{-1.5, 4.098076211353316, -0.375}, {-3., 
+       1.5, -0.375}, {-3., 1.5, 0.375}, {-1.5, 4.098076211353316, 0.375}}]}, 
+     {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {6., 0, 0}}]}, 
+     {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {0, 6., 0}}]}, 
+     {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {0, 0, 6.}}]}}, {0, 0, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[-1, 2] 3^Rational[1, 2], Rational[-1, 2], 0}, {
+       Rational[1, 2], Rational[-1, 2] 3^Rational[1, 2], 0}, {0, 0, 
+       1}}, {{-0.8660254037844386, -0.5, 0}, {0.5, -0.8660254037844386, 0}, {
+       0, 0, 1}}]], {-2.25, 2.799038105676658, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, {{-1, 0, 0}, {0, -1, 
+     0}, {0, 0, 1}}], {-3., 0, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[-1, 2] 3^Rational[1, 2], Rational[1, 2], 0}, {
+       Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2], 0}, {0, 0, 
+       1}}, {{-0.8660254037844386, 0.5, 0}, {-0.5, -0.8660254037844386, 0}, {
+       0, 0, 1}}]], {-2.25, -2.799038105676658, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[1, 2] 3^Rational[1, 2], Rational[-1, 2], 0}, {
+       Rational[1, 2], Rational[1, 2] 3^Rational[1, 2], 0}, {0, 0, 1}}, {{
+       0.8660254037844386, -0.5, 0}, {0.5, 0.8660254037844386, 0}, {0, 0, 
+       1}}]], {2.25, 2.799038105676658, 0.375}], 
+   GeometricTransformation3DBox[{
+     GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+     GeometricTransformation3DBox[{
+       CuboidBox[
+        NCache[{Rational[-3, 2], Rational[-1, 2], 
+          Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+        NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+         0.5}]], {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+      NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+     GeometricTransformation3DBox[{
+       GeometricTransformation3DBox[
+        CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{1,
+         0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+     GeometricTransformation3DBox[{{
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+           Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5, 
+          0.5}, {2.5, -0.5, 0.25}, {2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+           Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+          0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+          0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+           Rational[-5, 2], Rational[1, 2], 
+            Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5, 
+          0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+           Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+          0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+          0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 0.25}}]]}, {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+      NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, {3., 0, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[1, 2] 3^Rational[1, 2], Rational[1, 2], 0}, {
+       Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2], 0}, {0, 0, 1}}, {{
+       0.8660254037844386, 0.5, 0}, {-0.5, 0.8660254037844386, 0}, {0, 0, 
+       1}}]], {2.25, -2.799038105676658, 0.375}]},
+  ImageSize->{372.6303644514211, 297.5498844820844},
+  ViewAngle->0.3179845511230338,
+  ViewCenter->{{0.5, 0.5, 0.5}, {0.4907352841473207, 0.514479906482864}},
+  ViewPoint->{2.269816702386618, 1.8135304043991183`, 1.7346583553791817`},
+  ViewVertical->{0.23387540332547452`, 0.40888708395232287`, 
+   3.13920134083804}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["Body", "Subsection",
+ CellChangeTimes->{{3.7262374340548444`*^9, 3.726237437671206*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"unitLength", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bodyLength", "  ", "=", " ", 
+   RowBox[{"1.5", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bodySide", " ", "=", " ", 
+   RowBox[{"2", "bodyLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"bodyLength60", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      SqrtBox["3"]}], ")"}], 
+    RowBox[{"(", "bodyLength", ")"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.726237441745613*^9, 3.72623744271171*^9}, {
+   3.7262374907215104`*^9, 3.7262375365230904`*^9}, {3.726244303784876*^9, 
+   3.7262443104165387`*^9}, {3.726244480896585*^9, 3.7262444813766327`*^9}, {
+   3.726245200128501*^9, 3.726245241993687*^9}, {3.726245586721156*^9, 
+   3.7262456144739313`*^9}, {3.7262462153800163`*^9, 3.726246215788057*^9}, {
+   3.726246385524029*^9, 3.72624638553503*^9}, {3.7262464692073965`*^9, 
+   3.72624646944742*^9}, {3.726246511537629*^9, 3.726246511680643*^9}, {
+   3.7262469058830595`*^9, 3.726246928619333*^9}, {3.7262471099154606`*^9, 
+   3.7262471435488234`*^9}, {3.7262472047039385`*^9, 
+   3.7262472257520432`*^9}, {3.726247280058473*^9, 3.726247294154883*^9}, 
+   3.7262473314146085`*^9, {3.726247374998966*^9, 3.7262474220886745`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vectorLengthBody", " ", "=", " ", 
+   RowBox[{"4", " ", "bodyLength"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262400359570084`*^9, 3.7262400506574783`*^9}, {
+  3.7262402142078323`*^9, 3.7262402143118424`*^9}, {3.7262413522190013`*^9, 
+  3.726241360322191*^9}, {3.7262447720696993`*^9, 3.726244805870079*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bodyHeight", "=", " ", 
+   RowBox[{"bodyLength", "/", "2"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726237508901328*^9, 3.726237510058444*^9}, {
+   3.7262377711495504`*^9, 3.7262377736458*^9}, {3.7262378129277277`*^9, 
+   3.7262378372881637`*^9}, {3.7262398666890836`*^9, 3.726239866801095*^9}, {
+   3.726244286808178*^9, 3.726244286976195*^9}, 3.7262443388493814`*^9, {
+   3.7262443790444007`*^9, 3.726244379084405*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bodyShape", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"bodySide", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", 
+          RowBox[{"-", "bodyLength60"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{
+           RowBox[{"-", "1"}], " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "bodySide"}], ",", 
+          RowBox[{"1", " ", "bodyLength"}], ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "1"}], " ", "bodyLength"}], ",", "bodyLength60", ",", 
+          RowBox[{"1", " ", 
+           RowBox[{"bodyHeight", "/", "2"}]}]}], "}"}]}], "}"}], "]"}], ","}],
+     "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262378948379183`*^9, 3.726237910348469*^9}, {
+  3.72623819708914*^9, 3.7262382268421154`*^9}, {3.7262382613635674`*^9, 
+  3.7262384971021385`*^9}, {3.726238534551883*^9, 3.7262388538688116`*^9}, {
+  3.7262389068241067`*^9, 3.7262389755549793`*^9}, {3.7262391019766197`*^9, 
+  3.7262391467620983`*^9}, {3.726239186604082*^9, 3.7262397184682627`*^9}, {
+  3.7262443429467916`*^9, 3.7262443595314493`*^9}, {3.72624640783726*^9, 
+  3.7262464257140474`*^9}, {3.726247331364603*^9, 3.7262473314086075`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bodyGraphicF", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"bodyShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["a", "^"], "1"], ",", 
+         RowBox[{"{", 
+          RowBox[{"vectorLengthBody", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["a", "^"], "2"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "vectorLengthBody", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["a", "^"], "3"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "vectorLengthBody"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthBody", ",", "0", ",", "0"}], "}"}]}], "}"}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthBody", ",", "0"}], "}"}]}], "}"}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthBody"}], "}"}]}], "}"}],
+           "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262399581492286`*^9, 3.7262400307364864`*^9}, {
+  3.7262400655299654`*^9, 3.7262401968000913`*^9}, {3.7262413664975734`*^9, 
+  3.7262413783863845`*^9}, {3.7262434355470605`*^9, 3.7262434391154175`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"bodyGraphic", " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{"bodyShape", ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"vectorLengthBody", ",", "0", ",", "0"}], "}"}]}], "}"}], 
+         "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "vectorLengthBody", ",", "0"}], "}"}]}], "}"}], 
+         "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0", ",", "vectorLengthBody"}], "}"}]}], "}"}], 
+         "]"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7262397284792643`*^9, 3.726239773524768*^9}, 
+   3.7262399443968534`*^9, {3.7262410603325596`*^9, 3.7262411127273493`*^9}, {
+   3.726241380479175*^9, 3.7262413884713755`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Graphics3D", "[", "bodyGraphicF", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.726239776434059*^9, 3.7262397855739727`*^9}, 
+   3.726240201607572*^9, {3.726241118596413*^9, 3.7262411212260976`*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    Polygon3DBox[{{3., 1.5, -0.375}, {3., -1.5, -0.375}, {
+     1.5, -4.098076211353316, -0.375}, {-1.5, -4.098076211353316, -0.375}, \
+{-3., -1.5, -0.375}, {-3., 1.5, -0.375}, {-1.5, 4.098076211353316, -0.375}, {
+     1.5, 4.098076211353316, -0.375}}], 
+    Polygon3DBox[{{3., 1.5, 0.375}, {3., -1.5, 0.375}, {
+     1.5, -4.098076211353316, 0.375}, {-1.5, -4.098076211353316, 
+     0.375}, {-3., -1.5, 0.375}, {-3., 1.5, 0.375}, {-1.5, 4.098076211353316, 
+     0.375}, {1.5, 4.098076211353316, 0.375}}], 
+    Polygon3DBox[{{3., 1.5, -0.375}, {3., -1.5, -0.375}, {3., -1.5, 0.375}, {
+     3., 1.5, 0.375}}], 
+    Polygon3DBox[{{-3., 1.5, -0.375}, {-3., -1.5, -0.375}, {-3., -1.5, 
+     0.375}, {-3., 1.5, 0.375}}], 
+    Polygon3DBox[{{-1.5, 4.098076211353316, -0.375}, {1.5, 
+     4.098076211353316, -0.375}, {1.5, 4.098076211353316, 0.375}, {-1.5, 
+     4.098076211353316, 0.375}}], 
+    Polygon3DBox[{{-1.5, -4.098076211353316, -0.375}, {
+     1.5, -4.098076211353316, -0.375}, {1.5, -4.098076211353316, 
+     0.375}, {-1.5, -4.098076211353316, 0.375}}], 
+    Polygon3DBox[{{1.5, 4.098076211353316, -0.375}, {3., 1.5, -0.375}, {3., 
+     1.5, 0.375}, {1.5, 4.098076211353316, 0.375}}], 
+    Polygon3DBox[{{1.5, -4.098076211353316, -0.375}, {3., -1.5, -0.375}, {
+     3., -1.5, 0.375}, {1.5, -4.098076211353316, 0.375}}], 
+    Polygon3DBox[{{-1.5, -4.098076211353316, -0.375}, {-3., -1.5, -0.375}, \
+{-3., -1.5, 0.375}, {-1.5, -4.098076211353316, 0.375}}], 
+    Polygon3DBox[{{-1.5, 4.098076211353316, -0.375}, {-3., 1.5, -0.375}, {-3.,
+      1.5, 0.375}, {-1.5, 4.098076211353316, 0.375}}]}, {Text3DBox[
+     SubscriptBox[
+      OverscriptBox["a", "^"], "1"], {6., 0, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["a", "^"], "2"], {0, 6., 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["a", "^"], "3"], {0, 0, 6.}, {0, 1}], 
+    {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {6., 0, 0}}]}, 
+    {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 6., 0}}]}, 
+    {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 0, 6.}}]}}},
+  ImageMargins->0.,
+  ImageSize->{337.2988842950635, 396.1995433983994},
+  ViewAngle->0.16633278687927364`,
+  ViewCenter->{{0.5, 0.5, 0.5}, {0.6212485107267154, 0.5731159290764734}},
+  ViewPoint->{0.23518229982812439`, 0.6067032128797546, 3.3206325447614606`},
+  ViewVertical->{-0.09361648364674663, 0.9383327627147954, 
+   0.48944107991239433`}]], "Output",
+ CellChangeTimes->{
+  3.726239786484064*^9, 3.726239826398055*^9, 3.726239870395454*^9, {
+   3.726240202617673*^9, 3.726240231637575*^9}, {3.7262411190821705`*^9, 
+   3.726241122313554*^9}, 3.7262413961706057`*^9, 3.7262422183743634`*^9, 
+   3.7262434452720327`*^9, 3.7262439990324035`*^9, {3.7262440441859183`*^9, 
+   3.726244064244924*^9}, {3.7262443652490215`*^9, 3.7262443820707035`*^9}, 
+   3.726244493174813*^9, {3.7262447765911517`*^9, 3.7262448085623484`*^9}, 
+   3.7262452852230096`*^9, 3.7262462237348514`*^9, 3.726246430152491*^9, 
+   3.7262464726827435`*^9, 3.7262465171161866`*^9, {3.7262468988133526`*^9, 
+   3.7262469307835493`*^9}, 3.726247117590228*^9, {3.7262473777802444`*^9, 
+   3.7262474231157775`*^9}, 3.72624758855532*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Shoulder Sphere", "Subsection",
+ CellChangeTimes->{{3.726240705175932*^9, 3.726240713579151*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sphereRadius", " ", "=", " ", 
+   RowBox[{"unitLength", "/", "1.25"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sphereCenter", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vectorLengthShoulder", " ", "=", " ", "unitLength"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.726240797468541*^9, 3.726240807857976*^9}, {
+   3.7262408470010986`*^9, 3.726240855372362*^9}, 3.726240998878302*^9, {
+   3.7262414094182806`*^9, 3.7262414435488677`*^9}, {3.7262440591504145`*^9, 
+   3.726244060829582*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"shoulderGraphicF", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sphere", "[", 
+      RowBox[{"sphereCenter", ",", "sphereRadius"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["b", "^"], "1"], ",", 
+         RowBox[{"{", 
+          RowBox[{"vectorLengthShoulder", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["b", "^"], "2"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "vectorLengthShoulder", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["b", "^"], "3"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "vectorLengthShoulder"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthShoulder", ",", "0", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthShoulder", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthShoulder"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262408248611383`*^9, 3.726241024392539*^9}, {
+  3.726241203861759*^9, 3.7262412256878405`*^9}, {3.726241288181406*^9, 
+  3.7262413195522685`*^9}, {3.72624147331989*^9, 3.726241503275894*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"shoulderGraphic", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sphere", "[", 
+      RowBox[{"sphereCenter", ",", "sphereRadius"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthShoulder", ",", "0", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthShoulder", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthShoulder"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726241030092687*^9, 3.7262410300966854`*^9}, {
+  3.7262413154726763`*^9, 3.7262413313510885`*^9}, {3.726241479808241*^9, 
+  3.7262414806541567`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"show", "[", 
+  RowBox[{"Graphics3D", "[", "shoulderGraphicF", "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.726241182856267*^9}],
+
+Cell[BoxData[
+ RowBox[{"show", "[", 
+  Graphics3DBox[{SphereBox[{0, 0, 0}, 0.8], {Text3DBox[
+      SubscriptBox[
+       OverscriptBox["b", "^"], "1"], {1, 0, 0}, {0, 1}], Text3DBox[
+      SubscriptBox[
+       OverscriptBox["b", "^"], "2"], {0, 1, 0}, {0, 1}], Text3DBox[
+      SubscriptBox[
+       OverscriptBox["b", "^"], "3"], {0, 0, 1}, {0, 1}], 
+     {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+     {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+     {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.7262409417762275`*^9, {3.7262409870342274`*^9, 3.72624102794776*^9}, 
+   3.7262413400822153`*^9, {3.726241490865135*^9, 3.7262415233928823`*^9}, 
+   3.7262422184373636`*^9, 3.7262434453400393`*^9, 3.726243999108411*^9, {
+   3.7262440442449245`*^9, 3.7262440643109303`*^9}, {3.726244365294026*^9, 
+   3.726244382124709*^9}, 3.726244493220817*^9, {3.7262447766401567`*^9, 
+   3.7262448086193542`*^9}, 3.726245285280015*^9, 3.7262462237948575`*^9, 
+   3.7262464302044964`*^9, 3.7262464727397494`*^9, 3.726246517170192*^9, {
+   3.7262468988603573`*^9, 3.7262469308405547`*^9}, 3.726247117640233*^9, {
+   3.72624737783825*^9, 3.7262474231647825`*^9}, 3.726247588617326*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Arm Segment", "Subsection",
+ CellChangeTimes->{{3.7262417770693636`*^9, 3.7262417832293634`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"armLength", " ", "=", " ", 
+    RowBox[{"3", " ", "unitLength"}]}], ";"}], " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"armHeight", " ", "=", " ", 
+    RowBox[{"1", " ", "unitLength"}]}], ";"}], " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"armDepth", " ", "=", " ", 
+   RowBox[{"1", " ", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"vectorLengthArm", " ", "=", " ", 
+    RowBox[{"2", " ", "unitLength"}]}], ";"}], " "}]}], "Input",
+ CellChangeTimes->{{3.7262418124513636`*^9, 3.7262418889673634`*^9}, {
+  3.7262422265003633`*^9, 3.7262422376993637`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"armShape", " ", "=", " ", 
+    RowBox[{"Cuboid", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "armLength"}], "/", "2"}], ",", 
+        RowBox[{
+         RowBox[{"-", "armDepth"}], "/", "2"}], ",", 
+        RowBox[{
+         RowBox[{"-", "armHeight"}], "/", "2"}]}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"armLength", "/", "2"}], ",", 
+        RowBox[{"armDepth", "/", "2"}], ",", 
+        RowBox[{"armHeight", "/", "2"}]}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7262418990783634`*^9, 3.7262419572753634`*^9}, {
+  3.7262420272883635`*^9, 3.726242043910363*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"armGraphicF", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"armShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["c", "^"], "1"], ",", 
+         RowBox[{"{", 
+          RowBox[{"vectorLengthArm", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["c", "^"], "2"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "vectorLengthArm", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["c", "^"], "3"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "vectorLengthArm"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthArm", ",", "0", ",", "0"}], "}"}]}], "}"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthArm", ",", "0"}], "}"}]}], "}"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthArm"}], "}"}]}], "}"}], 
+          "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262419672113633`*^9, 3.726241984818363*^9}, {
+  3.726242086068363*^9, 3.7262421192183633`*^9}, {3.7262422109733634`*^9, 
+  3.7262422123083634`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"armGraphic", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"armShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthArm", ",", "0", ",", "0"}], "}"}]}], "}"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthArm", ",", "0"}], "}"}]}], "}"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthArm"}], "}"}]}], "}"}], 
+          "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262421429933634`*^9, 3.7262421470723634`*^9}, {
+  3.7262422125573635`*^9, 3.7262422135083637`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Graphics3D", "[", "armGraphicF", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7262421558893633`*^9, 3.726242165247363*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   CuboidBox[
+    NCache[{Rational[-3, 2], Rational[-1, 2], 
+      Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+    NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+     0.5}]], {Text3DBox[
+     SubscriptBox[
+      OverscriptBox["c", "^"], "1"], {2, 0, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["c", "^"], "2"], {0, 2, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["c", "^"], "3"], {0, 0, 2}, {0, 1}], 
+    {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+    {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+    {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}},
+  ImageSize->{342.32583516891907`, 182.05440372448342`},
+  ViewPoint->{-0.6039200885314009, -3.302428429789068, 0.42337571114688954`},
+  ViewVertical->{-0.04441051799386754, -0.6789355479791424, 
+   1.2227758687664851`}]], "Output",
+ CellChangeTimes->{
+  3.7262421655333633`*^9, {3.726242218504363*^9, 3.7262422407623634`*^9}, 
+   3.726243445397045*^9, 3.726243999175418*^9, {3.72624404430593*^9, 
+   3.726244064376937*^9}, {3.726244365362033*^9, 3.7262443821927156`*^9}, 
+   3.7262444932948246`*^9, {3.7262447766991625`*^9, 3.726244808689361*^9}, 
+   3.7262452853510227`*^9, 3.7262462238558636`*^9, 3.7262464302615023`*^9, 
+   3.7262464728437595`*^9, 3.726246517229198*^9, {3.7262468989433656`*^9, 
+   3.726246930909562*^9}, 3.726247117702239*^9, {3.7262473779082575`*^9, 
+   3.726247423232789*^9}, 3.726247588684333*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Wrist", "Subsection",
+ CellChangeTimes->{{3.7262422537623634`*^9, 3.7262422552983637`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vectorLengthWrist", " ", "=", " ", 
+   RowBox[{"1", " ", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wristHeight", " ", "=", " ", 
+   RowBox[{"1.25", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wristRadius", " ", "=", " ", 
+   RowBox[{"unitLength", "/", "1.5"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wristTop", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"wristHeight", "/", "2"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"wristBase", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", "wristHeight"}], "/", "2"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7262423458483634`*^9, 3.7262424744463634`*^9}, {
+  3.72624402670117*^9, 3.7262440384133415`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wristShape", " ", "=", " ", 
+   RowBox[{"Rotate", "[", 
+    RowBox[{
+     RowBox[{"Cylinder", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"wristBase", ",", "wristTop"}], "}"}], ",", "wristRadius"}], 
+      "]"}], ",", 
+     RowBox[{"Pi", "/", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726242431820363*^9, 3.726242436872363*^9}, {
+  3.7262424805973635`*^9, 3.7262425296443634`*^9}, {3.726243975723073*^9, 
+  3.7262439864031405`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wristGraphicF", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"wristShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["d", "^"], "1"], ",", 
+         RowBox[{"{", 
+          RowBox[{"vectorLengthWrist", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["d", "^"], "2"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "vectorLengthWrist", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["d", "^"], "3"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "vectorLengthWrist"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthWrist", ",", "0", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthWrist", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthWrist"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262425370973635`*^9, 3.7262425838233633`*^9}, {
+  3.7262426238943634`*^9, 3.7262426259023633`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wristGraphic", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"wristShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthWrist", ",", "0", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthWrist", ",", "0"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthWrist"}], "}"}]}], 
+           "}"}], "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726242597167363*^9, 3.7262426305573635`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Graphics3D", "[", "wristGraphicF", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7262426046543636`*^9, 3.7262426133663635`*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   GeometricTransformation3DBox[
+    CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{1, 0, 
+    0}, {0, 0, -1}, {0, 1, 0}}], {Text3DBox[
+     SubscriptBox[
+      OverscriptBox["d", "^"], "1"], {1, 0, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["d", "^"], "2"], {0, 1, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["d", "^"], "3"], {0, 0, 1}, {0, 1}], 
+    {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+    {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+    {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}},
+  ImageSize->{354.03345744145514`, 356.74545747921275`},
+  ViewPoint->{3.2704461956352593`, -0.6201065330878632, 0.6079881323484929},
+  ViewVertical->{0.4546212648630396, 0.04460633357848166, 
+   0.8895671871978055}]], "Output",
+ CellChangeTimes->{{3.7262426151403637`*^9, 3.7262426342493634`*^9}, 
+   3.7262434454510508`*^9, {3.7262439910006003`*^9, 3.7262439992394238`*^9}, {
+   3.726244044371937*^9, 3.726244064434943*^9}, {3.726244365416038*^9, 
+   3.726244382247721*^9}, 3.7262444933608313`*^9, {3.7262447767531676`*^9, 
+   3.7262448087453666`*^9}, 3.726245285409028*^9, 3.726246223913869*^9, 
+   3.7262464303195076`*^9, 3.7262464729267683`*^9, 3.726246517285204*^9, {
+   3.7262468990093718`*^9, 3.7262469309665675`*^9}, 3.726247117759245*^9, {
+   3.726247377966263*^9, 3.726247423289795*^9}, 3.726247588746339*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Foot", "Subsection",
+ CellChangeTimes->{{3.7262426747463636`*^9, 3.7262426750513635`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vectorLengthFoot", " ", "=", " ", 
+   RowBox[{"3", " ", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"footLength", " ", "=", " ", 
+   RowBox[{"5", " ", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"halfFoot", " ", "=", " ", 
+   RowBox[{"footLength", "/", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"footWidth", " ", "=", " ", 
+   RowBox[{"1", "unitLength"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"footDepth", " ", "=", " ", 
+   RowBox[{"1", "unitLength"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7262428427567873`*^9, 3.7262428992834396`*^9}, {
+  3.726242959902501*^9, 3.7262429662301335`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"footShape", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "2"}]}], "}"}]}], "}"}], "]"}], 
+     ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "2"}]}], "}"}]}], "}"}], "]"}], 
+     ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "2"}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "2"}]}], "}"}]}], "}"}], "]"}], 
+     ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "2"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "halfFoot"}], ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "2"}]}], "}"}]}], "}"}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"Polygon", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{
+           RowBox[{"-", "footDepth"}], "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{
+           RowBox[{"-", "footWidth"}], "/", "4"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"halfFoot", ",", 
+          RowBox[{"footDepth", "/", "2"}], ",", 
+          RowBox[{"footWidth", "/", "4"}]}], "}"}]}], "}"}], "]"}]}], "}"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.726242993668877*^9, 3.726243013984908*^9}, {
+  3.726243073994909*^9, 3.726243334590966*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"footGraphicF", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"footShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["e", "^"], "1"], ",", 
+         RowBox[{"{", 
+          RowBox[{"vectorLengthFoot", ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["e", "^"], "2"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "vectorLengthFoot", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         SubscriptBox[
+          OverscriptBox["e", "^"], "3"], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "vectorLengthFoot"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthFoot", ",", "0", ",", "0"}], "}"}]}], "}"}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthFoot", ",", "0"}], "}"}]}], "}"}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthFoot"}], "}"}]}], "}"}],
+           "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726243336501157*^9, 3.7262434306185675`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"footGraphic", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"footShape", ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"vectorLengthFoot", ",", "0", ",", "0"}], "}"}]}], "}"}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "vectorLengthFoot", ",", "0"}], "}"}]}], "}"}],
+           "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"AbsoluteThickness", "[", "1", "]"}], ",", 
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "vectorLengthFoot"}], "}"}]}], "}"}],
+           "]"}]}], "}"}]}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726243470892595*^9, 3.726243474636969*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Graphics3D", "[", "footGraphicF", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7262434483853445`*^9, 3.726243457124218*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{{
+    Polygon3DBox[
+     NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+       Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+       Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+       Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5, 
+      0.5}, {2.5, -0.5, 0.25}, {2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+    Polygon3DBox[
+     NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+       Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+       Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+       Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+      0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+    Polygon3DBox[
+     NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+       Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+       Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+       Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+      0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+    Polygon3DBox[
+     NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+       Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+       Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+       Rational[-5, 2], Rational[1, 2], 
+        Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5, 
+      0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+    Polygon3DBox[
+     NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+       Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+       Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+       Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+      0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+    Polygon3DBox[
+     NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+       Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+       Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+       Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 0.25}, {
+      2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 0.25}}]]}, {Text3DBox[
+     SubscriptBox[
+      OverscriptBox["e", "^"], "1"], {3, 0, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["e", "^"], "2"], {0, 3, 0}, {0, 1}], Text3DBox[
+     SubscriptBox[
+      OverscriptBox["e", "^"], "3"], {0, 0, 3}, {0, 1}], 
+    {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+    {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+    {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+     Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}},
+  ImageSize->{367.93890980185733`, 242.8095384781923},
+  ViewPoint->{0.025603563310542105`, -3.360119973079556, 0.39867057084471746`},
+  ViewVertical->{0.03268051544024811, -0.7727158418893881, 
+   1.3673553440644826`}]], "Output",
+ CellChangeTimes->{
+  3.7262434583403397`*^9, 3.7262439993394337`*^9, {3.7262440444459443`*^9, 
+   3.726244064496949*^9}, {3.726244365474044*^9, 3.726244382310727*^9}, 
+   3.7262444934318385`*^9, {3.7262447768071733`*^9, 3.7262448088103733`*^9}, 
+   3.726245285474035*^9, 3.726246223972875*^9, 3.726246430374513*^9, 
+   3.7262464730107765`*^9, 3.7262465173432093`*^9, {3.7262468990773787`*^9, 
+   3.7262469310265737`*^9}, 3.726247117821251*^9, {3.7262473780232687`*^9, 
+   3.7262474233488007`*^9}, 3.726247588807345*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Leg Assembly", "Subsection",
+ CellChangeTimes->{{3.7262436117546797`*^9, 3.726243613706875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "legGraphic", " ", "=", " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Shoulder", " ", "Graphic"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Translate", "[", 
+      RowBox[{"shoulderGraphic", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Arm", " ", "Graphic"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{"armGraphic", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"armLength", "/", "2"}], ",", "0", ",", "0"}], "}"}]}], 
+      "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Wrist", " ", "Graphic"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{"wristGraphic", ",", 
+       RowBox[{"{", 
+        RowBox[{"armLength", ",", "0", ",", "0"}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Foot", " ", "Graphic"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{"footGraphic", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"armLength", "+", "halfFoot"}], ",", "0", ",", "0"}], 
+        "}"}]}], "]"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262436552090244`*^9, 3.726243829868489*^9}, {
+  3.726243872525754*^9, 3.7262439011836195`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Graphics3D", "[", "legGraphic", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.726243834001902*^9, 3.726243844204922*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+      {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+      {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+      {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+   GeometricTransformation3DBox[{
+     CuboidBox[
+      NCache[{Rational[-3, 2], Rational[-1, 2], 
+        Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+      NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+       0.5}]], {
+      {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+      {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+      {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+    NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+   GeometricTransformation3DBox[{
+     GeometricTransformation3DBox[
+      CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{1, 
+      0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+      {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+      {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+      {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+   GeometricTransformation3DBox[{{
+      Polygon3DBox[
+       NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+         Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+         Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+         Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5, 
+        0.5}, {2.5, -0.5, 0.25}, {2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+      Polygon3DBox[
+       NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+         Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+         Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+         Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+        0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+      Polygon3DBox[
+       NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+         Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+         Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+         Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+        0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+      Polygon3DBox[
+       NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+         Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+         Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+         Rational[-5, 2], Rational[1, 2], 
+          Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5, 
+        0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+      Polygon3DBox[
+       NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+         Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+         Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+         Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+        0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+      Polygon3DBox[
+       NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+         Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+         Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+         Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+        0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 0.25}}]]}, {
+      {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+      {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+      {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+       Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+    NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]},
+  ImageSize->{327.77319171253913`, 252.36796484750585`},
+  ViewPoint->{0.09383327729039119, -3.342052055574886, 0.5214243702596039},
+  ViewVertical->{0.008688738221393457, -1.1348300386775851`, 
+   2.1682529351689204`}]], "Output",
+ CellChangeTimes->{
+  3.726243845161018*^9, 3.726243905045006*^9, 3.726243999370437*^9, {
+   3.7262440444759474`*^9, 3.7262440645339527`*^9}, {3.726244365503047*^9, 
+   3.726244382343731*^9}, 3.7262444934598413`*^9, {3.7262447768371763`*^9, 
+   3.7262448088453765`*^9}, 3.726245285512038*^9, 3.7262462240038786`*^9, 
+   3.726246430411517*^9, 3.72624647304278*^9, 3.7262465173742123`*^9, {
+   3.726246899108382*^9, 3.726246931059577*^9}, 3.726247117855254*^9, {
+   3.726247378055272*^9, 3.7262474233788037`*^9}, 3.7262475888403482`*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Full Robot", "Subsection",
+ CellChangeTimes->{{3.726244128696368*^9, 3.726244136081107*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"offset60", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"(", "bodyLength", ")"}], "+", 
+    RowBox[{"(", 
+     RowBox[{"bodyLength", 
+      RowBox[{
+       SqrtBox["3"], "/", "2"}]}], ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.726245636975181*^9, 3.726245684956979*^9}, {
+  3.726245742511734*^9, 3.7262457426157446`*^9}, {3.726245796898172*^9, 
+  3.726245830811563*^9}, {3.726245966961177*^9, 3.7262459670891895`*^9}, {
+  3.72624627792727*^9, 3.7262463026237392`*^9}, {3.726247479515417*^9, 
+  3.726247511068572*^9}, {3.7262475818006444`*^9, 3.7262475819196568`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "robotGraphic", " ", "=", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Body", " ", "graphic"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Translate", "[", 
+      RowBox[{"bodyGraphic", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Leg", " ", "1"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{
+       RowBox[{"Rotate", "[", 
+        RowBox[{"legGraphic", ",", 
+         RowBox[{"5", 
+          RowBox[{"Pi", "/", "6"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "1.5"}], "bodyLength"}], ",", "offset60", ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Leg", " ", "2"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{
+       RowBox[{"Rotate", "[", 
+        RowBox[{"legGraphic", ",", "Pi", ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "bodySide"}], ",", "0", ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Leg", " ", "3"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{
+       RowBox[{"Rotate", "[", 
+        RowBox[{"legGraphic", ",", 
+         RowBox[{"7", 
+          RowBox[{"Pi", "/", "6"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "1.5"}], "bodyLength"}], ",", 
+         RowBox[{"-", "offset60"}], ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Leg", " ", "4"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{
+       RowBox[{"Rotate", "[", 
+        RowBox[{"legGraphic", ",", 
+         RowBox[{"Pi", "/", "6"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"1.5", "bodyLength"}], ",", "offset60", ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Leg", " ", "5"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{"legGraphic", ",", 
+       RowBox[{"{", 
+        RowBox[{"bodySide", ",", "0", ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"Leg", " ", "6"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Translate", "[", 
+      RowBox[{
+       RowBox[{"Rotate", "[", 
+        RowBox[{"legGraphic", ",", 
+         RowBox[{"11", 
+          RowBox[{"Pi", "/", "6"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"1.5", "bodyLength"}], ",", 
+         RowBox[{"-", "offset60"}], ",", 
+         RowBox[{"bodyHeight", "/", "2"}]}], "}"}]}], "]"}], ","}], 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7262441888803864`*^9, 3.7262442451100087`*^9}, {
+  3.7262444116936655`*^9, 3.7262444364471407`*^9}, {3.7262445158660817`*^9, 
+  3.726244589677462*^9}, {3.7262453787203584`*^9, 3.7262454623957253`*^9}, {
+  3.7262456250179853`*^9, 3.7262456262831125`*^9}, {3.7262457092944126`*^9, 
+  3.726245719439427*^9}, {3.726246044565936*^9, 3.7262460682623053`*^9}, {
+  3.726246098696349*^9, 3.726246107992278*^9}, {3.726246227069185*^9, 
+  3.7262462341578937`*^9}, {3.726246318649342*^9, 3.726246326721149*^9}, {
+  3.726247334871954*^9, 3.7262473348779545`*^9}, {3.7262474752039857`*^9, 
+  3.7262474770431695`*^9}, {3.726247521421607*^9, 3.726247522829748*^9}, {
+  3.726247586776142*^9, 3.7262475872001843`*^9}, {3.7262476228347473`*^9, 
+  3.7262476879642596`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"Graphics3D", "[", "robotGraphic", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.726244247532251*^9, 3.726244255615059*^9}}],
+
+Cell[BoxData[
+ Graphics3DBox[{
+   GeometricTransformation3DBox[{{
+      Polygon3DBox[{{3., 1.5, -0.375}, {3., -1.5, -0.375}, {
+       1.5, -4.098076211353316, -0.375}, {-1.5, -4.098076211353316, -0.375}, \
+{-3., -1.5, -0.375}, {-3., 1.5, -0.375}, {-1.5, 4.098076211353316, -0.375}, {
+       1.5, 4.098076211353316, -0.375}}], 
+      Polygon3DBox[{{3., 1.5, 0.375}, {3., -1.5, 0.375}, {
+       1.5, -4.098076211353316, 0.375}, {-1.5, -4.098076211353316, 
+       0.375}, {-3., -1.5, 0.375}, {-3., 1.5, 0.375}, {-1.5, 
+       4.098076211353316, 0.375}, {1.5, 4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{3., 1.5, -0.375}, {3., -1.5, -0.375}, {3., -1.5, 
+       0.375}, {3., 1.5, 0.375}}], 
+      Polygon3DBox[{{-3., 1.5, -0.375}, {-3., -1.5, -0.375}, {-3., -1.5, 
+       0.375}, {-3., 1.5, 0.375}}], 
+      Polygon3DBox[{{-1.5, 4.098076211353316, -0.375}, {1.5, 
+       4.098076211353316, -0.375}, {1.5, 4.098076211353316, 0.375}, {-1.5, 
+       4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{-1.5, -4.098076211353316, -0.375}, {
+       1.5, -4.098076211353316, -0.375}, {1.5, -4.098076211353316, 
+       0.375}, {-1.5, -4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{1.5, 4.098076211353316, -0.375}, {3., 1.5, -0.375}, {3., 
+       1.5, 0.375}, {1.5, 4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{1.5, -4.098076211353316, -0.375}, {3., -1.5, -0.375}, {
+       3., -1.5, 0.375}, {1.5, -4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{-1.5, -4.098076211353316, -0.375}, {-3., -1.5, -0.375}, \
+{-3., -1.5, 0.375}, {-1.5, -4.098076211353316, 0.375}}], 
+      Polygon3DBox[{{-1.5, 4.098076211353316, -0.375}, {-3., 
+       1.5, -0.375}, {-3., 1.5, 0.375}, {-1.5, 4.098076211353316, 0.375}}]}, 
+     {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {6., 0, 0}}]}, 
+     {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {0, 6., 0}}]}, 
+     {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+      Line3DBox[{{0, 0, 0}, {0, 0, 6.}}]}}, {0, 0, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[-1, 2] 3^Rational[1, 2], Rational[-1, 2], 0}, {
+       Rational[1, 2], Rational[-1, 2] 3^Rational[1, 2], 0}, {0, 0, 
+       1}}, {{-0.8660254037844386, -0.5, 0}, {0.5, -0.8660254037844386, 0}, {
+       0, 0, 1}}]], {-2.25, 2.799038105676658, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, {{-1, 0, 0}, {0, -1, 
+     0}, {0, 0, 1}}], {-3., 0, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[-1, 2] 3^Rational[1, 2], Rational[1, 2], 0}, {
+       Rational[-1, 2], Rational[-1, 2] 3^Rational[1, 2], 0}, {0, 0, 
+       1}}, {{-0.8660254037844386, 0.5, 0}, {-0.5, -0.8660254037844386, 0}, {
+       0, 0, 1}}]], {-2.25, -2.799038105676658, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[1, 2] 3^Rational[1, 2], Rational[-1, 2], 0}, {
+       Rational[1, 2], Rational[1, 2] 3^Rational[1, 2], 0}, {0, 0, 1}}, {{
+       0.8660254037844386, -0.5, 0}, {0.5, 0.8660254037844386, 0}, {0, 0, 
+       1}}]], {2.25, 2.799038105676658, 0.375}], 
+   GeometricTransformation3DBox[{
+     GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+     GeometricTransformation3DBox[{
+       CuboidBox[
+        NCache[{Rational[-3, 2], Rational[-1, 2], 
+          Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+        NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+         0.5}]], {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+      NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+     GeometricTransformation3DBox[{
+       GeometricTransformation3DBox[
+        CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{1,
+         0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+     GeometricTransformation3DBox[{{
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+           Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5, 
+          0.5}, {2.5, -0.5, 0.25}, {2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+           Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+          0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+          0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+           Rational[-5, 2], Rational[1, 2], 
+            Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5, 
+          0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+           Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+           Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+          0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+        Polygon3DBox[
+         NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+           Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+           Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+          0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 0.25}}]]}, {
+        {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+        {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+        {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+         Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+      NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, {3., 0, 0.375}], 
+   GeometricTransformation3DBox[
+    GeometricTransformation3DBox[{
+      GeometricTransformation3DBox[{SphereBox[{0, 0, 0}, 0.8], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {0, 0, 0}], 
+      GeometricTransformation3DBox[{
+        CuboidBox[
+         NCache[{Rational[-3, 2], Rational[-1, 2], 
+           Rational[-1, 2]}, {-1.5, -0.5, -0.5}], 
+         NCache[{Rational[3, 2], Rational[1, 2], Rational[1, 2]}, {1.5, 0.5, 
+          0.5}]], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {2, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 2, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 2}}]}}}, 
+       NCache[{Rational[3, 2], 0, 0}, {1.5, 0, 0}]], 
+      GeometricTransformation3DBox[{
+        GeometricTransformation3DBox[
+         CylinderBox[{{0, 0, -0.625}, {0, 0, 0.625}}, 0.6666666666666666], {{
+         1, 0, 0}, {0, 0, -1}, {0, 1, 0}}], {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {1, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 1, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 1}}]}}}, {3, 0, 0}], 
+      GeometricTransformation3DBox[{{
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}}, {{-2.5, -0.5,
+            0.5}, {2.5, -0.5, 0.25}, {
+           2.5, -0.5, -0.25}, {-2.5, -0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}}, {{-2.5, 0.5, 
+           0.5}, {2.5, 0.5, 0.25}, {2.5, 0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {2.5, -0.5, 0.25}, {2.5, 0.5, 0.25}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[-5, 2], Rational[1, 2], 
+             Rational[-1, 2]}}, {{-2.5, -0.5, -0.5}, {2.5, -0.5, -0.25}, {2.5,
+            0.5, -0.25}, {-2.5, 0.5, -0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[-5, 2], Rational[-1, 2], Rational[1, 2]}, {
+            Rational[-5, 2], Rational[-1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[-1, 2]}, {
+            Rational[-5, 2], Rational[1, 2], Rational[1, 2]}}, {{-2.5, -0.5, 
+           0.5}, {-2.5, -0.5, -0.5}, {-2.5, 0.5, -0.5}, {-2.5, 0.5, 0.5}}]], 
+         Polygon3DBox[
+          NCache[{{Rational[5, 2], Rational[-1, 2], Rational[1, 4]}, {
+            Rational[5, 2], Rational[-1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[-1, 4]}, {
+            Rational[5, 2], Rational[1, 2], Rational[1, 4]}}, {{2.5, -0.5, 
+           0.25}, {2.5, -0.5, -0.25}, {2.5, 0.5, -0.25}, {2.5, 0.5, 
+           0.25}}]]}, {
+         {RGBColor[1, 0, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {3, 0, 0}}]}, 
+         {RGBColor[0, 1, 0], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 3, 0}}]}, 
+         {RGBColor[0, 0, 1], AbsoluteThickness[1], 
+          Line3DBox[{{0, 0, 0}, {0, 0, 3}}]}}}, 
+       NCache[{Rational[11, 2], 0, 0}, {5.5, 0, 0}]]}, 
+     NCache[{{Rational[1, 2] 3^Rational[1, 2], Rational[1, 2], 0}, {
+       Rational[-1, 2], Rational[1, 2] 3^Rational[1, 2], 0}, {0, 0, 1}}, {{
+       0.8660254037844386, 0.5, 0}, {-0.5, 0.8660254037844386, 0}, {0, 0, 
+       1}}]], {2.25, -2.799038105676658, 0.375}]},
+  ImageSize->{372.6303644514211, 297.5498844820844},
+  ViewAngle->0.21635794895714597`,
+  ViewCenter->{{0.5, 0.5, 0.5}, {0.4876706654947711, 0.5481907116609095}},
+  ViewPoint->{2.1392750721318854`, 1.6866637586133728`, 2.0071540875417164`},
+  ViewVertical->{0.1322667286071324, 0.3983712672972652, 
+   3.2138674004683394`}]], "Output",
+ CellChangeTimes->{
+  3.726244256446142*^9, {3.72624436553505*^9, 3.726244382378734*^9}, {
+   3.7262444270402*^9, 3.7262444408165774`*^9}, 3.726244493491844*^9, {
+   3.726244569804475*^9, 3.726244595036998*^9}, {3.7262447768751802`*^9, 
+   3.7262448088873806`*^9}, 3.726245285557043*^9, {3.7262457225057335`*^9, 
+   3.726245750020485*^9}, {3.726245809941476*^9, 3.7262458338008623`*^9}, {
+   3.7262459702615066`*^9, 3.72624597579706*^9}, 3.7262461109945784`*^9, {
+   3.7262462240818863`*^9, 3.726246252050683*^9}, {3.726246287595237*^9, 
+   3.726246329644441*^9}, 3.726246430489525*^9, 3.7262464731207876`*^9, 
+   3.72624651745022*^9, {3.72624689918939*^9, 3.726246931140585*^9}, 
+   3.7262471179362626`*^9, {3.72624737813828*^9, 3.726247423456812*^9}, 
+   3.7262475889193563`*^9, {3.7262476758730507`*^9, 3.7262476918906527`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{944, 982},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 163, 2, 111, "Title"],
+Cell[746, 26, 29032, 528, 343, "Input"],
+Cell[CellGroupData[{
+Cell[29803, 558, 94, 1, 53, "Subsection"],
+Cell[29900, 561, 1325, 26, 105, "Input"],
+Cell[31228, 589, 347, 6, 32, "Input"],
+Cell[31578, 597, 458, 8, 32, "Input"],
+Cell[32039, 607, 14925, 401, 1373, "Input"],
+Cell[46967, 1010, 2797, 72, 133, "Input"],
+Cell[49767, 1084, 1831, 47, 113, "Input"],
+Cell[CellGroupData[{
+Cell[51623, 1135, 247, 4, 32, "Input"],
+Cell[51873, 1141, 3267, 57, 452, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[55189, 1204, 103, 1, 43, "Subsection"],
+Cell[55295, 1207, 629, 14, 73, "Input"],
+Cell[55927, 1223, 2876, 74, 152, "Input"],
+Cell[58806, 1299, 1921, 50, 93, InheritFromParent],
+Cell[CellGroupData[{
+Cell[60752, 1353, 151, 3, 32, "Input"],
+Cell[60906, 1358, 1335, 24, 125, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[62290, 1388, 103, 1, 43, "Subsection"],
+Cell[62396, 1391, 665, 17, 93, "Input"],
+Cell[63064, 1410, 784, 22, 93, "Input"],
+Cell[63851, 1434, 2740, 72, 133, "Input"],
+Cell[66594, 1508, 1794, 47, 93, "Input"],
+Cell[CellGroupData[{
+Cell[68413, 1559, 172, 3, 32, "Input"],
+Cell[68588, 1564, 1577, 31, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[70214, 1601, 97, 1, 43, "Subsection"],
+Cell[70314, 1604, 876, 23, 113, "Input"],
+Cell[71193, 1629, 569, 15, 32, "Input"],
+Cell[71765, 1646, 2710, 71, 152, "Input"],
+Cell[74478, 1719, 1752, 46, 93, "Input"],
+Cell[CellGroupData[{
+Cell[76255, 1769, 176, 3, 32, "Input"],
+Cell[76434, 1774, 1527, 28, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[78010, 1808, 96, 1, 43, "Subsection"],
+Cell[78109, 1811, 714, 17, 141, "Input"],
+Cell[78826, 1830, 6594, 180, 911, "Input"],
+Cell[85423, 2012, 2639, 70, 148, "Input"],
+Cell[88065, 2084, 1737, 46, 115, "Input"],
+Cell[CellGroupData[{
+Cell[89827, 2134, 173, 3, 38, "Input"],
+Cell[90003, 2139, 3424, 62, 70, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[93476, 2207, 102, 1, 43, "Subsection"],
+Cell[93581, 2210, 1524, 37, 273, "Input"],
+Cell[CellGroupData[{
+Cell[95130, 2251, 169, 3, 32, "Input"],
+Cell[95302, 2256, 4753, 87, 294, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[100104, 2349, 98, 1, 43, "Subsection"],
+Cell[100205, 2352, 604, 13, 44, "Input"],
+Cell[100812, 2367, 4498, 108, 493, "Input"],
+Cell[CellGroupData[{
+Cell[105335, 2479, 171, 3, 32, "Input"],
+Cell[105509, 2484, 29869, 540, 343, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

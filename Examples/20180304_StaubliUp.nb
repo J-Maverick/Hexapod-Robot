@@ -1,0 +1,4298 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    128800,       4288]
+NotebookOptionsPosition[    117159,       3875]
+NotebookOutlinePosition[    117909,       3900]
+CellTagsIndexPosition[    117866,       3897]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Kinematics for the Saubli RX-130, using the coordinate directions as \
+specified as specified below  These frames should be used in the SSM and TDM \
+construction of the virtual Staubli RX130 robot.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[GraphicsData["CompressedBitmap", "\<\
+eJztvQe4bUWRP7rdK+x08jk3nZsDNwdu5JK5XOKFS84ZE1FRQDFgGhOKmAhj
+FglGUFREzBlzBnWcUUfHMWIa44zO1Kvfr6p79d77HJx5//e9b7735PsO557V
+9avu1au7urqqunr3+Vde+KjHnH/lRY84f9Hhl5//uAsvesQViw677HJ9lD2s
+Vitv0Z99mrWHPawm6X9vllrtb3//7e+//f23v//299/+/tvff/v7b3//v/33
+U6SW1fRfo0nZJEueIAuSZzP47HJZkTwb5rPLZLA2IiPJ8wE+v1Q6tfkykDxv
+8vlF0q7toT/V85LPL5BWba3+VM8zPn+UNGubpZE8fxifP1xp99Lnb5Qylp3A
+kvMUsZ/+vF6qtzqKJefo0x1K/yqZjCWHseQsLTlUS26ShbFkJ0vO0DqOkqL2
+cq1vUIZi6UEsPU1Lj1Hci/X37KT1B7D0ZOV6gmJfpBTzk9J9WXqCPjlZS67R
+nyVKGUr3Zulx2kenKfZ5WrpHUroXS49R7Nla+mwtXZX0zlaWHq2l52vpM7V0
+TVLvJpYeIFmtqU8fpRRPV4p5yr2d8AhUea3QkouV6qlKNVe/ZTvp642k2l9L
+c8U+Rn8/WUsnZbjWSag2kGpfpcj06eP05yqlnFS+ddZaUa4n5XYZq12hFE/U
+2ufq76ZSpFTrSLVNxmtP0NIryavQGu0nUK0l1RaZYG1XKC9QDfZQrSHVDM4A
+qc2RGfqeee3x5JnrmM5rA/oTqFeTekL7bpbMql2tbbrM+Y72UK4i5biWTOg4
+e6rPsCzSjymPwYR+ZaQf0zmT6Vy6Wksf4+0Y15+UekWkHtYvkmt/Xa3/voT9
+lWuN3dTLST2mrR3QeYov1dCfpynFxY6Y0YPYwxGNWqnfstTfLSKK2oVE4P2z
+KRGTyhv1NNmiC/i2uVJ381/m1LP02zaUuqM9VNQe7bxn91AvdeoZ2oqyNqTv
+gG/0SEWAeo7+DCXUS0g9qn0yoNTDOltL/7qXK9UjIqq7joAa0DFp1BjBY0qR
+aQtzRVxJtLVwsqfOxY5u6zgo+bVKrSfT30A9PKJyRWV9qEbNxklBnk/Qn/P9
+u8whoqpnUUSEVmI8z3Ak5st5jkQLh5O6DDmi3wXvNJMzIa89SX/OTRAjCWJh
+ROiL6OAdUsxMn0HAnaM/8/ythvtwwypbDNfR1s5kCyEditpZxIUWVu+2INaX
++7th3M3yd8P4OJPfLu+rcYHX2OYXn+0IzB8gqjZWdc2PbcTbzIkI1GGtmzMt
+YsDlDRBPZx3VtxpJEPMShMkxIJ6hP2d4zxkim6KODikM8UxHoI7ZUyKG9M0D
+Au/zLP336V7H9Ii2lsyfAjGH46D3PYBoKeV8HznPThCzpqkj5wiA1Gvpvxc4
+8jmOnBuRvXWhRQHZ0H8vdORz9ec0r3Pm/wj5PEfOfQhkrnOq4Lxd5KjnJ6gi
+zreMsr4bjTHRi75Gf051aRPQA1OiQ92F/ix29AuItrGYKQrfd/p6gVziEu2F
+jpxLCWR9PzYFEnyxbhe1pY68tgfZ8HWq+7sCmbt0WyY558O1+nOKz87cy8en
+REIDSJEv8l6a5z2UqwSeGpnzXXPVgyrkafy7qRJwOkQYDcv03wGF0bfcR99U
+KOimhb+Xze8Dp6VcnvQAKA/ok0sd9nKrtiL2skmy/aeghLZVUV6nFJCW01E2
+aysTyrP19759crifMifl3skbpZQN1SQrSsj47X2rSIff0TSasoe+qG2T3vXK
+6Ju11Qnl4fqew0q9tW89bLs2mVLvVC1kiOPLRkn6vZc4ytbcNQlqh9YJGTtH
+6pz1/QjUs9Y1GSAOoiZcUGqOS68GYoim1lEhDlQEJNss/Z1KlWXTIg7wWa46
+J8mblKsBt0fE4VukOGjZy9gu64NCNZyAWj4Fysb6fvp7D+qnda2n2rms7OsD
+aCbXEZFztGCFbSd7tDU9iJyy8DqOuly/VqkyqvoqB/W8v32VFzn1GuXQTKh3
+ROpMx0VKvY/+rEt2lgdPQWmtAOWeyV5zZx/lgPfkPorYK/lWh/oozVS+tJ2y
+8NqrNj4z8gtUoY3pXPo/p6pqfFakMinW9F6fjrKj3/f/nCLU1tB+z/4KZV2/
+4/r/BlVZ2/BXqaxWfEMbvdfq732m6I2OjrWMGnmdY3p6ygEdxyM6zqajaOlO
+IlDMVV6PfQiqUe5roBtNRzWss3OMvCanperIHO557V0XcIWF9vmYKamH5BCu
+YTMVMTXFiGxRfjNUlrRrl045Xsdkvc7LYaXoTEMxLou5ro7re47r+LhkGqqR
+GtQYFTy6Pg2orBurXTQN5aB+w47KjwZXyAumocq4JqxXXkPcZ3Zqj5rmDWwF
+W0PNAXKq1F4e5F5sar6lUq/iPgx2g8x7u8Vd1dT8m4pY7oiOjoRcW3PutNSw
+kyzVH+yoB5UadpRzlHJf/Xd/azrKe4FSYNc2pBRt/fdZpK54PyNSDyrVPFJj
+PQG1rbMt1VqmwwxpDbA7jVFfq+vfLepxU1HX2Y6ZXkNJGV/Xmlqqv03Nv669
+0tB22apT93oa7AeUNWsnTYmE5jihyI5+qzFacTKVq1iJG7UTpkXMUH7NBIH+
+naXPjpsWgVKMnnFHoI/n6LNjpn0fWHlA3eKb13XuN2tHT0s9qSN9Bt/WemBY
+ny3Qd9g1TYugPzdcPxJtXV13Ifhp1o5Q6v2SMVJ9wflODW1/kVIsVurDpqGu
+c4VerL+XKtUh0/Lcm3uCukqlVu1gUlVtfXqk2otaRV3ndFO1n+4xU1FtVarl
+SrVSqQ6clmqzjqgVSrVaqfanJlGfgmpPaqN1XV0abNPUVBuoAdZVPjS5ck5N
+tY5yoa48bZYU1Fanpl2jtOu0BHbkbT398bRIBTvqRv8aeJ+t01Ku0NItTrlF
+UZt7+uVp8XutIB+j3Eb+01HuoZR7OeV2pdwwDWWmX7bUfjHKvflm3X1U8Vys
+lPs65X7U3Or6dbop36t/n85RWmqZ0e6v42bVlLSZ7rvCeG2oPmv/PpDfter9
+31CrfR4R2OMZFfaWO/zfOyh1qxp+RW3z2RGRcW3c6dSHaNuWJW/5S5UStg4G
+aujghzj1odqyJaS23ntQ10CTyvfqk1MpaUqdY0Z9mLZkcfKlf04Jh/Y/I0HA
+HvoyH2kN7auK/mdK26Z+93TS55SmI5QSVsNR+u/5CeKn3GFmXYg6V8Ldjtit
+/57bh8hr79Pv8v6kFti8jnXMMdzxVJifcIXKlHZQe6mm2Kx2MmVZqRK1Xjte
+ec3qom+wVe9VfefuSJ/RSnuC0p/EtcPo1zjm/VF3g6y+R8b9r7sSPHSnk7T0
+FMVPRLzpw++LeNT8Hq7Zrdrbic65thT6DL1zGtfcgLY9072uBxq24B4sxUJ/
+Oo2ju6ErnmHXOva9xGb8cu/Rn08o7v3690lSWa7OUOyZih127DruDmwEvoU6
+DHonZ90VvqUY+yJnce20WbGBPW9v/WYxmw+syxU2r52oX/AspT2XK+d0uCHt
+3aHaRx1zgtKerXTncy9pq9Ke1GqKpJ2d2jtlovYBxxyvmHMU8wjfiQVMw/0s
+b2HfNWvvktk6egxzrNKep5hHcsU1DGRZ6fU8W58vZH/Yu79b5usPsEUN3ihg
+H037ru0BNnGnb/U9S9u3QJ99OGrHM2vv0F8fUNpdqiOeq9iLtP7wXfbmemP2
+JOCfqf0B/GepLQ7V7ozYkt/4XP25SGfBdn222XeJz1Cd1jCwueniAXN1RB7J
+1mVs9aUqmbBj3Or74Wfo22T05xn6I445grY4fIm6auwtx7Qc06BMma/PgPmw
+Yw6n3dDqeRxHqfXeYi3byz1yT6demndhP6gYeCsbjn289twQtQL0Tuk4s2Oh
+nZ/T3x8iDvaUgiMFuMsVN8h1AvpuwOXcgwH3ef13wO3g7LT3u5xW5zptrPt4
+O58mZjte4LgPOu4g62G+17n++/H0JWYq40rFNx1fp5UTGlOKP5D40F7bOcAr
+OIM6hPXv1RGLdw3YghaQYWJDvRmtJC3OamgqHeJf7NjP688H+W2wbha0bGP0
+XUE51tA2z6bVp+4z8iX6fJHXabOrwf4fTXAt4sZVDys4+kN90PVu1N8bHfs+
+bc9eLuXOpVSzNj9SMvpR8C2P4hireEATvEFgB21RonyAa0Nbx11JWWt8Sv1m
+trs43bV34GENWeJ1vJw8hvnu91LK5KrXFJT3xqOtUibjGnUqde2Kx3sT7Hs5
+KzHLCq4thh1QiZixv0+Ka6UIrAH3ULcc5Bi7x+fcRvpxAnaIe59R96P3YldT
+its7fJg8IAEgzWwnbjyGdRWw/cixvo6Cx7XO49eKe4/363q32RsupxcK6yx2
+4Ue5dT7Fwtv6LcXfzXmc6+pS0kMBPGhhocBKNJs7APODGT5TPNbngdo3HN/w
+lW0hV4A6v3eHq0JGf/khiZXxhay/VP4jjs8pyVcTn3FHOihm9cJ+Cx7+g7lD
+NPwLvP2wb3xb8e9mW2H7KzieDV9QNgC/UPsBO4QJx1/j+IbOn+8q/l3kldN6
+vcTx8AGdz/kBbJ2eSmCf79hCx9T3ic252u1Bb0Q3FlERJ3udFa5Z+xfFvZP9
+Y9b9ZbHNpc51PGtyJQfued5XWG3/VaCb2BiAhricOFiSOsQtV9yJrtsAd4WW
+HewrzY8V+w76t3P6eVZIxjmBPjyH796knhSwl+mKu8VX+p8q9u383jll5krH
+tvX7wb8XIjj+gbi51DQqnMkwWJpXRdyE9ktBWypw3yRuAe3mmLs/41pWEod1
+Yw1xddp5bRUdUS0A49Vk7wPEF9x5r014vF3MuzeXzzPaLiZUPzxOYKuz9eLr
+/l16MfCTrtc6DQPLDHRAyDtr81epOVWr+k/ZvzaXgYf+v8HxsMejjzd5e7/M
++dNgncB9nHOsoKXxLOn2uWFcbHXcF5T+XjG/2U8U94noUyi1XXVqX6XPXfRz
+WIM/72P0bS7fgP228tjsmIaYlw7ele2O+SzradfuEPO2Yfz8g/7eQq0SmlI9
+YrAGTvp4fZOOCfQh1gpgvskdZMBkbIdZnJrsI2Bu1vFwF2VfXvuRYh5QDPa5
+Z4r5AJvsv0z3a+ZVB+bVMkP7P6P/EPPi61q2l2PaLs+A2cG11r71K2WM2jXq
+AeZr3IkapuMyFJiDqesb5hVcGyrMV7nmG2bA585OxkEE+qCBl7ou5GzHD/XP
+L2v5fo6DR/pc6kAN7syAe4P20Ye9DT/kOMTYL+lBC+sP5vjh1LNCtNPD2bKC
+EuVOMT/6gY6AtH2E/j5CkSMRcb63KSAwNw5yxJP050ilHu6iLhLqSe6BK+qj
+qImUPbx/oNR3CHxRJe03gXo37YiB+jxve6DGHnhnQn0cpVUjoc6d+m3+TQ+V
+jHuzwhHHc+fRjcgdUfiuOfO9lSFO6IodOzdBvJU6SEHL14l8boiTuFNJEXVv
+1VtphS20B20fljniZNVumhFxjspqUL/Fo22O6qKGNaBJXS1QtyM1Vr+je6jP
+oP25ora15c0cI7n2dzf1mVpeJG0vONLezG9Y0Op4Emd9VnsyJW6T/rLQm3WO
+/zdzV9iI1DbW6x5X06KPQPy/w7XoTdTRC1pBT9R3B915cadU9tFCbzievNuk
+fXjiQTuMNA3GN53gPQuaRyY0hyjNG/0bnZjQXECbSzcNdpmnJDQXJj440Nyu
+z0ut69SE5qIeP93t3FGW1NFO0X+D5mLXy1MajPQzuYY0tf0mty8mbcXvYKfF
+el1QdzL6NvdxOXeBKe1tcT0Mvwt6rE52HPZJl/LdmxwDaZtulVm0Lpyi7wWd
++lL2Y/XtjlaaW5TmdL6X7bQfQ72m8qvuJs0MzthTuEfMSXNu8v7HKM0bVL6f
+HWngYcq1jVV06wmkGaV8O4UjGus5xkBFcyL7ZoB61am0/xvNyUldp0Ub46ne
+g5dJ5bm8NyltcE17XNIn3aWY04/vK52gJaeMfX75FBRWd6B4fF/9oDhN+/CK
+KbGn6de4MsG8N5bACvSE/3FJycg6e74h7jRy1TgqmqJ2VaRZpb35wa5y6HdV
++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
+UovOCLGRY9NQ2XmCqXncL+VDllos0PhD1vB1sfPBNb9/Jef5rW6ar4jdgWs0
+y8Qy2BnNgZGm6SdXrLYlD0ll43I6TkFbXiyWu3jptHR7RF52G0ygOaiLphXz
++fWXhv7HDW3TUy3z0v1i33SXdqgFV9gdU5RW2O7SlvcrvtXUNEtlgN9oPyl7
+Sr/K3hmkdKy+28GJdFqi6/Dcrq+ali7mjd9ZMi52JqWLkhsKZ09LtZCngi0H
+QdUDhyQUE1x/Brn2TnTxSanGaQMepoVqtIvXoVGeYJ88QhvGUNdorigQGzLK
+1bMjdk9fP8WkVCex62In/iGH9o/9m1LPoW4WbivvUAMrE86HddGWLK2LnSoL
+tRwglvvbEGsSBHYEpdh9CpaxYDDaADZLdbqRpwF8xtYZEWQoxNMNcNxMTkGZ
+ed5RaKuT7NHJ+I4p1ahLc7tNKVfafaWYlrbl2a8m/QyknSIxytmJ5B3x6JBC
+5jG+fYGErEz4b1ZCicgnlOB+pDq1pBDraKdDO7ElFcpstoPsv3F6em0eraMl
+ySJ9u9v0gNhNX0NuX61TB7M8aIu5A2n0IczqY/Esdrau5fa9paw5IOY4Atkg
+Wxyf7vOh57rh7wCLo0XuBtxkgmtSJzU9bYC9Wo/ZC+oRMc8R35Q8nmM2/zhm
+4YhHzeLmG9gfVrm+hftODYdbFkru1fMEYd/fdt7QMta4foiTRAGXU7ssxU6S
+2DcLHh30xTztyV7UP4jl3sm4qjcd2eI75jJHd/QtRywkohV1+C+K5YcKeefz
+eGa7SWk9zrKZzJlmHBZ5nd/WVtTpkRqnRaUuFs+LU3t7uW6ZUrdps4LOUeOd
+wAXPUWTUWkvmNk8RlZ/ra34Woh61FfTgYNInsEMd7hp+eEPYue3WF/dV+90N
+eK9RsRuhDo39uDBpJdQwZRxnR5t71RHaFZCxbrCn778d15a6e6qqugKuzdvU
+63GuzI/fbYD9lsVebxMRvsZMzoDq33nkMC9yqDRak4kDfL/5nG11trmMqLlx
+lFX5egK6nqAXuu1ztlsMutHf5NiciHcYjLq+gR1GiClpR1Q19zB6l5B6kdiJ
+3uWxZXOiLMAqsYgxk0v4nexegG6q+7lHXkSLK/TzWZz1eQ/V10kF2918UsKu
+gbG2PPILEuhrlAVhrMwl9Qofmcsj30D9VUF81QLOrpUc9Q3eg9xN9RXKp0Gu
+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
+dlfNFdWEUo2K5b4zykZCiZXG7lnLaWWybO1F9JOD7kt99MYZ9KPSSNbWlLN5
+2wtynsX1oUgsp81IaXHze3kbZjMDff5XKe1O1DEJN32l/ZRS4qtPKuV4126j
+lbQTb4tzlesphVpc2bNI2Z6CEvfczKfkHJyCCutWoFogdq+wUXUSKvTZPmyf
+RU9ORDkxkFBhLgWqWdx5llw1jXIwocRKPEo5a/c6z/QbAXopLW+gRS7YjT3T
+U2akLBKenWkow7lyWIiNZzvZGVfvPey5+6zm2bShDPRRDXJFXOm1bnadoren
+B7hervQa7Wb53q/2ADMshXZZnF8xJVXQ//EWqHlP59voGzMPqL4/5u3b6BKo
+f7Q+oCstVn2cxNkoVeYX8LsymVsvjfR59JBAQ1wllptmnzhrK86m1c5OqPaN
+8idQ3R/5WY5EnHAyynrP+9zPCCXLlbpJej3b9/OW+lAa3vKQWGp33qJ0s/R6
+1++ntSfnSa0t0uvDR4zJoljaGyWA/lgslqd2c18pckBZnb2eg//gapTFCNvK
+/v8fvk5ti30VSv6YRCyhvr0iRfAI/I6n0tKSYPv/N+b6zSlrrGT/WFL54cF1
+e6QIlv3fiJ1fxXm37bG9QRP4tdgNZZCKe0ds0AR+JZYXfy1Le/VzxN83IrZX
+u/4FZbaV7hs57xVLLdfr1KUPit2Nup5js1djTkv3k15N9kGxc0nrJI1KCdaS
+n3N1KZhTpYqw2NxXmsZfBMvHz7iOWr0HxW+0MWItjxzm84ERu2cstUybGySP
+dxJX1oUHkxMJq+KcqicxX2FX+J9OAe/WwfHt1naVVrexVRRrIkV6k149iYgL
+FP8lGe8iOyRiV3kJdrWteBM48r7g+RWx7UHe3E6qgF7ehe5wjIb5tEdS1qF8
+2x4jHez54oTCzrvtHS34vRTrqWMWtOYenki/ByLFBs/yCwvxoU6xPNqUK8Qt
+CcKy+6MnH9FzI8FbIhWyZIFqp1I9Skb49E19pYe6n/rhMQYEmjUo3hhpN9I2
+kPOGyfNcP8XzWxOKFmcsYj3Pksrrd3Ok2ETPvWU8xVg9g1pUdesiaF7WRw1b
+KEbnKVJlSX9tpNrscmImT7bXaQMLJ0henVBZXulZtHvCB5Z5ZjTc2tNPNcAa
+j3MdBmWviFRbpOFU4Ww+8hRktDGh/O8TygG+a04dN+Ndj0u91psi1VbmBbXM
+HlhjEO+6zHnd0EcFHwjWmsMkj37w6yPVNuZ1ykiFVeUQsTykKHtpQtXkmheo
+DvaVprv/4dW0rMx1+kMPIlXRwytQ7RQ7N7vOKV4SKSDbYY08VOze4Dm0ARvV
+i7uosJYe7vJ+lntLUXZdpELJfI4xu1VzJu249n4v6qPaJZaLkzl7GEeW0YPE
+KVqTHt7ISob1+mix2xYmpLpHwbSG10RaxKfvplU/o52hI1ncr74gUh0ndjvC
+sS7Xx8XubwqU10TKY3V/dILYLYrQrkbE7rdG2fO7qOD5he5leZEqP9WQz+Fu
+xHGKOJmRDr2IPGaqeV5CHdbsps62YBFeKmaXyfyEdMA9N+mNVu30qEUsEsut
+atF4VQab50T6s3QWnk6bceYZjjPa90POnYrybKWE5WeS9RrlkGSR57MTylwl
+nNmzhiWcLs6jjeHvuigvoMZupeFu4sCzotzt7boE1umSUUCSuX/Ezk7b+1kN
+z0pwVnIZ7WFGkUvhHnGr5ZkJtZU83r0ALbb9r2Esk/wTPWJgRDK/wbKM1M+I
+1OGe4auiFzRY8exrNnxvGmwCT0+QTfqzn+OUdn7T7hDqpsTYfLZrGi1mobQx
+/rRIcbzqis91Pm3fv3RTnKjvfo3z6DCrjPG4OlLgroXrSGE71u7SHzp23bQl
+AfPUKUqsrqfEkn/1cTF9yQbn1l0y5Lvf/pJhttq4PTmW/Kinnu6SlFtV8mPJ
+ulr9pKSku21/reQVydq7O3LtxxaOzfpKLLp0XR/mJ2LRl2u9jVd1lQxIMUXJ
+T8Xyna7pK/kZSwrmmTA5018+xPJKDlalQQde09f+nztudV/Jg16yaooS842s
+7HvnX3j7V/SV/NK/ZT8GJdv7vuOvJGcuwd6ntu51jwbQbusbPbgldmvfOPyN
+5HE3Wj39N6n2t9XT34rlacW/n5o8LeIYqmbY75LRWD3Fvalr+yTBHxJ94+ld
+T1c5bSW7YJcO8XmV/PuT5PG0a/UUFvGl/rSSxtgthxO3lWz/s1QnjauV7C/S
+jDaeal38T+oi5hGvVncRk59GfW3yfNyfXZc8G455A/DXi7tKjPNLu54Z3cu6
+nlmP3Zg8w39v/v/l30/rshHjv5VT0r26j649Df9tPZSX/T/U7h938f3Q/4re
++9vf/9v+/lHXKPnw/5JWTfX3jCnst/8b2vX/1b9rD/u/AGWZ4FM=\
+\>"], "Graphics",
+ ImageSize->{407, 382},
+ ImageMargins->{{0, Inherited}, {Inherited, 0}}],
+
+Cell["\<\
+
+Base to joint 1.  Rotation about Z, both centered in waist/shoulder.  \
+Possible Z translation from base, d0.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+T01[t_,d0_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,d0},{0,0,0,1}}
+T01[t1,d0]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t1], -Sin[t1], 0, 0}, {Sin[t1], Cos[t1], 0, 0}, 
+ 
+   {0, 0, 1, d0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t1]    -Sin[t1]   0          0
+
+Sin[t1]    Cos[t1]    0          0
+
+0          0          1          d0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the joint 1 rotation about Y.  There is a translation along +Y in \
+frame 1, d1. \
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+T12[t_,d1_]:={{Cos[t], 0, Sin[t], 0},
+{0, 1, 0, d1},
+{-Sin[t],0,Cos[t],0},{0,0,0,1}};
+T12[t2,d1]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t2], 0, Sin[t2], 0}, {0, 1, 0, d1}, 
+ 
+   {-Sin[t2], 0, Cos[t2], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t2]    0          Sin[t2]    0
+
+0          1          0          d1
+
+-Sin[t2]   0          Cos[t2]    0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the joint 3 rotation and translations measured relative frame 2.  \
+There is a translation along X and -Z of frame 2.  Enter all distances as \
+positive.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+T23[t_,d2_,d3_]:={{Cos[t], 0, Sin[t], d2},
+{0, 1, 0, -d3},
+{-Sin[t],0,Cos[t],0},{0,0,0,1}};
+T23[t3,d2,d3]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t3], 0, Sin[t3], d2}, {0, 1, 0, -d3}, 
+ 
+   {-Sin[t3], 0, Cos[t3], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t3]    0          Sin[t3]    d2
+
+0          1          0          -d3
+
+-Sin[t3]   0          Cos[t3]    0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the joint 4 rotation and translation along Z of frame 3\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+T34[t_,d4_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,d4},{0,0,0,1}}
+T34[t4,d4]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t4], -Sin[t4], 0, 0}, {Sin[t4], Cos[t4], 0, 0}, 
+ 
+   {0, 0, 1, d4}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t4]    -Sin[t4]   0          0
+
+Sin[t4]    Cos[t4]    0          0
+
+0          0          1          d4
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the joint 5 rotation and Z translation relative to frame 4.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+T45[t_,d5_]:={{Cos[t], 0, Sin[t], 0},
+{0, 1, 0, 0},
+{-Sin[t],0,Cos[t],d5},{0,0,0,1}};
+T45[t5,d5]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t5], 0, Sin[t5], 0}, {0, 1, 0, 0}, 
+ 
+   {-Sin[t5], 0, Cos[t5], d5}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t5]    0          Sin[t5]    0
+
+0          1          0          0
+
+-Sin[t5]   0          Cos[t5]    d5
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+T56[t_,d6_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,d6},{0,0,0,1}}
+T56[t6,d6]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t6], -Sin[t6], 0, 0}, {Sin[t6], Cos[t6], 0, 0}, 
+ 
+   {0, 0, 1, d6}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t6]    -Sin[t6]   0          0
+
+Sin[t6]    Cos[t6]    0          0
+
+0          0          1          d6
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+Test forward Kinematics.  Ran many different Pi/2 moves and all is good.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+test1=T01[0,0].T12[-Pi/2,1].T23[0,1,1].
+T34[0,1].T45[0,1].T56[0,1];MatrixForm[test1]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{0, 0, -1, -3}, {0, 1, 0, 0}, {1, 0, 0, 1}, 
+ 
+   {0, 0, 0, 1}}]\
+\>", "\<\
+0    0    -1   -3
+
+0    1    0    0
+
+1    0    0    1
+
+0    0    0    1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+General Expression for forward Kinematics.  Will fix the static rotations and \
+leave the distances to be entered.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+KMS=T01[t1,d0].T12[t2,d1].T23[t3,d2,d3].
+T34[t4,d4].T45[t5,d5].T56[t6,d6];MatrixForm[KMS]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t6]*(Cos[t5]*
+ 
+         (Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - 
+ 
+              Cos[t1]*Sin[t2]*Sin[t3]) - Sin[t1]*Sin[t4]) - 
+ 
+        (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])*
+ 
+         Sin[t5]) + (-(Cos[t4]*Sin[t1]) - 
+ 
+        (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3])*
+ 
+         Sin[t4])*Sin[t6], 
+ 
+    Cos[t6]*(-(Cos[t4]*Sin[t1]) - 
+ 
+        (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3])*
+ 
+         Sin[t4]) - (Cos[t5]*
+ 
+         (Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - 
+ 
+              Cos[t1]*Sin[t2]*Sin[t3]) - Sin[t1]*Sin[t4]) - 
+ 
+        (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])*
+ 
+         Sin[t5])*Sin[t6], 
+ 
+    Cos[t5]*(Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3]) + 
+ 
+     (Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - 
+ 
+           Cos[t1]*Sin[t2]*Sin[t3]) - Sin[t1]*Sin[t4])*Sin[t5], 
+ 
+    d2*Cos[t1]*Cos[t2] - d1*Sin[t1] + d3*Sin[t1] + 
+ 
+     d4*(Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3]) + 
+ 
+     d5*(Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3]) + 
+ 
+     d6*(Cos[t5]*(Cos[t1]*Cos[t3]*Sin[t2] + 
+ 
+           Cos[t1]*Cos[t2]*Sin[t3]) + 
+ 
+        (Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - 
+ 
+              Cos[t1]*Sin[t2]*Sin[t3]) - Sin[t1]*Sin[t4])*Sin[t5])
+ 
+     }, {Cos[t6]*(Cos[t5]*(Cos[t4]*
+ 
+            (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3]) + 
+ 
+           Cos[t1]*Sin[t4]) - 
+ 
+        (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])*
+ 
+         Sin[t5]) + (Cos[t1]*Cos[t4] - 
+ 
+        (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3])*
+ 
+         Sin[t4])*Sin[t6], 
+ 
+    Cos[t6]*(Cos[t1]*Cos[t4] - 
+ 
+        (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3])*
+ 
+         Sin[t4]) - (Cos[t5]*
+ 
+         (Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - 
+ 
+              Sin[t1]*Sin[t2]*Sin[t3]) + Cos[t1]*Sin[t4]) - 
+ 
+        (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])*
+ 
+         Sin[t5])*Sin[t6], 
+ 
+    Cos[t5]*(Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3]) + 
+ 
+     (Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - 
+ 
+           Sin[t1]*Sin[t2]*Sin[t3]) + Cos[t1]*Sin[t4])*Sin[t5], 
+ 
+    d1*Cos[t1] - d3*Cos[t1] + d2*Cos[t2]*Sin[t1] + 
+ 
+     d4*(Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3]) + 
+ 
+     d5*(Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3]) + 
+ 
+     d6*(Cos[t5]*(Cos[t3]*Sin[t1]*Sin[t2] + 
+ 
+           Cos[t2]*Sin[t1]*Sin[t3]) + 
+ 
+        (Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - 
+ 
+              Sin[t1]*Sin[t2]*Sin[t3]) + Cos[t1]*Sin[t4])*Sin[t5])
+ 
+     }, {Cos[t6]*(Cos[t4]*Cos[t5]*
+ 
+         (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3]) - 
+ 
+        (Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])*Sin[t5]) - 
+ 
+     (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t4]*Sin[t6], 
+ 
+    -(Cos[t6]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t4]) - 
+ 
+     (Cos[t4]*Cos[t5]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3]) - 
+ 
+        (Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])*Sin[t5])*Sin[t6], 
+ 
+    Cos[t5]*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]) + 
+ 
+     Cos[t4]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t5], 
+ 
+    d0 - d2*Sin[t2] + d4*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]) + 
+ 
+     d5*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]) + 
+ 
+     d6*(Cos[t5]*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]) + 
+ 
+        Cos[t4]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t5])}, 
+ 
+   {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t6] (Cos[t5] (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - 
+ 
+           Cos[t1] Sin[t2] Sin[t3]) - Sin[t1] Sin[t4]) - 
+ 
+     (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) Sin[t5])\\
+ 
+    + (-(Cos[t4] Sin[t1]) - 
+ 
+     (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) Sin[t4]) 
+ 
+   Sin[t6]
+ 
+      Cos[t6] (-(Cos[t4] Sin[t1]) - 
+       
+           (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) 
+       
+            Sin[t4]) - (Cos[t5] 
+       
+            (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - 
+       
+                 Cos[t1] Sin[t2] Sin[t3]) - Sin[t1] Sin[t4]) - 
+       
+           (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) 
+       
+            Sin[t5]) Sin[t6]
+ 
+      Cos[t5] (Cos[t1] Cos[t3] Sin[t2] + 
+       
+           Cos[t1] Cos[t2] Sin[t3]) + 
+       
+        (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - 
+       
+              Cos[t1] Sin[t2] Sin[t3]) - Sin[t1] Sin[t4]) Sin[t5]
+ 
+      d2 Cos[t1] Cos[t2] - d1 Sin[t1] + d3 Sin[t1] + 
+ 
+   d4 (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) + 
+ 
+   d5 (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) + 
+ 
+   d6 (Cos[t5] (Cos[t1] Cos[t3] Sin[t2] + 
+ 
+         Cos[t1] Cos[t2] Sin[t3]) + 
+ 
+      (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - 
+ 
+            Cos[t1] Sin[t2] Sin[t3]) - Sin[t1] Sin[t4]) Sin[t5])
+
+Cos[t6] (Cos[t5] (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - 
+ 
+           Sin[t1] Sin[t2] Sin[t3]) + Cos[t1] Sin[t4]) - 
+ 
+     (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) Sin[t5])\\
+ 
+    + (Cos[t1] Cos[t4] - (Cos[t2] Cos[t3] Sin[t1] - 
+ 
+        Sin[t1] Sin[t2] Sin[t3]) Sin[t4]) Sin[t6]
+ 
+      Cos[t6] (Cos[t1] Cos[t4] - 
+       
+           (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) 
+       
+            Sin[t4]) - (Cos[t5] 
+       
+            (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - 
+       
+                 Sin[t1] Sin[t2] Sin[t3]) + Cos[t1] Sin[t4]) - 
+       
+           (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) 
+       
+            Sin[t5]) Sin[t6]
+ 
+      Cos[t5] (Cos[t3] Sin[t1] Sin[t2] + 
+       
+           Cos[t2] Sin[t1] Sin[t3]) + 
+       
+        (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - 
+       
+              Sin[t1] Sin[t2] Sin[t3]) + Cos[t1] Sin[t4]) Sin[t5]
+ 
+      d1 Cos[t1] - d3 Cos[t1] + d2 Cos[t2] Sin[t1] + 
+ 
+   d4 (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) + 
+ 
+   d5 (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) + 
+ 
+   d6 (Cos[t5] (Cos[t3] Sin[t1] Sin[t2] + 
+ 
+         Cos[t2] Sin[t1] Sin[t3]) + 
+ 
+      (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - 
+ 
+            Sin[t1] Sin[t2] Sin[t3]) + Cos[t1] Sin[t4]) Sin[t5])
+
+Cos[t6] (Cos[t4] Cos[t5] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) - 
+ 
+     (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) Sin[t5]) - 
+ 
+  (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t4] Sin[t6]
+ 
+      -(Cos[t6] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t4]) - 
+       
+        (Cos[t4] Cos[t5] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) - 
+       
+           (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) Sin[t5]) Sin[t6]
+ 
+      Cos[t5] (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) + 
+       
+        Cos[t4] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t5]
+ 
+      d0 - d2 Sin[t2] + d4 (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) + 
+       
+        d5 (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) + 
+       
+        d6 (Cos[t5] (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) + 
+       
+           Cos[t4] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t5])
+
+0   0   0   1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell["\<\
+The above equations are too complicated it appears to get a general Inverse \
+solution, so a reduced DH set will be used, and the parts will have to be \
+offset in the drawing.  This reduced set takes advantage of the Staubli RX130 \
+lining up the base frame with the forearm/wrist all the out to the tool, thus \
+d0 = d1 = d3 = d4 = d6 = 0.  The tool frame will also be centered in the \
+wrist so that the inverse kinematics are esier to find.  Care must be taken \
+when specifying the tool offsets.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["KMS=KMS//.{d0->0,d1->0,d3->0,d4->0,d6->0}", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{{Cos[t6]*(Cos[t5]*(Cos[t4]*
+ 
+           (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3]) - 
+ 
+          Sin[t1]*Sin[t4]) - 
+ 
+       (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])*Sin[t5])
+ 
+      + (-(Cos[t4]*Sin[t1]) - 
+ 
+       (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+      *Sin[t6], Cos[t6]*(-(Cos[t4]*Sin[t1]) - 
+ 
+       (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+      - (Cos[t5]*(Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - 
+ 
+             Cos[t1]*Sin[t2]*Sin[t3]) - Sin[t1]*Sin[t4]) - 
+ 
+       (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])*Sin[t5])
+ 
+      *Sin[t6], Cos[t5]*(Cos[t1]*Cos[t3]*Sin[t2] + 
+ 
+       Cos[t1]*Cos[t2]*Sin[t3]) + 
+ 
+    (Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3]) - 
+ 
+       Sin[t1]*Sin[t4])*Sin[t5], 
+ 
+   d2*Cos[t1]*Cos[t2] + d5*
+ 
+     (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])}, 
+ 
+  {Cos[t6]*(Cos[t5]*(Cos[t4]*
+ 
+           (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3]) + 
+ 
+          Cos[t1]*Sin[t4]) - 
+ 
+       (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])*Sin[t5])
+ 
+      + (Cos[t1]*Cos[t4] - 
+ 
+       (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+      *Sin[t6], Cos[t6]*(Cos[t1]*Cos[t4] - 
+ 
+       (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+      - (Cos[t5]*(Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - 
+ 
+             Sin[t1]*Sin[t2]*Sin[t3]) + Cos[t1]*Sin[t4]) - 
+ 
+       (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])*Sin[t5])
+ 
+      *Sin[t6], Cos[t5]*(Cos[t3]*Sin[t1]*Sin[t2] + 
+ 
+       Cos[t2]*Sin[t1]*Sin[t3]) + 
+ 
+    (Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3]) + 
+ 
+       Cos[t1]*Sin[t4])*Sin[t5], 
+ 
+   d2*Cos[t2]*Sin[t1] + d5*
+ 
+     (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])}, 
+ 
+  {Cos[t6]*(Cos[t4]*Cos[t5]*
+ 
+        (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3]) - 
+ 
+       (Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])*Sin[t5]) - 
+ 
+    (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t4]*Sin[t6], 
+ 
+   -(Cos[t6]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t4]) - 
+ 
+    (Cos[t4]*Cos[t5]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3]) - 
+ 
+       (Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])*Sin[t5])*Sin[t6], 
+ 
+   Cos[t5]*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]) + 
+ 
+    Cos[t4]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t5], 
+ 
+   -(d2*Sin[t2]) + d5*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])}, 
+ 
+  {0, 0, 0, 1}}\
+\>", "\<\
+{{Cos[t6] (Cos[t5] (Cos[t4] 
+ 
+           (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) - 
+ 
+          Sin[t1] Sin[t4]) - 
+ 
+       (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) Sin[t5])
+ 
+      + (-(Cos[t4] Sin[t1]) - 
+ 
+       (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+       Sin[t6], Cos[t6] (-(Cos[t4] Sin[t1]) - 
+ 
+       (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+      - (Cos[t5] (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - 
+ 
+             Cos[t1] Sin[t2] Sin[t3]) - Sin[t1] Sin[t4]) - 
+ 
+       (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) Sin[t5])
+ 
+       Sin[t6], Cos[t5] (Cos[t1] Cos[t3] Sin[t2] + 
+ 
+       Cos[t1] Cos[t2] Sin[t3]) + 
+ 
+    (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) - 
+ 
+       Sin[t1] Sin[t4]) Sin[t5], 
+ 
+   d2 Cos[t1] Cos[t2] + d5 
+ 
+     (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3])}, 
+ 
+  {Cos[t6] (Cos[t5] (Cos[t4] 
+ 
+           (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) + 
+ 
+          Cos[t1] Sin[t4]) - 
+ 
+       (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) Sin[t5])
+ 
+      + (Cos[t1] Cos[t4] - 
+ 
+       (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+       Sin[t6], Cos[t6] (Cos[t1] Cos[t4] - 
+ 
+       (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+      - (Cos[t5] (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - 
+ 
+             Sin[t1] Sin[t2] Sin[t3]) + Cos[t1] Sin[t4]) - 
+ 
+       (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) Sin[t5])
+ 
+       Sin[t6], Cos[t5] (Cos[t3] Sin[t1] Sin[t2] + 
+ 
+       Cos[t2] Sin[t1] Sin[t3]) + 
+ 
+    (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) + 
+ 
+       Cos[t1] Sin[t4]) Sin[t5], 
+ 
+   d2 Cos[t2] Sin[t1] + d5 
+ 
+     (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3])}, 
+ 
+  {Cos[t6] (Cos[t4] Cos[t5] 
+ 
+        (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) - 
+ 
+       (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) Sin[t5]) - 
+ 
+    (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t4] Sin[t6], 
+ 
+   -(Cos[t6] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t4]) - 
+ 
+    (Cos[t4] Cos[t5] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) - 
+ 
+       (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) Sin[t5]) Sin[t6], 
+ 
+   Cos[t5] (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) + 
+ 
+    Cos[t4] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t5], 
+ 
+   -(d2 Sin[t2]) + d5 (Cos[t2] Cos[t3] - Sin[t2] Sin[t3])}, 
+ 
+  {0, 0, 0, 1}}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell["Known Kinematic matrix.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+KMK={{a11,a12,a13,X},
+{a21,a22,a23,Y},{a31,a32,a33,Z},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{{a11, a12, a13, X}, {a21, a22, a23, Y}, {a31, a32, a33, Z}, 
+ 
+  {0, 0, 0, 1}}\
+\>", "\<\
+{{a11, a12, a13, X}, {a21, a22, a23, Y}, {a31, a32, a33, Z}, 
+ 
+  {0, 0, 0, 1}}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+eq11=KMK[[1]][[1]]==KMS[[1]][[1]]
+eq12=KMK[[1]][[2]]==KMS[[1]][[2]]
+eq13=KMK[[1]][[3]]==KMS[[1]][[3]]
+eq14=KMK[[1]][[4]]==KMS[[1]][[4]]
+eq21=KMK[[2]][[1]]==KMS[[2]][[1]]
+eq22=KMK[[2]][[2]]==KMS[[2]][[2]]
+eq23=KMK[[2]][[3]]==KMS[[2]][[3]]
+eq24=KMK[[2]][[4]]==KMS[[2]][[4]]
+eq31=KMK[[3]][[1]]==KMS[[3]][[1]]
+eq32=KMK[[3]][[2]]==KMS[[3]][[2]]
+eq33=KMK[[3]][[3]]==KMS[[3]][[3]]
+eq34=KMK[[3]][[4]]==KMS[[3]][[4]]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a11 == Cos[t6]*(Cos[t5]*(Cos[t4]*
+ 
+          (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3]) - 
+ 
+         Sin[t1]*Sin[t4]) - 
+ 
+      (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])*Sin[t5])
+ 
+     + (-(Cos[t4]*Sin[t1]) - 
+ 
+      (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+     *Sin[t6]\
+\>", "\<\
+a11 == Cos[t6] (Cos[t5] (Cos[t4] 
+ 
+          (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) - 
+ 
+         Sin[t1] Sin[t4]) - 
+ 
+      (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) Sin[t5])
+ 
+     + (-(Cos[t4] Sin[t1]) - 
+ 
+      (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+      Sin[t6]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a12 == Cos[t6]*(-(Cos[t4]*Sin[t1]) - 
+ 
+      (Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+     - (Cos[t5]*(Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - 
+ 
+            Cos[t1]*Sin[t2]*Sin[t3]) - Sin[t1]*Sin[t4]) - 
+ 
+      (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])*Sin[t5])
+ 
+     *Sin[t6]\
+\>", "\<\
+a12 == Cos[t6] (-(Cos[t4] Sin[t1]) - 
+ 
+      (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+     - (Cos[t5] (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - 
+ 
+            Cos[t1] Sin[t2] Sin[t3]) - Sin[t1] Sin[t4]) - 
+ 
+      (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]) Sin[t5])
+ 
+      Sin[t6]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a13 == Cos[t5]*(Cos[t1]*Cos[t3]*Sin[t2] + 
+ 
+      Cos[t1]*Cos[t2]*Sin[t3]) + 
+ 
+   (Cos[t4]*(Cos[t1]*Cos[t2]*Cos[t3] - Cos[t1]*Sin[t2]*Sin[t3]) - 
+ 
+      Sin[t1]*Sin[t4])*Sin[t5]\
+\>", "\<\
+a13 == Cos[t5] (Cos[t1] Cos[t3] Sin[t2] + 
+ 
+      Cos[t1] Cos[t2] Sin[t3]) + 
+ 
+   (Cos[t4] (Cos[t1] Cos[t2] Cos[t3] - Cos[t1] Sin[t2] Sin[t3]) - 
+ 
+      Sin[t1] Sin[t4]) Sin[t5]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+X == d2*Cos[t1]*Cos[t2] + d5*
+ 
+    (Cos[t1]*Cos[t3]*Sin[t2] + Cos[t1]*Cos[t2]*Sin[t3])\
+\>", "\<\
+X == d2 Cos[t1] Cos[t2] + d5 
+ 
+    (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3])\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a21 == Cos[t6]*(Cos[t5]*(Cos[t4]*
+ 
+          (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3]) + 
+ 
+         Cos[t1]*Sin[t4]) - 
+ 
+      (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])*Sin[t5])
+ 
+     + (Cos[t1]*Cos[t4] - (Cos[t2]*Cos[t3]*Sin[t1] - 
+ 
+         Sin[t1]*Sin[t2]*Sin[t3])*Sin[t4])*Sin[t6]\
+\>", "\<\
+a21 == Cos[t6] (Cos[t5] (Cos[t4] 
+ 
+          (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) + 
+ 
+         Cos[t1] Sin[t4]) - 
+ 
+      (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) Sin[t5])
+ 
+     + (Cos[t1] Cos[t4] - (Cos[t2] Cos[t3] Sin[t1] - 
+ 
+         Sin[t1] Sin[t2] Sin[t3]) Sin[t4]) Sin[t6]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a22 == Cos[t6]*(Cos[t1]*Cos[t4] - 
+ 
+      (Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3])*Sin[t4])
+ 
+     - (Cos[t5]*(Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - 
+ 
+            Sin[t1]*Sin[t2]*Sin[t3]) + Cos[t1]*Sin[t4]) - 
+ 
+      (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])*Sin[t5])
+ 
+     *Sin[t6]\
+\>", "\<\
+a22 == Cos[t6] (Cos[t1] Cos[t4] - 
+ 
+      (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) Sin[t4])
+ 
+     - (Cos[t5] (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - 
+ 
+            Sin[t1] Sin[t2] Sin[t3]) + Cos[t1] Sin[t4]) - 
+ 
+      (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]) Sin[t5])
+ 
+      Sin[t6]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a23 == Cos[t5]*(Cos[t3]*Sin[t1]*Sin[t2] + 
+ 
+      Cos[t2]*Sin[t1]*Sin[t3]) + 
+ 
+   (Cos[t4]*(Cos[t2]*Cos[t3]*Sin[t1] - Sin[t1]*Sin[t2]*Sin[t3]) + 
+ 
+      Cos[t1]*Sin[t4])*Sin[t5]\
+\>", "\<\
+a23 == Cos[t5] (Cos[t3] Sin[t1] Sin[t2] + 
+ 
+      Cos[t2] Sin[t1] Sin[t3]) + 
+ 
+   (Cos[t4] (Cos[t2] Cos[t3] Sin[t1] - Sin[t1] Sin[t2] Sin[t3]) + 
+ 
+      Cos[t1] Sin[t4]) Sin[t5]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Y == d2*Cos[t2]*Sin[t1] + d5*
+ 
+    (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3])\
+\>", "\<\
+Y == d2 Cos[t2] Sin[t1] + d5 
+ 
+    (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3])\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a31 == Cos[t6]*(Cos[t4]*Cos[t5]*
+ 
+       (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3]) - 
+ 
+      (Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])*Sin[t5]) - 
+ 
+   (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t4]*Sin[t6]\
+\>", "\<\
+a31 == Cos[t6] (Cos[t4] Cos[t5] 
+ 
+       (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) - 
+ 
+      (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) Sin[t5]) - 
+ 
+   (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t4] Sin[t6]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a32 == -(Cos[t6]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*
+ 
+      Sin[t4]) - (Cos[t4]*Cos[t5]*
+ 
+       (-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3]) - 
+ 
+      (Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])*Sin[t5])*Sin[t6]\
+\>", "\<\
+a32 == -(Cos[t6] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) 
+ 
+      Sin[t4]) - (Cos[t4] Cos[t5] 
+ 
+       (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) - 
+ 
+      (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) Sin[t5]) Sin[t6]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a33 == Cos[t5]*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]) + 
+ 
+   Cos[t4]*(-(Cos[t3]*Sin[t2]) - Cos[t2]*Sin[t3])*Sin[t5]\
+\>", "\<\
+a33 == Cos[t5] (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]) + 
+ 
+   Cos[t4] (-(Cos[t3] Sin[t2]) - Cos[t2] Sin[t3]) Sin[t5]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Z == -(d2*Sin[t2]) + d5*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3])\
+\>", "\<\
+Z == -(d2 Sin[t2]) + d5 (Cos[t2] Cos[t3] - Sin[t2] Sin[t3])\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell["\<\
+Will try to find t1,t2,t3, from the position set of equations.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["t1sol=Solve[{eq14,eq24},{Cos[t1],Sin[t1]}]//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Cos[t1] -> -(X/
+ 
+      (-(d2*Cos[t2]) - d5*Cos[t3]*Sin[t2] - d5*Cos[t2]*Sin[t3])), 
+ 
+  Sin[t1] -> -(Y/
+ 
+      (-(d2*Cos[t2]) - d5*Cos[t3]*Sin[t2] - d5*Cos[t2]*Sin[t3]))}\
+\>", "\<\
+{Cos[t1] -> -(
+ 
+                                 X
+      -------------------------------------------------------), 
+      -(d2 Cos[t2]) - d5 Cos[t3] Sin[t2] - d5 Cos[t2] Sin[t3]
+ 
+  Sin[t1] -> -(
+ 
+                                 Y
+      -------------------------------------------------------)}
+      -(d2 Cos[t2]) - d5 Cos[t3] Sin[t2] - d5 Cos[t2] Sin[t3]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+cost1=Cos[t1]/.t1sol//Simplify
+sint1=Sin[t1]/.t1sol//Simplify\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+X/(d2*Cos[t2] + d5*Sin[t2 + t3])\
+\>", "\<\
+             X
+----------------------------
+d2 Cos[t2] + d5 Sin[t2 + t3]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Y/(d2*Cos[t2] + d5*Sin[t2 + t3])\
+\>", "\<\
+             Y
+----------------------------
+d2 Cos[t2] + d5 Sin[t2 + t3]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["tant1=sint1/cost1//Simplify", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Y/X\
+\>", "\<\
+Y
+-
+X\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["t3sol=eq14[[2]]^2 + eq24[[2]]^2 + eq34[[2]]^2", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(d2*Cos[t1]*Cos[t2] + d5*(Cos[t1]*Cos[t3]*Sin[t2] + 
+ 
+        Cos[t1]*Cos[t2]*Sin[t3]))^2 + 
+ 
+  (d2*Cos[t2]*Sin[t1] + d5*
+ 
+      (Cos[t3]*Sin[t1]*Sin[t2] + Cos[t2]*Sin[t1]*Sin[t3]))^2 + 
+ 
+  (-(d2*Sin[t2]) + d5*(Cos[t2]*Cos[t3] - Sin[t2]*Sin[t3]))^2\
+\>", "\<\
+Power[d2 Cos[t1] Cos[t2] + 
+ 
+    d5 (Cos[t1] Cos[t3] Sin[t2] + Cos[t1] Cos[t2] Sin[t3]), 2] + 
+ 
+  Power[d2 Cos[t2] Sin[t1] + 
+ 
+    d5 (Cos[t3] Sin[t1] Sin[t2] + Cos[t2] Sin[t1] Sin[t3]), 2] + 
+ 
+                                                          2
+  (-(d2 Sin[t2]) + d5 (Cos[t2] Cos[t3] - Sin[t2] Sin[t3]))\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["t3sol=t3sol//Simplify", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+d2^2 + d5^2 + 2*d2*d5*Sin[t3]\
+\>", "\<\
+  2     2
+d2  + d5  + 2 d2 d5 Sin[t3]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell["Which is just the law of cosines for 90+t3.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["st3=Solve[X^2 + Y^2 + Z^2==t3sol,Sin[t3]]//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Sin[t3] -> (-d2^2 - d5^2 + X^2 + Y^2 + Z^2)/(2*d2*d5)}\
+\>", "\<\
+               2     2    2    2    2
+            -d2  - d5  + X  + Y  + Z
+{Sin[t3] -> -------------------------}
+                     2 d2 d5\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["sint3=Sin[t3]/.st3", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(-d2^2 - d5^2 + X^2 + Y^2 + Z^2)/(2*d2*d5)\
+\>", "\<\
+   2     2    2    2    2
+-d2  - d5  + X  + Y  + Z
+-------------------------
+         2 d2 d5\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["t2sol=Eliminate[{eq14,eq24,eq34},Sin[t2]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Y*(d2 + d5*Sin[t3]) == Sin[t1]*
+ 
+    (d2^2*Cos[t2] - d5*Z*Cos[t3] + d5^2*Cos[t2]*Cos[t3]^2 + 
+ 
+      2*d2*d5*Cos[t2]*Sin[t3] + d5^2*Cos[t2]*Sin[t3]^2) && 
+ 
+  X*Sin[t1] == Y*Cos[t1] && 
+ 
+  X*(d2 + d5*Sin[t3]) == Cos[t1]*
+ 
+    (d2^2*Cos[t2] - d5*Z*Cos[t3] + d5^2*Cos[t2]*Cos[t3]^2 + 
+ 
+      2*d2*d5*Cos[t2]*Sin[t3] + d5^2*Cos[t2]*Sin[t3]^2)\
+\>", "\<\
+Y (d2 + d5 Sin[t3]) == Sin[t1] 
+ 
+       2                            2                2
+    (d2  Cos[t2] - d5 Z Cos[t3] + d5  Cos[t2] Cos[t3]  + 
+ 
+                                  2                2
+      2 d2 d5 Cos[t2] Sin[t3] + d5  Cos[t2] Sin[t3] ) && 
+ 
+  X Sin[t1] == Y Cos[t1] && 
+ 
+  X (d2 + d5 Sin[t3]) == Cos[t1] 
+ 
+       2                            2                2
+    (d2  Cos[t2] - d5 Z Cos[t3] + d5  Cos[t2] Cos[t3]  + 
+ 
+                                  2                2
+      2 d2 d5 Cos[t2] Sin[t3] + d5  Cos[t2] Sin[t3] )\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ct2=Solve[t2sol,Cos[t2]]//Simplify//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Cos[t2] -> (Csc[t1]*(d2*Y + d5*Z*Cos[t3]*Sin[t1] + 
+ 
+        d5*Y*Sin[t3]))/(d2^2 + d5^2 + 2*d2*d5*Sin[t3])}\
+\>", "\<\
+            Csc[t1] (d2 Y + d5 Z Cos[t3] Sin[t1] + d5 Y Sin[t3])
+{Cos[t2] -> ----------------------------------------------------}
+                          2     2
+                        d2  + d5  + 2 d2 d5 Sin[t3]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["cost2=Cos[t2]/.ct2", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(Csc[t1]*(d2*Y + d5*Z*Cos[t3]*Sin[t1] + d5*Y*Sin[t3]))/
+ 
+  (d2^2 + d5^2 + 2*d2*d5*Sin[t3])\
+\>", "\<\
+Csc[t1] (d2 Y + d5 Z Cos[t3] Sin[t1] + d5 Y Sin[t3])
+----------------------------------------------------
+              2     2
+            d2  + d5  + 2 d2 d5 Sin[t3]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["t2sol2=eq34/.ct2/.st3", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Z == -(d2*Sin[t2]) + d5*((Cos[t3]*Csc[t1]*
+ 
+         (d2*Y + (Y*(-d2^2 - d5^2 + X^2 + Y^2 + Z^2))/(2*d2) + 
+ 
+           d5*Z*Cos[t3]*Sin[t1]))/(X^2 + Y^2 + Z^2) - 
+ 
+      ((-d2^2 - d5^2 + X^2 + Y^2 + Z^2)*Sin[t2])/(2*d2*d5))\
+\>", "\<\
+Z == -(d2 Sin[t2]) + d5 ((Cos[t3] Csc[t1] 
+ 
+                       2     2    2    2    2
+                 Y (-d2  - d5  + X  + Y  + Z )
+         (d2 Y + ----------------------------- + 
+                             2 d2
+ 
+                                      2    2    2
+           d5 Z Cos[t3] Sin[t1])) / (X  + Y  + Z ) - 
+ 
+          2     2    2    2    2
+      (-d2  - d5  + X  + Y  + Z ) Sin[t2]
+      -----------------------------------)
+                    2 d2 d5\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["st2=Solve[t2sol2,Sin[t2]]//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Sin[t2] -> -((2*d2*X^2*Z + 2*d2*Y^2*Z + 2*d2*Z^3 - 
+ 
+        2*d2*d5^2*Z*Cos[t3]^2 - d2^2*d5*Y*Cos[t3]*Csc[t1] + 
+ 
+        d5^3*Y*Cos[t3]*Csc[t1] - d5*X^2*Y*Cos[t3]*Csc[t1] - 
+ 
+        d5*Y^3*Cos[t3]*Csc[t1] - d5*Y*Z^2*Cos[t3]*Csc[t1])/
+ 
+      ((X^2 + Y^2 + Z^2)*(d2^2 - d5^2 + X^2 + Y^2 + Z^2)))}\
+\>", "\<\
+                     2           2           3
+{Sin[t2] -> -((2 d2 X  Z + 2 d2 Y  Z + 2 d2 Z  - 
+ 
+               2          2     2
+        2 d2 d5  Z Cos[t3]  - d2  d5 Y Cos[t3] Csc[t1] + 
+ 
+          3                         2
+        d5  Y Cos[t3] Csc[t1] - d5 X  Y Cos[t3] Csc[t1] - 
+ 
+            3                         2
+        d5 Y  Cos[t3] Csc[t1] - d5 Y Z  Cos[t3] Csc[t1]) / 
+ 
+         2    2    2     2     2    2    2    2
+      ((X  + Y  + Z ) (d2  - d5  + X  + Y  + Z )))}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["sint2=Sin[t2]/.st2", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-((2*d2*X^2*Z + 2*d2*Y^2*Z + 2*d2*Z^3 - 2*d2*d5^2*Z*Cos[t3]^2 - 
+ 
+      d2^2*d5*Y*Cos[t3]*Csc[t1] + d5^3*Y*Cos[t3]*Csc[t1] - 
+ 
+      d5*X^2*Y*Cos[t3]*Csc[t1] - d5*Y^3*Cos[t3]*Csc[t1] - 
+ 
+      d5*Y*Z^2*Cos[t3]*Csc[t1])/
+ 
+    ((X^2 + Y^2 + Z^2)*(d2^2 - d5^2 + X^2 + Y^2 + Z^2)))\
+\>", "\<\
+         2           2           3          2          2
+-((2 d2 X  Z + 2 d2 Y  Z + 2 d2 Z  - 2 d2 d5  Z Cos[t3]  - 
+ 
+        2                          3
+      d2  d5 Y Cos[t3] Csc[t1] + d5  Y Cos[t3] Csc[t1] - 
+ 
+          2                         3
+      d5 X  Y Cos[t3] Csc[t1] - d5 Y  Cos[t3] Csc[t1] - 
+ 
+            2
+      d5 Y Z  Cos[t3] Csc[t1]) / 
+ 
+       2    2    2     2     2    2    2    2
+    ((X  + Y  + Z ) (d2  - d5  + X  + Y  + Z )))\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["temp=Eliminate[{eq14,eq24,eq34},Sin[t3]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+Y*Sin[t2] == Sin[t1]*(-(Z*Cos[t2]) + d5*Cos[t2]^2*Cos[t3] + 
+ 
+      d5*Cos[t3]*Sin[t2]^2) && 
+ 
+  X*Sin[t2] == Cos[t1]*(-(Z*Cos[t2]) + d5*Cos[t2]^2*Cos[t3] + 
+ 
+      d5*Cos[t3]*Sin[t2]^2) && X*Sin[t1] == Y*Cos[t1]\
+\>", "\<\
+                                               2
+Y Sin[t2] == Sin[t1] (-(Z Cos[t2]) + d5 Cos[t2]  Cos[t3] + 
+ 
+                        2
+      d5 Cos[t3] Sin[t2] ) && 
+ 
+                                                 2
+  X Sin[t2] == Cos[t1] (-(Z Cos[t2]) + d5 Cos[t2]  Cos[t3] + 
+ 
+                        2
+      d5 Cos[t3] Sin[t2] ) && X Sin[t1] == Y Cos[t1]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell["\<\
+We will use this to try to generate quadrant info for t3 after t3 has been \
+computed above and used in the t2 calculation.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["ct3=Solve[temp,Cos[t3]]//Simplify//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Cos[t3] -> (Csc[t1]*(Z*Cos[t2]*Sin[t1] + Y*Sin[t2]))/d5}\
+\>", "\<\
+            Csc[t1] (Z Cos[t2] Sin[t1] + Y Sin[t2])
+{Cos[t3] -> ---------------------------------------}
+                              d5\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["cost3=Cos[t3]/.ct3", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(Csc[t1]*(Z*Cos[t2]*Sin[t1] + Y*Sin[t2]))/d5\
+\>", "\<\
+Csc[t1] (Z Cos[t2] Sin[t1] + Y Sin[t2])
+---------------------------------------
+                  d5\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["Now find the tool angles in terms of previous angles.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+t6sol=Eliminate[{eq11,eq21,eq31},{Sin[t5],Cos[t5]}]//Simplify\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a31*Sin[t2 + t3]*Sin[t4] == 
+ 
+  (-2*a21*Cos[t1 - t4] + a21*Cos[t1 - t2 - t3 - t4] + 
+ 
+     a21*Cos[t1 + t2 + t3 - t4] - 2*a21*Cos[t1 + t4] - 
+ 
+     a21*Cos[t1 - t2 - t3 + t4] - a21*Cos[t1 + t2 + t3 + t4] + 
+ 
+     2*a11*Sin[t1 - t4] - a11*Sin[t1 - t2 - t3 - t4] - 
+ 
+     a11*Sin[t1 + t2 + t3 - t4] + 2*a11*Sin[t1 + t4] + 
+ 
+     a11*Sin[t1 - t2 - t3 + t4] + a11*Sin[t1 + t2 + t3 + t4] + 
+ 
+     4*Sin[t6])/4\
+\>", "\<\
+a31 Sin[t2 + t3] Sin[t4] == 
+ 
+  (-2 a21 Cos[t1 - t4] + a21 Cos[t1 - t2 - t3 - t4] + 
+ 
+     a21 Cos[t1 + t2 + t3 - t4] - 2 a21 Cos[t1 + t4] - 
+ 
+     a21 Cos[t1 - t2 - t3 + t4] - a21 Cos[t1 + t2 + t3 + t4] + 
+ 
+     2 a11 Sin[t1 - t4] - a11 Sin[t1 - t2 - t3 - t4] - 
+ 
+     a11 Sin[t1 + t2 + t3 - t4] + 2 a11 Sin[t1 + t4] + 
+ 
+     a11 Sin[t1 - t2 - t3 + t4] + a11 Sin[t1 + t2 + t3 + t4] + 
+ 
+     4 Sin[t6]) / 4\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+st6=Solve[t6sol,Sin[t6]]//First
+\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Sin[t6] -> (2*a21*Cos[t1 - t4] - a21*Cos[t1 - t2 - t3 - t4] - 
+ 
+      a21*Cos[t1 + t2 + t3 - t4] + 2*a21*Cos[t1 + t4] + 
+ 
+      a21*Cos[t1 - t2 - t3 + t4] + a21*Cos[t1 + t2 + t3 + t4] - 
+ 
+      2*a11*Sin[t1 - t4] + a11*Sin[t1 - t2 - t3 - t4] + 
+ 
+      a11*Sin[t1 + t2 + t3 - t4] + 4*a31*Sin[t2 + t3]*Sin[t4] - 
+ 
+      2*a11*Sin[t1 + t4] - a11*Sin[t1 - t2 - t3 + t4] - 
+ 
+      a11*Sin[t1 + t2 + t3 + t4])/4}\
+\>", "\<\
+{Sin[t6] -> (2 a21 Cos[t1 - t4] - a21 Cos[t1 - t2 - t3 - t4] - 
+ 
+      a21 Cos[t1 + t2 + t3 - t4] + 2 a21 Cos[t1 + t4] + 
+ 
+      a21 Cos[t1 - t2 - t3 + t4] + a21 Cos[t1 + t2 + t3 + t4] - 
+ 
+      2 a11 Sin[t1 - t4] + a11 Sin[t1 - t2 - t3 - t4] + 
+ 
+      a11 Sin[t1 + t2 + t3 - t4] + 4 a31 Sin[t2 + t3] Sin[t4] - 
+ 
+      2 a11 Sin[t1 + t4] - a11 Sin[t1 - t2 - t3 + t4] - 
+ 
+      a11 Sin[t1 + t2 + t3 + t4]) / 4}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["sint6=Sin[t6]/.st6", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(2*a21*Cos[t1 - t4] - a21*Cos[t1 - t2 - t3 - t4] - 
+ 
+    a21*Cos[t1 + t2 + t3 - t4] + 2*a21*Cos[t1 + t4] + 
+ 
+    a21*Cos[t1 - t2 - t3 + t4] + a21*Cos[t1 + t2 + t3 + t4] - 
+ 
+    2*a11*Sin[t1 - t4] + a11*Sin[t1 - t2 - t3 - t4] + 
+ 
+    a11*Sin[t1 + t2 + t3 - t4] + 4*a31*Sin[t2 + t3]*Sin[t4] - 
+ 
+    2*a11*Sin[t1 + t4] - a11*Sin[t1 - t2 - t3 + t4] - 
+ 
+    a11*Sin[t1 + t2 + t3 + t4])/4\
+\>", "\<\
+(2 a21 Cos[t1 - t4] - a21 Cos[t1 - t2 - t3 - t4] - 
+ 
+    a21 Cos[t1 + t2 + t3 - t4] + 2 a21 Cos[t1 + t4] + 
+ 
+    a21 Cos[t1 - t2 - t3 + t4] + a21 Cos[t1 + t2 + t3 + t4] - 
+ 
+    2 a11 Sin[t1 - t4] + a11 Sin[t1 - t2 - t3 - t4] + 
+ 
+    a11 Sin[t1 + t2 + t3 - t4] + 4 a31 Sin[t2 + t3] Sin[t4] - 
+ 
+    2 a11 Sin[t1 + t4] - a11 Sin[t1 - t2 - t3 + t4] - 
+ 
+    a11 Sin[t1 + t2 + t3 + t4]) / 4\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+t6solc=Eliminate[{eq12,eq22,eq32},{Cos[t5],Sin[t5]}]//Simplify\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(a12*(2*Sin[t1 - t4] - Sin[t1 - t2 - t3 - t4] - 
+ 
+       Sin[t1 + t2 + t3 - t4] + 2*Sin[t1 + t4] + 
+ 
+       Sin[t1 - t2 - t3 + t4] + Sin[t1 + t2 + t3 + t4]))/4 == 
+ 
+  (2*a22*Cos[t1 - t4] - a22*Cos[t1 - t2 - t3 - t4] + 
+ 
+     2*a32*Cos[t2 + t3 - t4] - a22*Cos[t1 + t2 + t3 - t4] + 
+ 
+     2*a22*Cos[t1 + t4] + a22*Cos[t1 - t2 - t3 + t4] - 
+ 
+     2*a32*Cos[t2 + t3 + t4] + a22*Cos[t1 + t2 + t3 + t4] - 
+ 
+     4*Cos[t6])/4\
+\>", "\<\
+(a12 (2 Sin[t1 - t4] - Sin[t1 - t2 - t3 - t4] - 
+ 
+       Sin[t1 + t2 + t3 - t4] + 2 Sin[t1 + t4] + 
+ 
+       Sin[t1 - t2 - t3 + t4] + Sin[t1 + t2 + t3 + t4])) / 4 == 
+ 
+  (2 a22 Cos[t1 - t4] - a22 Cos[t1 - t2 - t3 - t4] + 
+ 
+     2 a32 Cos[t2 + t3 - t4] - a22 Cos[t1 + t2 + t3 - t4] + 
+ 
+     2 a22 Cos[t1 + t4] + a22 Cos[t1 - t2 - t3 + t4] - 
+ 
+     2 a32 Cos[t2 + t3 + t4] + a22 Cos[t1 + t2 + t3 + t4] - 
+ 
+     4 Cos[t6]) / 4\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ct6=Solve[t6solc,Cos[t6]]//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Cos[t6] -> (2*a22*Cos[t1 - t4] - a22*Cos[t1 - t2 - t3 - t4] + 
+ 
+      2*a32*Cos[t2 + t3 - t4] - a22*Cos[t1 + t2 + t3 - t4] + 
+ 
+      2*a22*Cos[t1 + t4] + a22*Cos[t1 - t2 - t3 + t4] - 
+ 
+      2*a32*Cos[t2 + t3 + t4] + a22*Cos[t1 + t2 + t3 + t4] - 
+ 
+      2*a12*Sin[t1 - t4] + a12*Sin[t1 - t2 - t3 - t4] + 
+ 
+      a12*Sin[t1 + t2 + t3 - t4] - 2*a12*Sin[t1 + t4] - 
+ 
+      a12*Sin[t1 - t2 - t3 + t4] - a12*Sin[t1 + t2 + t3 + t4])/4}\
+\>", "\<\
+{Cos[t6] -> (2 a22 Cos[t1 - t4] - a22 Cos[t1 - t2 - t3 - t4] + 
+ 
+      2 a32 Cos[t2 + t3 - t4] - a22 Cos[t1 + t2 + t3 - t4] + 
+ 
+      2 a22 Cos[t1 + t4] + a22 Cos[t1 - t2 - t3 + t4] - 
+ 
+      2 a32 Cos[t2 + t3 + t4] + a22 Cos[t1 + t2 + t3 + t4] - 
+ 
+      2 a12 Sin[t1 - t4] + a12 Sin[t1 - t2 - t3 - t4] + 
+ 
+      a12 Sin[t1 + t2 + t3 - t4] - 2 a12 Sin[t1 + t4] - 
+ 
+      a12 Sin[t1 - t2 - t3 + t4] - a12 Sin[t1 + t2 + t3 + t4]) / 4
+ 
+   }\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["cost6=Cos[t6]/.ct6", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(2*a22*Cos[t1 - t4] - a22*Cos[t1 - t2 - t3 - t4] + 
+ 
+    2*a32*Cos[t2 + t3 - t4] - a22*Cos[t1 + t2 + t3 - t4] + 
+ 
+    2*a22*Cos[t1 + t4] + a22*Cos[t1 - t2 - t3 + t4] - 
+ 
+    2*a32*Cos[t2 + t3 + t4] + a22*Cos[t1 + t2 + t3 + t4] - 
+ 
+    2*a12*Sin[t1 - t4] + a12*Sin[t1 - t2 - t3 - t4] + 
+ 
+    a12*Sin[t1 + t2 + t3 - t4] - 2*a12*Sin[t1 + t4] - 
+ 
+    a12*Sin[t1 - t2 - t3 + t4] - a12*Sin[t1 + t2 + t3 + t4])/4\
+\>", "\<\
+(2 a22 Cos[t1 - t4] - a22 Cos[t1 - t2 - t3 - t4] + 
+ 
+    2 a32 Cos[t2 + t3 - t4] - a22 Cos[t1 + t2 + t3 - t4] + 
+ 
+    2 a22 Cos[t1 + t4] + a22 Cos[t1 - t2 - t3 + t4] - 
+ 
+    2 a32 Cos[t2 + t3 + t4] + a22 Cos[t1 + t2 + t3 + t4] - 
+ 
+    2 a12 Sin[t1 - t4] + a12 Sin[t1 - t2 - t3 - t4] + 
+ 
+    a12 Sin[t1 + t2 + t3 - t4] - 2 a12 Sin[t1 + t4] - 
+ 
+    a12 Sin[t1 - t2 - t3 + t4] - a12 Sin[t1 + t2 + t3 + t4]) / 4\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["t5sol=Eliminate[{eq11,eq21,eq31},{Sin[t6],Cos[t6]}]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a31*(-(Cos[t1]^2*Cos[t2]*Cos[t3]*Cos[t4]^2*Cos[t5]) - 
+ 
+     Cos[t2]*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t1]^2 + 
+ 
+     Cos[t1]^2*Cos[t4]^2*Cos[t5]*Sin[t2]*Sin[t3] + 
+ 
+     Cos[t4]^2*Cos[t5]*Sin[t1]^2*Sin[t2]*Sin[t3] - 
+ 
+     Cos[t1]^2*Cos[t2]*Cos[t3]*Cos[t5]*Sin[t4]^2 - 
+ 
+     Cos[t2]*Cos[t3]*Cos[t5]*Sin[t1]^2*Sin[t4]^2 + 
+ 
+     Cos[t1]^2*Cos[t5]*Sin[t2]*Sin[t3]*Sin[t4]^2 + 
+ 
+     Cos[t5]*Sin[t1]^2*Sin[t2]*Sin[t3]*Sin[t4]^2 + 
+ 
+     Cos[t1]^2*Cos[t3]*Cos[t4]*Sin[t2]*Sin[t5] + 
+ 
+     Cos[t3]*Cos[t4]*Sin[t1]^2*Sin[t2]*Sin[t5] + 
+ 
+     Cos[t1]^2*Cos[t2]*Cos[t4]*Sin[t3]*Sin[t5] + 
+ 
+     Cos[t2]*Cos[t4]*Sin[t1]^2*Sin[t3]*Sin[t5]) == 
+ 
+  a11*Cos[t1]*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t2] + 
+ 
+   a21*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t1]*Sin[t2] + 
+ 
+   a11*Cos[t1]*Cos[t2]*Cos[t4]^2*Cos[t5]*Sin[t3] + 
+ 
+   a21*Cos[t2]*Cos[t4]^2*Cos[t5]*Sin[t1]*Sin[t3] + 
+ 
+   a11*Cos[t1]*Cos[t3]*Cos[t5]*Sin[t2]*Sin[t4]^2 + 
+ 
+   a21*Cos[t3]*Cos[t5]*Sin[t1]*Sin[t2]*Sin[t4]^2 + 
+ 
+   a11*Cos[t1]*Cos[t2]*Cos[t5]*Sin[t3]*Sin[t4]^2 + 
+ 
+   a21*Cos[t2]*Cos[t5]*Sin[t1]*Sin[t3]*Sin[t4]^2 + 
+ 
+   a11*Cos[t1]*Cos[t2]*Cos[t3]*Cos[t4]*Sin[t5] + 
+ 
+   a21*Cos[t2]*Cos[t3]*Cos[t4]*Sin[t1]*Sin[t5] - 
+ 
+   a11*Cos[t1]*Cos[t4]*Sin[t2]*Sin[t3]*Sin[t5] - 
+ 
+   a21*Cos[t4]*Sin[t1]*Sin[t2]*Sin[t3]*Sin[t5] + 
+ 
+   a21*Cos[t1]*Cos[t2]^2*Cos[t3]^2*Sin[t4]*Sin[t5] - 
+ 
+   a11*Cos[t2]^2*Cos[t3]^2*Sin[t1]*Sin[t4]*Sin[t5] + 
+ 
+   a21*Cos[t1]*Cos[t3]^2*Sin[t2]^2*Sin[t4]*Sin[t5] - 
+ 
+   a11*Cos[t3]^2*Sin[t1]*Sin[t2]^2*Sin[t4]*Sin[t5] + 
+ 
+   a21*Cos[t1]*Cos[t2]^2*Sin[t3]^2*Sin[t4]*Sin[t5] - 
+ 
+   a11*Cos[t2]^2*Sin[t1]*Sin[t3]^2*Sin[t4]*Sin[t5] + 
+ 
+   a21*Cos[t1]*Sin[t2]^2*Sin[t3]^2*Sin[t4]*Sin[t5] - 
+ 
+   a11*Sin[t1]*Sin[t2]^2*Sin[t3]^2*Sin[t4]*Sin[t5]\
+\>", "\<\
+              2                        2
+a31 (-(Cos[t1]  Cos[t2] Cos[t3] Cos[t4]  Cos[t5]) - 
+ 
+                            2                2
+     Cos[t2] Cos[t3] Cos[t4]  Cos[t5] Sin[t1]  + 
+ 
+            2        2
+     Cos[t1]  Cos[t4]  Cos[t5] Sin[t2] Sin[t3] + 
+ 
+            2                2
+     Cos[t4]  Cos[t5] Sin[t1]  Sin[t2] Sin[t3] - 
+ 
+            2                                2
+     Cos[t1]  Cos[t2] Cos[t3] Cos[t5] Sin[t4]  - 
+ 
+                                    2        2
+     Cos[t2] Cos[t3] Cos[t5] Sin[t1]  Sin[t4]  + 
+ 
+            2                                2
+     Cos[t1]  Cos[t5] Sin[t2] Sin[t3] Sin[t4]  + 
+ 
+                    2                        2
+     Cos[t5] Sin[t1]  Sin[t2] Sin[t3] Sin[t4]  + 
+ 
+            2
+     Cos[t1]  Cos[t3] Cos[t4] Sin[t2] Sin[t5] + 
+ 
+                            2
+     Cos[t3] Cos[t4] Sin[t1]  Sin[t2] Sin[t5] + 
+ 
+            2
+     Cos[t1]  Cos[t2] Cos[t4] Sin[t3] Sin[t5] + 
+ 
+                            2
+     Cos[t2] Cos[t4] Sin[t1]  Sin[t3] Sin[t5]) == 
+ 
+                             2
+  a11 Cos[t1] Cos[t3] Cos[t4]  Cos[t5] Sin[t2] + 
+ 
+                      2
+   a21 Cos[t3] Cos[t4]  Cos[t5] Sin[t1] Sin[t2] + 
+ 
+                              2
+   a11 Cos[t1] Cos[t2] Cos[t4]  Cos[t5] Sin[t3] + 
+ 
+                      2
+   a21 Cos[t2] Cos[t4]  Cos[t5] Sin[t1] Sin[t3] + 
+ 
+                                              2
+   a11 Cos[t1] Cos[t3] Cos[t5] Sin[t2] Sin[t4]  + 
+ 
+                                              2
+   a21 Cos[t3] Cos[t5] Sin[t1] Sin[t2] Sin[t4]  + 
+ 
+                                              2
+   a11 Cos[t1] Cos[t2] Cos[t5] Sin[t3] Sin[t4]  + 
+ 
+                                              2
+   a21 Cos[t2] Cos[t5] Sin[t1] Sin[t3] Sin[t4]  + 
+ 
+   a11 Cos[t1] Cos[t2] Cos[t3] Cos[t4] Sin[t5] + 
+ 
+   a21 Cos[t2] Cos[t3] Cos[t4] Sin[t1] Sin[t5] - 
+ 
+   a11 Cos[t1] Cos[t4] Sin[t2] Sin[t3] Sin[t5] - 
+ 
+   a21 Cos[t4] Sin[t1] Sin[t2] Sin[t3] Sin[t5] + 
+ 
+                      2        2
+   a21 Cos[t1] Cos[t2]  Cos[t3]  Sin[t4] Sin[t5] - 
+ 
+              2        2
+   a11 Cos[t2]  Cos[t3]  Sin[t1] Sin[t4] Sin[t5] + 
+ 
+                      2        2
+   a21 Cos[t1] Cos[t3]  Sin[t2]  Sin[t4] Sin[t5] - 
+ 
+              2                2
+   a11 Cos[t3]  Sin[t1] Sin[t2]  Sin[t4] Sin[t5] + 
+ 
+                      2        2
+   a21 Cos[t1] Cos[t2]  Sin[t3]  Sin[t4] Sin[t5] - 
+ 
+              2                2
+   a11 Cos[t2]  Sin[t1] Sin[t3]  Sin[t4] Sin[t5] + 
+ 
+                      2        2
+   a21 Cos[t1] Sin[t2]  Sin[t3]  Sin[t4] Sin[t5] - 
+ 
+                      2        2
+   a11 Sin[t1] Sin[t2]  Sin[t3]  Sin[t4] Sin[t5]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["st5=Solve[t5sol,Sin[t5]]//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Sin[t5] -> -((-(a31*Cos[t1]^2*Cos[t2]*Cos[t3]*Cos[t4]^2*
+ 
+           Cos[t5]) - a31*Cos[t2]*Cos[t3]*Cos[t4]^2*Cos[t5]*
+ 
+         Sin[t1]^2 - a11*Cos[t1]*Cos[t3]*Cos[t4]^2*Cos[t5]*
+ 
+         Sin[t2] - a21*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t1]*
+ 
+         Sin[t2] - a11*Cos[t1]*Cos[t2]*Cos[t4]^2*Cos[t5]*
+ 
+         Sin[t3] - a21*Cos[t2]*Cos[t4]^2*Cos[t5]*Sin[t1]*
+ 
+         Sin[t3] + a31*Cos[t1]^2*Cos[t4]^2*Cos[t5]*Sin[t2]*
+ 
+         Sin[t3] + a31*Cos[t4]^2*Cos[t5]*Sin[t1]^2*Sin[t2]*
+ 
+         Sin[t3] - a31*Cos[t1]^2*Cos[t2]*Cos[t3]*Cos[t5]*
+ 
+         Sin[t4]^2 - a31*Cos[t2]*Cos[t3]*Cos[t5]*Sin[t1]^2*
+ 
+         Sin[t4]^2 - a11*Cos[t1]*Cos[t3]*Cos[t5]*Sin[t2]*
+ 
+         Sin[t4]^2 - a21*Cos[t3]*Cos[t5]*Sin[t1]*Sin[t2]*
+ 
+         Sin[t4]^2 - a11*Cos[t1]*Cos[t2]*Cos[t5]*Sin[t3]*
+ 
+         Sin[t4]^2 - a21*Cos[t2]*Cos[t5]*Sin[t1]*Sin[t3]*
+ 
+         Sin[t4]^2 + a31*Cos[t1]^2*Cos[t5]*Sin[t2]*Sin[t3]*
+ 
+         Sin[t4]^2 + a31*Cos[t5]*Sin[t1]^2*Sin[t2]*Sin[t3]*
+ 
+         Sin[t4]^2)/
+ 
+      (-(a11*Cos[t1]*Cos[t2]*Cos[t3]*Cos[t4]) - 
+ 
+        a21*Cos[t2]*Cos[t3]*Cos[t4]*Sin[t1] + 
+ 
+        a31*Cos[t1]^2*Cos[t3]*Cos[t4]*Sin[t2] + 
+ 
+        a31*Cos[t3]*Cos[t4]*Sin[t1]^2*Sin[t2] + 
+ 
+        a31*Cos[t1]^2*Cos[t2]*Cos[t4]*Sin[t3] + 
+ 
+        a31*Cos[t2]*Cos[t4]*Sin[t1]^2*Sin[t3] + 
+ 
+        a11*Cos[t1]*Cos[t4]*Sin[t2]*Sin[t3] + 
+ 
+        a21*Cos[t4]*Sin[t1]*Sin[t2]*Sin[t3] - 
+ 
+        a21*Cos[t1]*Cos[t2]^2*Cos[t3]^2*Sin[t4] + 
+ 
+        a11*Cos[t2]^2*Cos[t3]^2*Sin[t1]*Sin[t4] - 
+ 
+        a21*Cos[t1]*Cos[t3]^2*Sin[t2]^2*Sin[t4] + 
+ 
+        a11*Cos[t3]^2*Sin[t1]*Sin[t2]^2*Sin[t4] - 
+ 
+        a21*Cos[t1]*Cos[t2]^2*Sin[t3]^2*Sin[t4] + 
+ 
+        a11*Cos[t2]^2*Sin[t1]*Sin[t3]^2*Sin[t4] - 
+ 
+        a21*Cos[t1]*Sin[t2]^2*Sin[t3]^2*Sin[t4] + 
+ 
+        a11*Sin[t1]*Sin[t2]^2*Sin[t3]^2*Sin[t4]))}\
+\>", "\<\
+                            2                        2
+{Sin[t5] -> -((-(a31 Cos[t1]  Cos[t2] Cos[t3] Cos[t4]  Cos[t5]) - 
+ 
+                                   2                2
+        a31 Cos[t2] Cos[t3] Cos[t4]  Cos[t5] Sin[t1]  - 
+ 
+                                   2
+        a11 Cos[t1] Cos[t3] Cos[t4]  Cos[t5] Sin[t2] - 
+ 
+                           2
+        a21 Cos[t3] Cos[t4]  Cos[t5] Sin[t1] Sin[t2] - 
+ 
+                                   2
+        a11 Cos[t1] Cos[t2] Cos[t4]  Cos[t5] Sin[t3] - 
+ 
+                           2
+        a21 Cos[t2] Cos[t4]  Cos[t5] Sin[t1] Sin[t3] + 
+ 
+                   2        2
+        a31 Cos[t1]  Cos[t4]  Cos[t5] Sin[t2] Sin[t3] + 
+ 
+                   2                2
+        a31 Cos[t4]  Cos[t5] Sin[t1]  Sin[t2] Sin[t3] - 
+ 
+                   2                                2
+        a31 Cos[t1]  Cos[t2] Cos[t3] Cos[t5] Sin[t4]  - 
+ 
+                                           2        2
+        a31 Cos[t2] Cos[t3] Cos[t5] Sin[t1]  Sin[t4]  - 
+ 
+                                                   2
+        a11 Cos[t1] Cos[t3] Cos[t5] Sin[t2] Sin[t4]  - 
+ 
+                                                   2
+        a21 Cos[t3] Cos[t5] Sin[t1] Sin[t2] Sin[t4]  - 
+ 
+                                                   2
+        a11 Cos[t1] Cos[t2] Cos[t5] Sin[t3] Sin[t4]  - 
+ 
+                                                   2
+        a21 Cos[t2] Cos[t5] Sin[t1] Sin[t3] Sin[t4]  + 
+ 
+                   2                                2
+        a31 Cos[t1]  Cos[t5] Sin[t2] Sin[t3] Sin[t4]  + 
+ 
+                           2                        2
+        a31 Cos[t5] Sin[t1]  Sin[t2] Sin[t3] Sin[t4] ) / 
+ 
+      (-(a11 Cos[t1] Cos[t2] Cos[t3] Cos[t4]) - 
+ 
+        a21 Cos[t2] Cos[t3] Cos[t4] Sin[t1] + 
+ 
+                   2
+        a31 Cos[t1]  Cos[t3] Cos[t4] Sin[t2] + 
+ 
+                                   2
+        a31 Cos[t3] Cos[t4] Sin[t1]  Sin[t2] + 
+ 
+                   2
+        a31 Cos[t1]  Cos[t2] Cos[t4] Sin[t3] + 
+ 
+                                   2
+        a31 Cos[t2] Cos[t4] Sin[t1]  Sin[t3] + 
+ 
+        a11 Cos[t1] Cos[t4] Sin[t2] Sin[t3] + 
+ 
+        a21 Cos[t4] Sin[t1] Sin[t2] Sin[t3] - 
+ 
+                           2        2
+        a21 Cos[t1] Cos[t2]  Cos[t3]  Sin[t4] + 
+ 
+                   2        2
+        a11 Cos[t2]  Cos[t3]  Sin[t1] Sin[t4] - 
+ 
+                           2        2
+        a21 Cos[t1] Cos[t3]  Sin[t2]  Sin[t4] + 
+ 
+                   2                2
+        a11 Cos[t3]  Sin[t1] Sin[t2]  Sin[t4] - 
+ 
+                           2        2
+        a21 Cos[t1] Cos[t2]  Sin[t3]  Sin[t4] + 
+ 
+                   2                2
+        a11 Cos[t2]  Sin[t1] Sin[t3]  Sin[t4] - 
+ 
+                           2        2
+        a21 Cos[t1] Sin[t2]  Sin[t3]  Sin[t4] + 
+ 
+                           2        2
+        a11 Sin[t1] Sin[t2]  Sin[t3]  Sin[t4]))}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["sint5=Sin[t5]/.st5", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-((-(a31*Cos[t1]^2*Cos[t2]*Cos[t3]*Cos[t4]^2*Cos[t5]) - 
+ 
+      a31*Cos[t2]*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t1]^2 - 
+ 
+      a11*Cos[t1]*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t2] - 
+ 
+      a21*Cos[t3]*Cos[t4]^2*Cos[t5]*Sin[t1]*Sin[t2] - 
+ 
+      a11*Cos[t1]*Cos[t2]*Cos[t4]^2*Cos[t5]*Sin[t3] - 
+ 
+      a21*Cos[t2]*Cos[t4]^2*Cos[t5]*Sin[t1]*Sin[t3] + 
+ 
+      a31*Cos[t1]^2*Cos[t4]^2*Cos[t5]*Sin[t2]*Sin[t3] + 
+ 
+      a31*Cos[t4]^2*Cos[t5]*Sin[t1]^2*Sin[t2]*Sin[t3] - 
+ 
+      a31*Cos[t1]^2*Cos[t2]*Cos[t3]*Cos[t5]*Sin[t4]^2 - 
+ 
+      a31*Cos[t2]*Cos[t3]*Cos[t5]*Sin[t1]^2*Sin[t4]^2 - 
+ 
+      a11*Cos[t1]*Cos[t3]*Cos[t5]*Sin[t2]*Sin[t4]^2 - 
+ 
+      a21*Cos[t3]*Cos[t5]*Sin[t1]*Sin[t2]*Sin[t4]^2 - 
+ 
+      a11*Cos[t1]*Cos[t2]*Cos[t5]*Sin[t3]*Sin[t4]^2 - 
+ 
+      a21*Cos[t2]*Cos[t5]*Sin[t1]*Sin[t3]*Sin[t4]^2 + 
+ 
+      a31*Cos[t1]^2*Cos[t5]*Sin[t2]*Sin[t3]*Sin[t4]^2 + 
+ 
+      a31*Cos[t5]*Sin[t1]^2*Sin[t2]*Sin[t3]*Sin[t4]^2)/
+ 
+    (-(a11*Cos[t1]*Cos[t2]*Cos[t3]*Cos[t4]) - 
+ 
+      a21*Cos[t2]*Cos[t3]*Cos[t4]*Sin[t1] + 
+ 
+      a31*Cos[t1]^2*Cos[t3]*Cos[t4]*Sin[t2] + 
+ 
+      a31*Cos[t3]*Cos[t4]*Sin[t1]^2*Sin[t2] + 
+ 
+      a31*Cos[t1]^2*Cos[t2]*Cos[t4]*Sin[t3] + 
+ 
+      a31*Cos[t2]*Cos[t4]*Sin[t1]^2*Sin[t3] + 
+ 
+      a11*Cos[t1]*Cos[t4]*Sin[t2]*Sin[t3] + 
+ 
+      a21*Cos[t4]*Sin[t1]*Sin[t2]*Sin[t3] - 
+ 
+      a21*Cos[t1]*Cos[t2]^2*Cos[t3]^2*Sin[t4] + 
+ 
+      a11*Cos[t2]^2*Cos[t3]^2*Sin[t1]*Sin[t4] - 
+ 
+      a21*Cos[t1]*Cos[t3]^2*Sin[t2]^2*Sin[t4] + 
+ 
+      a11*Cos[t3]^2*Sin[t1]*Sin[t2]^2*Sin[t4] - 
+ 
+      a21*Cos[t1]*Cos[t2]^2*Sin[t3]^2*Sin[t4] + 
+ 
+      a11*Cos[t2]^2*Sin[t1]*Sin[t3]^2*Sin[t4] - 
+ 
+      a21*Cos[t1]*Sin[t2]^2*Sin[t3]^2*Sin[t4] + 
+ 
+      a11*Sin[t1]*Sin[t2]^2*Sin[t3]^2*Sin[t4]))\
+\>", "\<\
+                2                        2
+-((-(a31 Cos[t1]  Cos[t2] Cos[t3] Cos[t4]  Cos[t5]) - 
+ 
+                                 2                2
+      a31 Cos[t2] Cos[t3] Cos[t4]  Cos[t5] Sin[t1]  - 
+ 
+                                 2
+      a11 Cos[t1] Cos[t3] Cos[t4]  Cos[t5] Sin[t2] - 
+ 
+                         2
+      a21 Cos[t3] Cos[t4]  Cos[t5] Sin[t1] Sin[t2] - 
+ 
+                                 2
+      a11 Cos[t1] Cos[t2] Cos[t4]  Cos[t5] Sin[t3] - 
+ 
+                         2
+      a21 Cos[t2] Cos[t4]  Cos[t5] Sin[t1] Sin[t3] + 
+ 
+                 2        2
+      a31 Cos[t1]  Cos[t4]  Cos[t5] Sin[t2] Sin[t3] + 
+ 
+                 2                2
+      a31 Cos[t4]  Cos[t5] Sin[t1]  Sin[t2] Sin[t3] - 
+ 
+                 2                                2
+      a31 Cos[t1]  Cos[t2] Cos[t3] Cos[t5] Sin[t4]  - 
+ 
+                                         2        2
+      a31 Cos[t2] Cos[t3] Cos[t5] Sin[t1]  Sin[t4]  - 
+ 
+                                                 2
+      a11 Cos[t1] Cos[t3] Cos[t5] Sin[t2] Sin[t4]  - 
+ 
+                                                 2
+      a21 Cos[t3] Cos[t5] Sin[t1] Sin[t2] Sin[t4]  - 
+ 
+                                                 2
+      a11 Cos[t1] Cos[t2] Cos[t5] Sin[t3] Sin[t4]  - 
+ 
+                                                 2
+      a21 Cos[t2] Cos[t5] Sin[t1] Sin[t3] Sin[t4]  + 
+ 
+                 2                                2
+      a31 Cos[t1]  Cos[t5] Sin[t2] Sin[t3] Sin[t4]  + 
+ 
+                         2                        2
+      a31 Cos[t5] Sin[t1]  Sin[t2] Sin[t3] Sin[t4] ) / 
+ 
+    (-(a11 Cos[t1] Cos[t2] Cos[t3] Cos[t4]) - 
+ 
+      a21 Cos[t2] Cos[t3] Cos[t4] Sin[t1] + 
+ 
+                 2
+      a31 Cos[t1]  Cos[t3] Cos[t4] Sin[t2] + 
+ 
+                                 2
+      a31 Cos[t3] Cos[t4] Sin[t1]  Sin[t2] + 
+ 
+                 2
+      a31 Cos[t1]  Cos[t2] Cos[t4] Sin[t3] + 
+ 
+                                 2
+      a31 Cos[t2] Cos[t4] Sin[t1]  Sin[t3] + 
+ 
+      a11 Cos[t1] Cos[t4] Sin[t2] Sin[t3] + 
+ 
+      a21 Cos[t4] Sin[t1] Sin[t2] Sin[t3] - 
+ 
+                         2        2
+      a21 Cos[t1] Cos[t2]  Cos[t3]  Sin[t4] + 
+ 
+                 2        2
+      a11 Cos[t2]  Cos[t3]  Sin[t1] Sin[t4] - 
+ 
+                         2        2
+      a21 Cos[t1] Cos[t3]  Sin[t2]  Sin[t4] + 
+ 
+                 2                2
+      a11 Cos[t3]  Sin[t1] Sin[t2]  Sin[t4] - 
+ 
+                         2        2
+      a21 Cos[t1] Cos[t2]  Sin[t3]  Sin[t4] + 
+ 
+                 2                2
+      a11 Cos[t2]  Sin[t1] Sin[t3]  Sin[t4] - 
+ 
+                         2        2
+      a21 Cos[t1] Sin[t2]  Sin[t3]  Sin[t4] + 
+ 
+                         2        2
+      a11 Sin[t1] Sin[t2]  Sin[t3]  Sin[t4]))\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["tant5=sint5/Cos[t5]//Simplify", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(2*(-(a21*Cos[t1 - t2 - t3]) - 2*a31*Cos[t2 + t3] + 
+ 
+      a21*Cos[t1 + t2 + t3] + a11*Sin[t1 - t2 - t3] - 
+ 
+      a11*Sin[t1 + t2 + t3]))/
+ 
+  (-2*a11*Cos[t1 - t4] + a11*Cos[t1 - t2 - t3 - t4] + 
+ 
+    a11*Cos[t1 + t2 + t3 - t4] + 2*a11*Cos[t1 + t4] + 
+ 
+    a11*Cos[t1 - t2 - t3 + t4] + a11*Cos[t1 + t2 + t3 + t4] - 
+ 
+    2*a21*Sin[t1 - t4] + a21*Sin[t1 - t2 - t3 - t4] - 
+ 
+    2*a31*Sin[t2 + t3 - t4] + a21*Sin[t1 + t2 + t3 - t4] + 
+ 
+    2*a21*Sin[t1 + t4] + a21*Sin[t1 - t2 - t3 + t4] - 
+ 
+    2*a31*Sin[t2 + t3 + t4] + a21*Sin[t1 + t2 + t3 + t4])\
+\>", "\<\
+(2 (-(a21 Cos[t1 - t2 - t3]) - 2 a31 Cos[t2 + t3] + 
+ 
+      a21 Cos[t1 + t2 + t3] + a11 Sin[t1 - t2 - t3] - 
+ 
+      a11 Sin[t1 + t2 + t3])) / 
+ 
+  (-2 a11 Cos[t1 - t4] + a11 Cos[t1 - t2 - t3 - t4] + 
+ 
+    a11 Cos[t1 + t2 + t3 - t4] + 2 a11 Cos[t1 + t4] + 
+ 
+    a11 Cos[t1 - t2 - t3 + t4] + a11 Cos[t1 + t2 + t3 + t4] - 
+ 
+    2 a21 Sin[t1 - t4] + a21 Sin[t1 - t2 - t3 - t4] - 
+ 
+    2 a31 Sin[t2 + t3 - t4] + a21 Sin[t1 + t2 + t3 - t4] + 
+ 
+    2 a21 Sin[t1 + t4] + a21 Sin[t1 - t2 - t3 + t4] - 
+ 
+    2 a31 Sin[t2 + t3 + t4] + a21 Sin[t1 + t2 + t3 + t4])\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["t4sol=Eliminate[{eq13,eq23,eq33},{Cos[t5],Sin[t5]}]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+a33*(Cos[t1]^2*Cos[t3]*Sin[t2] + Cos[t3]*Sin[t1]^2*Sin[t2] + 
+ 
+     Cos[t1]^2*Cos[t2]*Sin[t3] + Cos[t2]*Sin[t1]^2*Sin[t3])*
+ 
+   Sin[t4] == -(a23*Cos[t1]*Cos[t2]^2*Cos[t3]^2*Cos[t4]) + 
+ 
+   a13*Cos[t2]^2*Cos[t3]^2*Cos[t4]*Sin[t1] - 
+ 
+   a23*Cos[t1]*Cos[t3]^2*Cos[t4]*Sin[t2]^2 + 
+ 
+   a13*Cos[t3]^2*Cos[t4]*Sin[t1]*Sin[t2]^2 - 
+ 
+   a23*Cos[t1]*Cos[t2]^2*Cos[t4]*Sin[t3]^2 + 
+ 
+   a13*Cos[t2]^2*Cos[t4]*Sin[t1]*Sin[t3]^2 - 
+ 
+   a23*Cos[t1]*Cos[t4]*Sin[t2]^2*Sin[t3]^2 + 
+ 
+   a13*Cos[t4]*Sin[t1]*Sin[t2]^2*Sin[t3]^2 + 
+ 
+   a13*Cos[t1]*Cos[t2]*Cos[t3]*Sin[t4] + 
+ 
+   a23*Cos[t2]*Cos[t3]*Sin[t1]*Sin[t4] - 
+ 
+   a13*Cos[t1]*Sin[t2]*Sin[t3]*Sin[t4] - 
+ 
+   a23*Sin[t1]*Sin[t2]*Sin[t3]*Sin[t4]\
+\>", "\<\
+            2                                  2
+a33 (Cos[t1]  Cos[t3] Sin[t2] + Cos[t3] Sin[t1]  Sin[t2] + 
+ 
+            2                                  2
+     Cos[t1]  Cos[t2] Sin[t3] + Cos[t2] Sin[t1]  Sin[t3]) Sin[t4]\\
+ 
+                            2        2
+    == -(a23 Cos[t1] Cos[t2]  Cos[t3]  Cos[t4]) + 
+ 
+              2        2
+   a13 Cos[t2]  Cos[t3]  Cos[t4] Sin[t1] - 
+ 
+                      2                2
+   a23 Cos[t1] Cos[t3]  Cos[t4] Sin[t2]  + 
+ 
+              2                        2
+   a13 Cos[t3]  Cos[t4] Sin[t1] Sin[t2]  - 
+ 
+                      2                2
+   a23 Cos[t1] Cos[t2]  Cos[t4] Sin[t3]  + 
+ 
+              2                        2
+   a13 Cos[t2]  Cos[t4] Sin[t1] Sin[t3]  - 
+ 
+                              2        2
+   a23 Cos[t1] Cos[t4] Sin[t2]  Sin[t3]  + 
+ 
+                              2        2
+   a13 Cos[t4] Sin[t1] Sin[t2]  Sin[t3]  + 
+ 
+   a13 Cos[t1] Cos[t2] Cos[t3] Sin[t4] + 
+ 
+   a23 Cos[t2] Cos[t3] Sin[t1] Sin[t4] - 
+ 
+   a13 Cos[t1] Sin[t2] Sin[t3] Sin[t4] - 
+ 
+   a23 Sin[t1] Sin[t2] Sin[t3] Sin[t4]\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["st4=Solve[t4sol,Sin[t4]]//First", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{Sin[t4] -> -((a23*Cos[t1]*Cos[t2]^2*Cos[t3]^2*Cos[t4] - 
+ 
+        a13*Cos[t2]^2*Cos[t3]^2*Cos[t4]*Sin[t1] + 
+ 
+        a23*Cos[t1]*Cos[t3]^2*Cos[t4]*Sin[t2]^2 - 
+ 
+        a13*Cos[t3]^2*Cos[t4]*Sin[t1]*Sin[t2]^2 + 
+ 
+        a23*Cos[t1]*Cos[t2]^2*Cos[t4]*Sin[t3]^2 - 
+ 
+        a13*Cos[t2]^2*Cos[t4]*Sin[t1]*Sin[t3]^2 + 
+ 
+        a23*Cos[t1]*Cos[t4]*Sin[t2]^2*Sin[t3]^2 - 
+ 
+        a13*Cos[t4]*Sin[t1]*Sin[t2]^2*Sin[t3]^2)/
+ 
+      (-(a13*Cos[t1]*Cos[t2]*Cos[t3]) - 
+ 
+        a23*Cos[t2]*Cos[t3]*Sin[t1] + 
+ 
+        a33*Cos[t1]^2*Cos[t3]*Sin[t2] + 
+ 
+        a33*Cos[t3]*Sin[t1]^2*Sin[t2] + 
+ 
+        a33*Cos[t1]^2*Cos[t2]*Sin[t3] + 
+ 
+        a33*Cos[t2]*Sin[t1]^2*Sin[t3] + 
+ 
+        a13*Cos[t1]*Sin[t2]*Sin[t3] + a23*Sin[t1]*Sin[t2]*Sin[t3])
+ 
+      )}\
+\>", "\<\
+                                  2        2
+{Sin[t4] -> -((a23 Cos[t1] Cos[t2]  Cos[t3]  Cos[t4] - 
+ 
+                   2        2
+        a13 Cos[t2]  Cos[t3]  Cos[t4] Sin[t1] + 
+ 
+                           2                2
+        a23 Cos[t1] Cos[t3]  Cos[t4] Sin[t2]  - 
+ 
+                   2                        2
+        a13 Cos[t3]  Cos[t4] Sin[t1] Sin[t2]  + 
+ 
+                           2                2
+        a23 Cos[t1] Cos[t2]  Cos[t4] Sin[t3]  - 
+ 
+                   2                        2
+        a13 Cos[t2]  Cos[t4] Sin[t1] Sin[t3]  + 
+ 
+                                   2        2
+        a23 Cos[t1] Cos[t4] Sin[t2]  Sin[t3]  - 
+ 
+                                   2        2
+        a13 Cos[t4] Sin[t1] Sin[t2]  Sin[t3] ) / 
+ 
+      (-(a13 Cos[t1] Cos[t2] Cos[t3]) - 
+ 
+        a23 Cos[t2] Cos[t3] Sin[t1] + 
+ 
+                   2
+        a33 Cos[t1]  Cos[t3] Sin[t2] + 
+ 
+                           2
+        a33 Cos[t3] Sin[t1]  Sin[t2] + 
+ 
+                   2
+        a33 Cos[t1]  Cos[t2] Sin[t3] + 
+ 
+                           2
+        a33 Cos[t2] Sin[t1]  Sin[t3] + 
+ 
+        a13 Cos[t1] Sin[t2] Sin[t3] + a23 Sin[t1] Sin[t2] Sin[t3])
+ 
+      )}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["sint4=Sin[t4]/.st4", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-((a23*Cos[t1]*Cos[t2]^2*Cos[t3]^2*Cos[t4] - 
+ 
+      a13*Cos[t2]^2*Cos[t3]^2*Cos[t4]*Sin[t1] + 
+ 
+      a23*Cos[t1]*Cos[t3]^2*Cos[t4]*Sin[t2]^2 - 
+ 
+      a13*Cos[t3]^2*Cos[t4]*Sin[t1]*Sin[t2]^2 + 
+ 
+      a23*Cos[t1]*Cos[t2]^2*Cos[t4]*Sin[t3]^2 - 
+ 
+      a13*Cos[t2]^2*Cos[t4]*Sin[t1]*Sin[t3]^2 + 
+ 
+      a23*Cos[t1]*Cos[t4]*Sin[t2]^2*Sin[t3]^2 - 
+ 
+      a13*Cos[t4]*Sin[t1]*Sin[t2]^2*Sin[t3]^2)/
+ 
+    (-(a13*Cos[t1]*Cos[t2]*Cos[t3]) - 
+ 
+      a23*Cos[t2]*Cos[t3]*Sin[t1] + 
+ 
+      a33*Cos[t1]^2*Cos[t3]*Sin[t2] + 
+ 
+      a33*Cos[t3]*Sin[t1]^2*Sin[t2] + 
+ 
+      a33*Cos[t1]^2*Cos[t2]*Sin[t3] + 
+ 
+      a33*Cos[t2]*Sin[t1]^2*Sin[t3] + 
+ 
+      a13*Cos[t1]*Sin[t2]*Sin[t3] + a23*Sin[t1]*Sin[t2]*Sin[t3]))\
+\>", "\<\
+                      2        2
+-((a23 Cos[t1] Cos[t2]  Cos[t3]  Cos[t4] - 
+ 
+                 2        2
+      a13 Cos[t2]  Cos[t3]  Cos[t4] Sin[t1] + 
+ 
+                         2                2
+      a23 Cos[t1] Cos[t3]  Cos[t4] Sin[t2]  - 
+ 
+                 2                        2
+      a13 Cos[t3]  Cos[t4] Sin[t1] Sin[t2]  + 
+ 
+                         2                2
+      a23 Cos[t1] Cos[t2]  Cos[t4] Sin[t3]  - 
+ 
+                 2                        2
+      a13 Cos[t2]  Cos[t4] Sin[t1] Sin[t3]  + 
+ 
+                                 2        2
+      a23 Cos[t1] Cos[t4] Sin[t2]  Sin[t3]  - 
+ 
+                                 2        2
+      a13 Cos[t4] Sin[t1] Sin[t2]  Sin[t3] ) / 
+ 
+    (-(a13 Cos[t1] Cos[t2] Cos[t3]) - 
+ 
+      a23 Cos[t2] Cos[t3] Sin[t1] + 
+ 
+                 2
+      a33 Cos[t1]  Cos[t3] Sin[t2] + 
+ 
+                         2
+      a33 Cos[t3] Sin[t1]  Sin[t2] + 
+ 
+                 2
+      a33 Cos[t1]  Cos[t2] Sin[t3] + 
+ 
+                         2
+      a33 Cos[t2] Sin[t1]  Sin[t3] + 
+ 
+      a13 Cos[t1] Sin[t2] Sin[t3] + a23 Sin[t1] Sin[t2] Sin[t3]))\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["tant4=sint4/Cos[t4]//Simplify", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+(2*(a23*Cos[t1] - a13*Sin[t1]))/
+ 
+  (a13*Cos[t1 - t2 - t3] + a13*Cos[t1 + t2 + t3] + 
+ 
+    a23*Sin[t1 - t2 - t3] - 2*a33*Sin[t2 + t3] + 
+ 
+    a23*Sin[t1 + t2 + t3])\
+\>", "\<\
+(2 (a23 Cos[t1] - a13 Sin[t1])) / 
+ 
+  (a13 Cos[t1 - t2 - t3] + a13 Cos[t1 + t2 + t3] + 
+ 
+    a23 Sin[t1 - t2 - t3] - 2 a33 Sin[t2 + t3] + 
+ 
+    a23 Sin[t1 + t2 + t3])\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+Final Solution sequence.  Note I switch the order in atan2 to be like C \
+requires atan2(y,x).\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["theta1i=ArcTan[tant1];CForm[atan[tant1]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan(Y/X)\
+\>", "\<\
+atan(Y/X)\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["theta3i=ArcSin[sint3];CForm[asin[sint3]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+asin((-Power(d2,2) - Power(d5,2) + Power(X,2) + Power(Y,2) + 
+ 
+     Power(Z,2))/(2*d2*d5))\
+\>", "\<\
+asin((-Power(d2,2) - Power(d5,2) + Power(X,2) + Power(Y,2) + 
+      Power(Z,2))/(2*d2*d5))\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta2=ArcTan[cost2,sint2];
+CForm[atan2[sint2,cost2]]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan2(-((2*d2*Power(X,2)*Z + 2*d2*Power(Y,2)*Z + 
+ 
+       2*d2*Power(Z,3) - 2*d2*Power(d5,2)*Z*Power(Cos(t3),2) - 
+ 
+       Power(d2,2)*d5*Y*Cos(t3)*Csc(t1) + 
+ 
+       Power(d5,3)*Y*Cos(t3)*Csc(t1) - 
+ 
+       d5*Power(X,2)*Y*Cos(t3)*Csc(t1) - 
+ 
+       d5*Power(Y,3)*Cos(t3)*Csc(t1) - 
+ 
+       d5*Y*Power(Z,2)*Cos(t3)*Csc(t1))/
+ 
+     ((Power(X,2) + Power(Y,2) + Power(Z,2))*
+ 
+       (Power(d2,2) - Power(d5,2) + Power(X,2) + Power(Y,2) + 
+ 
+         Power(Z,2)))),Csc(t1)*
+ 
+    (d2*Y + d5*Z*Cos(t3)*Sin(t1) + d5*Y*Sin(t3))/
+ 
+   (Power(d2,2) + Power(d5,2) + 2*d2*d5*Sin(t3)))\
+\>", "\<\
+atan2(-((2*d2*Power(X,2)*Z + 2*d2*Power(Y,2)*Z + 
+        2*d2*Power(Z,3) - 2*d2*Power(d5,2)*Z*Power(Cos(t3),2) - 
+        Power(d2,2)*d5*Y*Cos(t3)*Csc(t1) + 
+        Power(d5,3)*Y*Cos(t3)*Csc(t1) - 
+        d5*Power(X,2)*Y*Cos(t3)*Csc(t1) - 
+        d5*Power(Y,3)*Cos(t3)*Csc(t1) - 
+        d5*Y*Power(Z,2)*Cos(t3)*Csc(t1))/
+      ((Power(X,2) + Power(Y,2) + Power(Z,2))*
+        (Power(d2,2) - Power(d5,2) + Power(X,2) + Power(Y,2) + 
+          Power(Z,2)))),Csc(t1)*
+     (d2*Y + d5*Z*Cos(t3)*Sin(t1) + d5*Y*Sin(t3))/
+    (Power(d2,2) + Power(d5,2) + 2*d2*d5*Sin(t3)))\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+Recalculate theta3 to try to pick up quadrant info.  It now uses theta2 info.\
+\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta3=ArcTan[cost3,sint3];
+CForm[atan2[sint3,cost3]]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+General::spell1: 
+   Possible spelling error: new symbol name \"theta3\"
+     is similar to existing symbol \"theta3i\".\
+\>", "Message",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan2((-Power(d2,2) - Power(d5,2) + Power(X,2) + Power(Y,2) + 
+ 
+     Power(Z,2))/(2*d2*d5),
+ 
+  Csc(t1)*(Z*Cos(t2)*Sin(t1) + Y*Sin(t2))/d5)\
+\>", "\<\
+atan2((-Power(d2,2) - Power(d5,2) + Power(X,2) + Power(Y,2) + 
+      Power(Z,2))/(2*d2*d5),
+   Csc(t1)*(Z*Cos(t2)*Sin(t1) + Y*Sin(t2))/d5)\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+Now try to pick up quadrant info for Joint 1, using info of joint 2 and 3.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta1=ArcTan[cost1,sint1];
+CForm[atan2[sint1,cost1]]\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan2(Y/(d2*Cos(t2) + d5*Sin(t2 + t3)),
+ 
+  X/(d2*Cos(t2) + d5*Sin(t2 + t3)))\
+\>", "\<\
+atan2(Y/(d2*Cos(t2) + d5*Sin(t2 + t3)),
+   X/(d2*Cos(t2) + d5*Sin(t2 + t3)))\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This one is not a ATAN2 it is a straight ATAN.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["theta4=ArcTan[tant4];CForm[atan[tant4]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan(2*(a23*Cos(t1) - a13*Sin(t1))/
+ 
+   (a13*Cos(t1 - t2 - t3) + a13*Cos(t1 + t2 + t3) + 
+ 
+     a23*Sin(t1 - t2 - t3) - 2*a33*Sin(t2 + t3) + 
+ 
+     a23*Sin(t1 + t2 + t3)))\
+\>", "\<\
+atan(2*(a23*Cos(t1) - a13*Sin(t1))/
+    (a13*Cos(t1 - t2 - t3) + a13*Cos(t1 + t2 + t3) + 
+      a23*Sin(t1 - t2 - t3) - 2*a33*Sin(t2 + t3) + 
+      a23*Sin(t1 + t2 + t3)))\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This one is not a ATAN2 it is a straight ATAN.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["theta5=ArcTan[tant5];CForm[atan[tant5]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan(2*(-(a21*Cos(t1 - t2 - t3)) - 2*a31*Cos(t2 + t3) + 
+ 
+      a21*Cos(t1 + t2 + t3) + a11*Sin(t1 - t2 - t3) - 
+ 
+      a11*Sin(t1 + t2 + t3))/
+ 
+   (-2*a11*Cos(t1 - t4) + a11*Cos(t1 - t2 - t3 - t4) + 
+ 
+     a11*Cos(t1 + t2 + t3 - t4) + 2*a11*Cos(t1 + t4) + 
+ 
+     a11*Cos(t1 - t2 - t3 + t4) + a11*Cos(t1 + t2 + t3 + t4) - 
+ 
+     2*a21*Sin(t1 - t4) + a21*Sin(t1 - t2 - t3 - t4) - 
+ 
+     2*a31*Sin(t2 + t3 - t4) + a21*Sin(t1 + t2 + t3 - t4) + 
+ 
+     2*a21*Sin(t1 + t4) + a21*Sin(t1 - t2 - t3 + t4) - 
+ 
+     2*a31*Sin(t2 + t3 + t4) + a21*Sin(t1 + t2 + t3 + t4)))\
+\>", "\<\
+atan(2*(-(a21*Cos(t1 - t2 - t3)) - 2*a31*Cos(t2 + t3) + 
+       a21*Cos(t1 + t2 + t3) + a11*Sin(t1 - t2 - t3) - 
+       a11*Sin(t1 + t2 + t3))/
+    (-2*a11*Cos(t1 - t4) + a11*Cos(t1 - t2 - t3 - t4) + 
+      a11*Cos(t1 + t2 + t3 - t4) + 2*a11*Cos(t1 + t4) + 
+      a11*Cos(t1 - t2 - t3 + t4) + a11*Cos(t1 + t2 + t3 + t4) - 
+      2*a21*Sin(t1 - t4) + a21*Sin(t1 - t2 - t3 - t4) - 
+      2*a31*Sin(t2 + t3 - t4) + a21*Sin(t1 + t2 + t3 - t4) + 
+      2*a21*Sin(t1 + t4) + a21*Sin(t1 - t2 - t3 + t4) - 
+      2*a31*Sin(t2 + t3 + t4) + a21*Sin(t1 + t2 + t3 + t4)))\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["theta6=ArcTan[cost6,sint6];CForm[atan2[sint6,cost6]]", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+atan2((2*a21*Cos(t1 - t4) - a21*Cos(t1 - t2 - t3 - t4) - 
+ 
+     a21*Cos(t1 + t2 + t3 - t4) + 2*a21*Cos(t1 + t4) + 
+ 
+     a21*Cos(t1 - t2 - t3 + t4) + a21*Cos(t1 + t2 + t3 + t4) - 
+ 
+     2*a11*Sin(t1 - t4) + a11*Sin(t1 - t2 - t3 - t4) + 
+ 
+     a11*Sin(t1 + t2 + t3 - t4) + 4*a31*Sin(t2 + t3)*Sin(t4) - 
+ 
+     2*a11*Sin(t1 + t4) - a11*Sin(t1 - t2 - t3 + t4) - 
+ 
+     a11*Sin(t1 + t2 + t3 + t4))/4,
+ 
+  (2*a22*Cos(t1 - t4) - a22*Cos(t1 - t2 - t3 - t4) + 
+ 
+     2*a32*Cos(t2 + t3 - t4) - a22*Cos(t1 + t2 + t3 - t4) + 
+ 
+     2*a22*Cos(t1 + t4) + a22*Cos(t1 - t2 - t3 + t4) - 
+ 
+     2*a32*Cos(t2 + t3 + t4) + a22*Cos(t1 + t2 + t3 + t4) - 
+ 
+     2*a12*Sin(t1 - t4) + a12*Sin(t1 - t2 - t3 - t4) + 
+ 
+     a12*Sin(t1 + t2 + t3 - t4) - 2*a12*Sin(t1 + t4) - 
+ 
+     a12*Sin(t1 - t2 - t3 + t4) - a12*Sin(t1 + t2 + t3 + t4))/4)\
+\>", "\<\
+atan2((2*a21*Cos(t1 - t4) - a21*Cos(t1 - t2 - t3 - t4) - 
+      a21*Cos(t1 + t2 + t3 - t4) + 2*a21*Cos(t1 + t4) + 
+      a21*Cos(t1 - t2 - t3 + t4) + a21*Cos(t1 + t2 + t3 + t4) - 
+      2*a11*Sin(t1 - t4) + a11*Sin(t1 - t2 - t3 - t4) + 
+      a11*Sin(t1 + t2 + t3 - t4) + 4*a31*Sin(t2 + t3)*Sin(t4) - 
+      2*a11*Sin(t1 + t4) - a11*Sin(t1 - t2 - t3 + t4) - 
+      a11*Sin(t1 + t2 + t3 + t4))/4,
+   (2*a22*Cos(t1 - t4) - a22*Cos(t1 - t2 - t3 - t4) + 
+      2*a32*Cos(t2 + t3 - t4) - a22*Cos(t1 + t2 + t3 - t4) + 
+      2*a22*Cos(t1 + t4) + a22*Cos(t1 - t2 - t3 + t4) - 
+      2*a32*Cos(t2 + t3 + t4) + a22*Cos(t1 + t2 + t3 + t4) - 
+      2*a12*Sin(t1 - t4) + a12*Sin(t1 - t2 - t3 - t4) + 
+      a12*Sin(t1 + t2 + t3 - t4) - 2*a12*Sin(t1 + t4) - 
+      a12*Sin(t1 - t2 - t3 + t4) - a12*Sin(t1 + t2 + t3 + t4))/4)\
+\>"], "Output",
+ Evaluatable->False,
+ LineSpacing->{1, 0},
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["Clear variables.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+d2=.;d5=.;t1=.;t2=.;t3=.;t4=.;t5=.;t6=.;
+a11=.;a12=.;a13=.;X=.;
+a21=.;a22=.;a23=.;Y=.;
+a31=.;a32=.;a33=.;Z=.;\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["\<\
+
+
+
+
+
+
+
+Testing scenario.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+KMK={{a11,a12,a13,X},
+{a21,a22,a23,Y},{a31,a32,a33,Z},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{{a11, a12, a13, X}, {a21, a22, a23, Y}, {a31, a32, a33, Z}, 
+ 
+  {0, 0, 0, 1}}\
+\>", "\<\
+{{a11, a12, a13, X}, {a21, a22, a23, Y}, {a31, a32, a33, Z}, 
+ 
+  {0, 0, 0, 1}}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "d2=",
+ StyleBox["1",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nd5=",
+ StyleBox["1",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth1=",
+ StyleBox["0.0001 Pi/180.//N",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth2=",
+ StyleBox["0.0001",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ StyleBox[" Pi/180.//N",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth3=",
+ StyleBox["0.0001",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ StyleBox[" Pi/180.//N",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth4=",
+ StyleBox["0.0001",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ StyleBox[" Pi/180.//N",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth5=",
+ StyleBox["0.0001",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ StyleBox[" Pi/180.//N",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth6=",
+ StyleBox["0.0001",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ StyleBox["  Pi/180.//N",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\n",
+ "TM=T01[th1,0].T12[th2,0].T23[th3,d2,0].\n\
+T34[th4,d5].T45[th5,0].T56[th6,0];MatrixForm[TM]//Chop"
+}], "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{0.999999999972584, -(5.235987755924507*10^-6), 
+ 
+    5.235987755943114*10^-6, 1.000003490655458}, 
+ 
+   {5.235987755932481*10^-6, 0.999999999986292, 0, 
+ 
+    1.745335344339181*10^-6}, 
+ 
+   {-(5.23598775593514*10^-6), 0, 0.999999999986292, 
+ 
+    0.999998254664656}, {0, 0, 0, 1.}}]\
+\>", "\<\
+                           -6             -6
+1.              -5.23599 10     5.23599 10      1.
+
+          -6                                              -6
+5.23599 10      1.              0               1.74534 10
+
+           -6
+-5.23599 10     0               1.              0.999998
+
+
+0               0               0               1.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+a11=TM[[1]][[1]];
+a12=TM[[1]][[2]];
+a13=TM[[1]][[3]];
+X=TM[[1]][[4]];
+a21=TM[[2]][[1]];
+a22=TM[[2]][[2]];
+a23=TM[[2]][[3]];
+Y=TM[[2]][[4]];
+a31=TM[[3]][[1]];
+a32=TM[[3]][[2]];
+a33=TM[[3]][[3]];
+Z=TM[[3]][[4]];\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta1i;t1=theta1i; 
+theta3i;t3=theta3i;
+theta2;t2=theta2;  
+theta3;t3=theta3; 
+theta1;t1=theta1;
+theta4;t4=theta4;
+theta5;t5=theta5;
+theta6;t6=theta6; 
+t1 180/Pi//N
+t2 180/Pi//N
+t3 180/Pi//N
+t4 180/Pi//N
+t5 180/Pi//N
+t6 180/Pi//N\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.0001\
+\>", "\<\
+0.0001\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.0000999999999944225\
+\>", "\<\
+0.0001\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.0001000000000010623\
+\>", "\<\
+0.0001\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.0000999999999954849\
+\>", "\<\
+0.0001\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.0001000000000045152\
+\>", "\<\
+0.0001\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.0001000000000045151\
+\>", "\<\
+0.0001\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+th1=t1;
+th2=t2;
+th3=t3;
+th4=t4;
+th5=t5;
+th6=t6;
+TM=T01[th1,0].T12[th2,0].T23[th3,d2,0].
+T34[th4,d5].T45[th5,0].T56[th6,0];MatrixForm[TM]//Chop\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{0.999999999972584, -(5.235987755924507*10^-6), 
+ 
+    5.235987755943114*10^-6, 1.000003490655458}, 
+ 
+   {5.235987755932482*10^-6, 0.999999999986292, 0, 
+ 
+    1.745335344339181*10^-6}, 
+ 
+   {-(5.23598775593514*10^-6), 0, 0.999999999986292, 
+ 
+    0.999998254664656}, {0, 0, 0, 1.}}]\
+\>", "\<\
+                           -6             -6
+1.              -5.23599 10     5.23599 10      1.
+
+          -6                                              -6
+5.23599 10      1.              0               1.74534 10
+
+           -6
+-5.23599 10     0               1.              0.999998
+
+
+0               0               0               1.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+
+
+
+
+
+
+
+
+This is for testing by giving the XYZ and Roll, Pitch, Yaw form Base to tool.\
+\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear variables.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Roll[t_,X_,Y_,Z_]:={{1, 0, 0, X},
+{0, Cos[t], -Sin[t],Y},
+{0, Sin[t], Cos[t], Z},
+{0,0,0,1}};Roll[t,X,Y,Z]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{1, 0, 0, 1.000003490655458}, 
+ 
+   {0, Cos[t], -Sin[t], 1.745335344339181*10^-6}, 
+ 
+   {0, Sin[t], Cos[t], 0.999998254664656}, {0, 0, 0, 1}}]\
+\>", "\<\
+
+1              0              0              1.
+
+                                                       -6
+0              Cos[t]         -Sin[t]        1.74534 10
+
+
+0              Sin[t]         Cos[t]         0.999998
+
+
+0              0              0              1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Pitch[t_]:={{Cos[t], 0, Sin[t], 0},
+{0, 1, 0,0},
+{-Sin[t], 0, Cos[t], 0},
+{0,0,0,1}};Pitch[t]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t], 0, Sin[t], 0}, {0, 1, 0, 0}, 
+ 
+   {-Sin[t], 0, Cos[t], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t]    0         Sin[t]    0
+
+0         1         0         0
+
+-Sin[t]   0         Cos[t]    0
+
+0         0         0         1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Yaw[t_]:={{Cos[t], Sin[t], 0, 0},
+{-Sin[t], Cos[t], 0, 0},
+{0, 0, 1 ,0},
+{0,0,0,1}};Yaw[t]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t], Sin[t], 0, 0}, {-Sin[t], Cos[t], 0, 0}, 
+ 
+   {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t]    Sin[t]    0         0
+
+-Sin[t]   Cos[t]    0         0
+
+0         0         1         0
+
+0         0         0         1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+TM=Roll[0 Pi/180 //N, .1,.1,.1].
+Pitch[0 Pi/180 //N].Yaw[-140 Pi/180 //N];
+TM//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{-0.7660444431189779, -0.6427876096865396, 0., 0.1}, 
+ 
+   {0.6427876096865396, -0.7660444431189779, 0., 0.1}, 
+ 
+   {0., 0., 1., 0.1}, {0., 0., 0, 1}}]\
+\>", "\<\
+-0.766044   -0.642788   0.          0.1
+
+0.642788    -0.766044   0.          0.1
+
+0.          0.          1.          0.1
+
+0.          0.          0           1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+a11=TM[[1]][[1]];
+a12=TM[[1]][[2]];
+a13=TM[[1]][[3]];
+X=TM[[1]][[4]];
+a21=TM[[2]][[1]];
+a22=TM[[2]][[2]];
+a23=TM[[2]][[3]];
+Y=TM[[2]][[4]];
+a31=TM[[3]][[1]];
+a32=TM[[3]][[2]];
+a33=TM[[3]][[3]];
+Z=TM[[3]][[4]];\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta1i;t1=theta1i; 
+theta3i;t3=theta3i;
+theta2;t2=theta2;  
+theta3;t3=theta3; 
+theta1;t1=theta1;
+theta4;t4=theta4;
+theta5;t5=theta5;
+theta6;t6=theta6; 
+t1 180/Pi//N
+t2 180/Pi//N
+t3 180/Pi//N
+t4 180/Pi//N
+t5 180/Pi//N
+t6 180/Pi//N\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+45.\
+\>", "\<\
+45.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+49.76742678117511\
+\>", "\<\
+49.7674\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-80.0636329278593\
+\>", "\<\
+-80.0636\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.\
+\>", "\<\
+0.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+30.29620614668421\
+\>", "\<\
+30.2962\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+95.\
+\>", "\<\
+95.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+th1=t1;
+th2=t2;
+th3=t3;
+th4=t4;
+th5=t5;
+th6=t6;
+TM=T01[th1,0].T12[th2,0].T23[th3,d2,0].
+T34[th4,d5].T45[th5,0].T56[th6,0];MatrixForm[TM]//Chop\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{-0.7660444431189779, -0.6427876096865394, 0, 
+ 
+    0.1000000000000002}, {0.6427876096865396, 
+ 
+    -0.7660444431189779, 0, 0.1000000000000002}, 
+ 
+   {0, 0, 1., 0.0999999999999998}, {0, 0, 0, 1.}}]\
+\>", "\<\
+-0.766044   -0.642788   0           0.1
+
+0.642788    -0.766044   0           0.1
+
+0           0           1.          0.1
+
+0           0           0           1.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]]
+},
+WindowToolbars->{},
+Evaluator->"Manual on osci",
+CellGrouping->Automatic,
+WindowSize->{520, 600},
+WindowMargins->{{336, Automatic}, {140, Automatic}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "NeXTAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 268, 6, 68, "Text",
+ Evaluatable->False],
+Cell[829, 28, 35506, 583, 390, "Graphics"],
+Cell[36338, 613, 180, 6, 68, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[36543, 623, 157, 6, 82, "Input"],
+Cell[36703, 631, 343, 14, 100, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[37061, 648, 159, 5, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[37245, 657, 158, 6, 60, "Input"],
+Cell[37406, 665, 343, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[37764, 682, 231, 6, 46, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[38020, 692, 167, 6, 60, "Input"],
+Cell[38190, 700, 347, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[38552, 717, 133, 4, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[38710, 725, 157, 6, 60, "Input"],
+Cell[38870, 733, 343, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[39228, 750, 137, 4, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[39390, 758, 158, 6, 60, "Input"],
+Cell[39551, 766, 343, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39931, 785, 157, 6, 60, "Input"],
+Cell[40091, 793, 343, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[40449, 810, 142, 4, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[40616, 818, 134, 4, 36, "Input"],
+Cell[40753, 824, 247, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[41015, 841, 184, 5, 46, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[41224, 850, 139, 4, 36, "Input"],
+Cell[41366, 856, 6738, 246, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[48119, 1105, 570, 10, 107, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[48714, 1119, 83, 1, 24, "Input"],
+Cell[48800, 1122, 4872, 182, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[53687, 1307, 85, 2, 27, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[53797, 1313, 114, 4, 36, "Input"],
+Cell[53914, 1319, 258, 10, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[54209, 1334, 457, 14, 153, "Input"],
+Cell[54669, 1350, 734, 30, 70, "Output",
+ Evaluatable->False],
+Cell[55406, 1382, 714, 26, 70, "Output",
+ Evaluatable->False],
+Cell[56123, 1410, 460, 18, 70, "Output",
+ Evaluatable->False],
+Cell[56586, 1430, 274, 10, 70, "Output",
+ Evaluatable->False],
+Cell[56863, 1442, 718, 26, 70, "Output",
+ Evaluatable->False],
+Cell[57584, 1470, 708, 26, 70, "Output",
+ Evaluatable->False],
+Cell[58295, 1498, 460, 18, 70, "Output",
+ Evaluatable->False],
+Cell[58758, 1518, 274, 10, 70, "Output",
+ Evaluatable->False],
+Cell[59035, 1530, 498, 18, 70, "Output",
+ Evaluatable->False],
+Cell[59536, 1550, 510, 18, 70, "Output",
+ Evaluatable->False],
+Cell[60049, 1570, 326, 10, 70, "Output",
+ Evaluatable->False],
+Cell[60378, 1582, 218, 6, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[60611, 1591, 132, 4, 27, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[60768, 1599, 91, 1, 24, "Input"],
+Cell[60862, 1602, 632, 22, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[61531, 1629, 111, 4, 33, "Input"],
+Cell[61645, 1635, 204, 8, 33, "Output",
+ Evaluatable->False],
+Cell[61852, 1645, 204, 8, 33, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62093, 1658, 69, 1, 24, "Input"],
+Cell[62165, 1661, 108, 8, 33, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62310, 1674, 87, 1, 24, "Input"],
+Cell[62400, 1677, 668, 23, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[63105, 1705, 63, 1, 21, "Input"],
+Cell[63171, 1708, 166, 7, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[63352, 1718, 105, 2, 27, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[63482, 1724, 90, 1, 24, "Input"],
+Cell[63575, 1727, 297, 9, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[63909, 1741, 60, 1, 21, "Input"],
+Cell[63972, 1744, 235, 9, 38, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64244, 1758, 83, 1, 24, "Input"],
+Cell[64330, 1761, 994, 34, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[65361, 1800, 83, 1, 21, "Input"],
+Cell[65447, 1803, 426, 11, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[65910, 1819, 60, 1, 21, "Input"],
+Cell[65973, 1822, 358, 11, 38, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66368, 1838, 63, 1, 24, "Input"],
+Cell[66434, 1841, 802, 25, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[67273, 1871, 74, 1, 21, "Input"],
+Cell[67350, 1874, 895, 27, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[68282, 1906, 60, 1, 21, "Input"],
+Cell[68345, 1909, 838, 27, 88, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69220, 1941, 82, 1, 24, "Input"],
+Cell[69305, 1944, 678, 22, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[69998, 1969, 193, 5, 43, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[70216, 1978, 82, 1, 24, "Input"],
+Cell[70301, 1981, 294, 8, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[70632, 1994, 60, 1, 21, "Input"],
+Cell[70695, 1997, 244, 8, 33, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[70954, 2008, 115, 2, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[71094, 2014, 111, 3, 36, "Input"],
+Cell[71208, 2019, 924, 34, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[72169, 2058, 82, 4, 33, "Input"],
+Cell[72254, 2064, 928, 30, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[73219, 2099, 60, 1, 21, "Input"],
+Cell[73282, 2102, 878, 30, 83, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74197, 2137, 112, 3, 36, "Input"],
+Cell[74312, 2142, 954, 34, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[75303, 2181, 74, 1, 21, "Input"],
+Cell[75380, 2184, 980, 32, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[76397, 2221, 60, 1, 21, "Input"],
+Cell[76460, 2224, 924, 30, 83, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77421, 2259, 93, 1, 24, "Input"],
+Cell[77517, 2262, 4485, 158, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[82039, 2425, 73, 1, 21, "Input"],
+Cell[82115, 2428, 4820, 160, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[86972, 2593, 60, 1, 21, "Input"],
+Cell[87035, 2596, 4575, 158, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[91647, 2759, 71, 1, 21, "Input"],
+Cell[91721, 2762, 1216, 42, 113, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92974, 2809, 93, 1, 24, "Input"],
+Cell[93070, 2812, 1880, 68, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[94987, 2885, 73, 1, 21, "Input"],
+Cell[95063, 2888, 2059, 78, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[97159, 2971, 60, 1, 21, "Input"],
+Cell[97222, 2974, 1925, 74, 70, "Output",
+ Evaluatable->False]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[99184, 3053, 71, 1, 21, "Input"],
+Cell[99258, 3056, 436, 18, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[99709, 3077, 164, 5, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[99898, 3086, 82, 1, 24, "Input"],
+Cell[99983, 3089, 140, 7, 24, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100160, 3101, 82, 1, 24, "Input"],
+Cell[100245, 3104, 303, 10, 32, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100585, 3119, 103, 4, 36, "Input"],
+Cell[100691, 3125, 1275, 40, 132, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[101981, 3168, 149, 5, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[102155, 3177, 103, 4, 36, "Input"],
+Cell[102261, 3183, 193, 6, 44, "Message",
+ Evaluatable->False],
+Cell[102457, 3191, 400, 13, 42, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[102872, 3207, 144, 4, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[103041, 3215, 103, 4, 36, "Input"],
+Cell[103147, 3221, 275, 10, 32, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[103437, 3234, 108, 2, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[103570, 3240, 81, 1, 24, "Input"],
+Cell[103654, 3243, 467, 16, 52, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[104136, 3262, 108, 2, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[104269, 3268, 81, 1, 24, "Input"],
+Cell[104353, 3271, 1249, 34, 112, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105639, 3310, 94, 1, 24, "Input"],
+Cell[105736, 3313, 1757, 46, 152, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[107508, 3362, 78, 2, 30, "Text",
+ Evaluatable->False],
+Cell[107589, 3366, 159, 6, 60, "Input"],
+Cell[107751, 3374, 94, 11, 142, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[107870, 3389, 114, 4, 36, "Input"],
+Cell[107987, 3395, 258, 10, 33, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108282, 3410, 1203, 52, 148, "Input"],
+Cell[109488, 3464, 738, 26, 73, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[110241, 3493, 259, 14, 156, "Input"],
+Cell[CellGroupData[{
+Cell[110525, 3511, 280, 16, 180, "Input"],
+Cell[110808, 3529, 112, 6, 24, "Output",
+ Evaluatable->False],
+Cell[110923, 3537, 127, 6, 24, "Output",
+ Evaluatable->False],
+Cell[111053, 3545, 127, 6, 24, "Output",
+ Evaluatable->False],
+Cell[111183, 3553, 127, 6, 24, "Output",
+ Evaluatable->False],
+Cell[111313, 3561, 127, 6, 24, "Output",
+ Evaluatable->False],
+Cell[111443, 3569, 127, 6, 24, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[111607, 3580, 192, 10, 108, "Input"],
+Cell[111802, 3592, 738, 26, 73, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[112555, 3621, 157, 13, 158, "Text",
+ Evaluatable->False],
+Cell[112715, 3636, 78, 2, 30, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[112818, 3642, 168, 6, 60, "Input"],
+Cell[112989, 3650, 523, 20, 73, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113549, 3675, 155, 6, 60, "Input"],
+Cell[113707, 3683, 325, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114069, 3702, 152, 6, 60, "Input"],
+Cell[114224, 3710, 325, 14, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114586, 3729, 139, 5, 48, "Input"],
+Cell[114728, 3736, 424, 16, 53, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[115167, 3755, 259, 14, 156, "Input"],
+Cell[CellGroupData[{
+Cell[115451, 3773, 280, 16, 180, "Input"],
+Cell[115734, 3791, 106, 6, 24, "Output",
+ Evaluatable->False],
+Cell[115843, 3799, 124, 6, 24, "Output",
+ Evaluatable->False],
+Cell[115970, 3807, 125, 6, 24, "Output",
+ Evaluatable->False],
+Cell[116098, 3815, 104, 6, 24, "Output",
+ Evaluatable->False],
+Cell[116205, 3823, 124, 6, 24, "Output",
+ Evaluatable->False],
+Cell[116332, 3831, 106, 6, 24, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116475, 3842, 192, 10, 108, "Input"],
+Cell[116670, 3854, 473, 18, 53, "Output",
+ Evaluatable->False]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

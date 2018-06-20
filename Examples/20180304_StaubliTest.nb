@@ -1,0 +1,1087 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24027,       1077]
+NotebookOptionsPosition[     18881,        895]
+NotebookOutlinePosition[     19621,        920]
+CellTagsIndexPosition[     19578,        917]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+T01[t_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T01[t1]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t1], -Sin[t1], 0, 0}, 
+ 
+   {Sin[t1], Cos[t1], 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t1]    -Sin[t1]   0          0
+
+Sin[t1]    Cos[t1]    0          0
+
+0          0          1          0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is a static move to get to joint 2 from joint 1 before the arm rotation \
+is applied.  The rotation is about frame 1 X and the translation is along \
+frame 1 Y.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T11p[alp_,d1_]:={{1, 0, 0, 0},
+{0, Cos[alp], -Sin[alp], d1},
+{0, Sin[alp], Cos[alp], 0},
+{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T11p[alp1,d1]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{1, 0, 0, 0}, 
+ 
+   {0, Cos[alp1], -Sin[alp1], d1}, 
+ 
+   {0, Sin[alp1], Cos[alp1], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+1            0            0            0
+
+0            Cos[alp1]    -Sin[alp1]   d1
+
+0            Sin[alp1]    Cos[alp1]    0
+
+0            0            0            1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the joint 1 rotation measured relative to the static frame above.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T1p2[t_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T1p2[t2]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t2], -Sin[t2], 0, 0}, 
+ 
+   {Sin[t2], Cos[t2], 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t2]    -Sin[t2]   0          0
+
+Sin[t2]    Cos[t2]    0          0
+
+0          0          1          0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the joint 3 rotation and translations measured relative frame 2.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T23[t_,d2_,d3_]:={{-Cos[t], Sin[t], 0, d2},
+{-Sin[t], -Cos[t], 0, 0},
+{0,0,1,d3},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T23[t3,d2,d3]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{-Cos[t3], Sin[t3], 0, d2}, 
+ 
+   {-Sin[t3], -Cos[t3], 0, 0}, {0, 0, 1, d3}, 
+ 
+   {0, 0, 0, 1}}]\
+\>", "\<\
+-Cos[t3]   Sin[t3]    0          d2
+
+-Sin[t3]   -Cos[t3]   0          0
+
+0          0          1          d3
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+This is the static rotation and translation for joint 4 relative to joint 3. \
+\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T33p[alp_,d4_]:={{1, 0, 0, 0},
+{0, Cos[alp], -Sin[alp], d4},
+{0, Sin[alp], Cos[alp], 0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T33p[alp2,d4]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{1, 0, 0, 0}, 
+ 
+   {0, Cos[alp2], -Sin[alp2], d4}, 
+ 
+   {0, Sin[alp2], Cos[alp2], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+1            0            0            0
+
+0            Cos[alp2]    -Sin[alp2]   d4
+
+0            Sin[alp2]    Cos[alp2]    0
+
+0            0            0            1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This is the joint 4 rotation relative to static frame 3.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T3p4[t_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T3p4[t4]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t4], -Sin[t4], 0, 0}, 
+ 
+   {Sin[t4], Cos[t4], 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t4]    -Sin[t4]   0          0
+
+Sin[t4]    Cos[t4]    0          0
+
+0          0          1          0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This is the static rotation and translation for joint 5.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T44p[alp_,d5_]:={{1, 0, 0, 0},
+{0, Cos[alp], -Sin[alp], 0},
+{0, Sin[alp], Cos[alp], d5},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T44p[alp3,d5]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{1, 0, 0, 0}, {0, Cos[alp3], -Sin[alp3], 0}, 
+ 
+   {0, Sin[alp3], Cos[alp3], d5}, {0, 0, 0, 1}}]\
+\>", "\<\
+1            0            0            0
+
+0            Cos[alp3]    -Sin[alp3]   0
+
+0            Sin[alp3]    Cos[alp3]    d5
+
+0            0            0            1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This is the joint 5 rotation relative to the static frame 4.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T4p5[t_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T4p5[t5]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t5], -Sin[t5], 0, 0}, 
+ 
+   {Sin[t5], Cos[t5], 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t5]    -Sin[t5]   0          0
+
+Sin[t5]    Cos[t5]    0          0
+
+0          0          1          0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This is the static rotation and translation for joint 6.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T55p[alp_,d6_]:={{1, 0, 0, 0},
+{0, Cos[alp], -Sin[alp], d6},
+{0, Sin[alp], Cos[alp], 0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T55p[alp4,d6]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{1, 0, 0, 0}, 
+ 
+   {0, Cos[alp4], -Sin[alp4], d6}, 
+ 
+   {0, Sin[alp4], Cos[alp4], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+1            0            0            0
+
+0            Cos[alp4]    -Sin[alp4]   d6
+
+0            Sin[alp4]    Cos[alp4]    0
+
+0            0            0            1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["This is the joint 5 rotation relative to the static frame 4.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+T5p6[t_]:={{Cos[t], -Sin[t], 0, 0},
+{Sin[t], Cos[t], 0, 0},
+{0,0,1,0},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["T5p6[t6]//MatrixForm", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t6], -Sin[t6], 0, 0}, 
+ 
+   {Sin[t6], Cos[t6], 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t6]    -Sin[t6]   0          0
+
+Sin[t6]    Cos[t6]    0          0
+
+0          0          1          0
+
+0          0          0          1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+
+
+
+Initialize the inverse kinematics.\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+theta1 = ArcTan[X, Y];
+
+theta3i = ArcSin[(-d2^2 - d5^2 + X^2 + Y^2 + Z^2)/(2*d2*d5)];
+
+theta2 = ArcTan[(Csc[t1]*(d2*Y + d5*Z*Cos[t3]*Sin[t1] + d5*Y*Sin[t3]))/ 
+   (d2^2 + d5^2 + 2*d2*d5*Sin[t3]), 
+   -((2*d2*X^2*Z + 2*d2*Y^2*Z + 2*d2*Z^3 - 2*d2*d5^2*Z*Cos[t3]^2 - 
+        d2^2*d5*Y*Cos[t3]*Csc[t1] + d5^3*Y*Cos[t3]*Csc[t1] - 
+        d5*X^2*Y*Cos[t3]*Csc[t1] - d5*Y^3*Cos[t3]*Csc[t1] - 
+        d5*Y*Z^2*Cos[t3]*Csc[t1])/
+      ((X^2 + Y^2 + Z^2)*(d2^2 - d5^2 + X^2 + Y^2 + Z^2)))];
+
+theta3 = ArcTan[(Csc[t1]*(Z*Cos[t2]*Sin[t1] + Y*Sin[t2]))/d5, 
+   (-d2^2 - d5^2 + X^2 + Y^2 + Z^2)/(2*d2*d5)];
+
+theta4i = ArcTan[-((Csc[t2 + t3]*(a23*Cos[t1] - a13*Sin[t1]))/
+     (a33*Cos[t1]^2 - a13*Cos[t1]*Cot[t2 + t3] - 
+       a23*Cot[t2 + t3]*Sin[t1] + a33*Sin[t1]^2))];
+       
+theta5=ArcTan[-(-(a21*Cos[t1 - t2 - t3]) - 2*a31*Cos[t2 + t3] + 
+      a21*Cos[t1 + t2 + t3] + a11*Sin[t1 - t2 - t3] - 
+      a11*Sin[t1 + t2 + t3])/
+   (2*(-(a11*Cos[t1]*Cos[t2 + t3]*Cos[t4]) - 
+       a21*Cos[t2 + t3]*Cos[t4]*Sin[t1] + 
+       a31*Cos[t1]^2*Cos[t4]*Sin[t2 + t3] + 
+       a31*Cos[t4]*Sin[t1]^2*Sin[t2 + t3] - 
+       a21*Cos[t1]*Cos[t2 + t3]^2*Sin[t4] + 
+       a11*Cos[t2 + t3]^2*Sin[t1]*Sin[t4] - 
+       a21*Cos[t1]*Sin[t2 + t3]^2*Sin[t4] + 
+       a11*Sin[t1]*Sin[t2 + t3]^2*Sin[t4]))];
+
+theta4 = ArcTan[-((Csc[t5]*(a33*Cos[t1]^2 - a13*Cos[t1]*Cot[t2 + t3] - 
+          a23*Cot[t2 + t3]*Sin[t1] + a33*Sin[t1]^2))/
+      (Cos[t2 + t3]*Cot[t2 + t3] + Sin[t2 + t3])), 
+   Csc[t5]*(a23*Cos[t1] - a13*Sin[t1])];
+
+theta6 = ArcTan[-(a22*Cos[t1]*Cos[t4]) + a12*Cos[t4]*Sin[t1] + 
+    a12*Cos[t1]*Cos[t2 + t3]*Sin[t4] + 
+    a22*Cos[t2 + t3]*Sin[t1]*Sin[t4] - a32*Sin[t2 + t3]*Sin[t4], 
+   -(a21*Cos[t1]*Cos[t4]) + a11*Cos[t4]*Sin[t1] + 
+    a11*Cos[t1]*Cos[t2 + t3]*Sin[t4] + 
+    a21*Cos[t2 + t3]*Sin[t1]*Sin[t4] - a31*Sin[t2 + t3]*Sin[t4]];\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell["Testing scenario.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+KMK={{a11,a12,a13,X},
+{a21,a22,a23,Y},{a31,a32,a33,Z},{0,0,0,1}}\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+{{a11, a12, a13, X}, {a21, a22, a23, Y}, 
+ 
+  {a31, a32, a33, Z}, {0, 0, 0, 1}}\
+\>", "\<\
+{{a11, a12, a13, X}, {a21, a22, a23, Y}, 
+ 
+  {a31, a32, a33, Z}, {0, 0, 0, 1}}\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "d2=",
+ StyleBox["625/25.4",
+  FontFamily->"Helvetica"],
+ ";\nd5=",
+ StyleBox["625/25.",
+  FontFamily->"Helvetica"],
+ StyleBox["4",
+  FontFamily->"Helvetica",
+  FontWeight->"Plain"],
+ ";\nth1=",
+ StyleBox["-50.0 Pi/180.//N",
+  FontFamily->"Helvetica"],
+ ";\nth2=",
+ StyleBox["-20.3 Pi/180.//N",
+  FontFamily->"Helvetica"],
+ ";\nth3=",
+ StyleBox["66.4 Pi/180.//N",
+  FontFamily->"Helvetica"],
+ ";\nth4=",
+ StyleBox["59.8 Pi/180.//N",
+  FontFamily->"Helvetica"],
+ ";\nth5=",
+ StyleBox["62.4Pi/180.//N",
+  FontFamily->"Helvetica"],
+ ";\nth6=",
+ StyleBox["-168.6 Pi/180.//N",
+  FontFamily->"Helvetica"],
+ ";\nTM=T01[th1].T11p[-Pi/2,0].T1p2[th2].T23[th3,d2,0].\n\
+T33p[-Pi/2,0].T3p4[th4].T44p[Pi/2,d5].T4p5[th5].\n\
+T55p[-Pi/2,0].T5p6[th6];MatrixForm[TM//Transpose]//Chop"
+}], "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{0.0001726420643951576, 0.7651185174272439, 
+ 
+    -0.6438894505151129, 0}, 
+ 
+   {0.0000872200244168434, 0.6438894461405891, 
+ 
+    0.7651185356148633, 0}, 
+ 
+   {0.999999981293692, -0.0001882516970910242, 
+ 
+    0.0000444287474521965, 0}, 
+ 
+   {26.23092306015292, -31.26079679399955, 
+ 
+    25.59885531124677, 1.}}]\
+\>", "\<\
+0.000172642    0.765119       -0.643889      0
+
+0.00008722     0.643889       0.765119       0
+
+1.             -0.000188252   0.0000444287   0
+
+26.2309        -31.2608       25.5989        1.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+a11=TM[[1]][[1]];
+a12=TM[[1]][[2]];
+a13=TM[[1]][[3]];
+X=TM[[1]][[4]];
+a21=TM[[2]][[1]];
+a22=TM[[2]][[2]];
+a23=TM[[2]][[3]];
+Y=TM[[2]][[4]];
+a31=TM[[3]][[1]];
+a32=TM[[3]][[2]];
+a33=TM[[3]][[3]];
+Z=TM[[3]][[4]];\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta1;t1=theta1; t1 180/Pi//N
+theta3i;t3=theta3i;
+theta2;t2=theta2;  t2 180/Pi//N
+theta3;t3=theta3; t3 180/Pi//N
+theta4i;t4=theta4i;
+theta5;t5=theta5;
+theta4;t4=theta4; t4 180/Pi//N
+theta5; t5 180/Pi//N
+theta6;t6=theta6; t6 180/Pi//N
+\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-50.\
+\>", "\<\
+-50.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-20.29999999999997\
+\>", "\<\
+-20.3\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+66.39999999999996\
+\>", "\<\
+66.4\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+59.8\
+\>", "\<\
+59.8\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+62.40000000000003\
+\>", "\<\
+62.4\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-168.6\
+\>", "\<\
+-168.6\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+th1=t1;
+th2=t2;
+th3=t3;
+th4=t4;
+th5=t5;
+th6=t6;
+TM=T01[th1].T11p[-Pi/2,0].T1p2[th2].T23[th3,d2,0].
+T33p[-Pi/2,0].T3p4[th4].T44p[Pi/2,d5].T4p5[th5].
+T55p[-Pi/2,0].T5p6[th6];MatrixForm[TM//Transpose]//Chop\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{0.000172642064394994, 0.765118517427244, 
+ 
+    -0.6438894505151128, 0}, 
+ 
+   {0.0000872200244165932, 0.6438894461405893, 
+ 
+    0.7651185356148631, 0}, 
+ 
+   {0.999999981293692, -0.0001882516970908577, 
+ 
+    0.00004442874745225201, 0}, 
+ 
+   {26.23092306015292, -31.26079679399955, 
+ 
+    25.59885531124677, 1.}}]\
+\>", "\<\
+0.000172642    0.765119       -0.643889      0
+
+0.00008722     0.643889       0.765119       0
+
+1.             -0.000188252   0.0000444287   0
+
+26.2309        -31.2608       25.5989        1.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+
+
+
+
+
+
+
+
+This is for testing by giving the XYZ and Roll, Pitch, Yaw form Base to tool.\
+\
+\>", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["Clear variables.", "Text",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell["\<\
+d2=.;d5=.;t1=.;t2=.;t3=.;t4=.;t5=.;t6=.;
+a11=.;a12=.;a13=.;X=.;
+a21=.;a22=.;a23=.;Y=.;
+a31=.;a32=.;a33=.;Z=.;\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Roll[t_,X_,Y_,Z_]:={{1, 0, 0, X},
+{0, Cos[t], -Sin[t],Y},
+{0, Sin[t], Cos[t], Z},
+{0,0,0,1}};Roll[t,X,Y,Z]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{1, 0, 0, X}, {0, Cos[t], -Sin[t], Y}, 
+ 
+   {0, Sin[t], Cos[t], Z}, {0, 0, 0, 1}}]\
+\>", "\<\
+1         0         0         X
+
+0         Cos[t]    -Sin[t]   Y
+
+0         Sin[t]    Cos[t]    Z
+
+0         0         0         1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Pitch[t_]:={{Cos[t], 0, Sin[t], 0},
+{0, 1, 0,0},
+{-Sin[t], 0, Cos[t], 0},
+{0,0,0,1}};Pitch[t]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t], 0, Sin[t], 0}, {0, 1, 0, 0}, 
+ 
+   {-Sin[t], 0, Cos[t], 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t]    0         Sin[t]    0
+
+0         1         0         0
+
+-Sin[t]   0         Cos[t]    0
+
+0         0         0         1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Yaw[t_]:={{Cos[t], Sin[t], 0, 0},
+{-Sin[t], Cos[t], 0, 0},
+{0, 0, 1 ,0},
+{0,0,0,1}};Yaw[t]//MatrixForm\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{Cos[t], Sin[t], 0, 0}, 
+ 
+   {-Sin[t], Cos[t], 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}]\
+\>", "\<\
+Cos[t]    Sin[t]    0         0
+
+-Sin[t]   Cos[t]    0         0
+
+0         0         1         0
+
+0         0         0         1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "TM=Roll[0 Pi/180 //N, ",
+ StyleBox["-886.138/25.4, -743.558/25.4,313.970/25.4",
+  FontFamily->"Helvetica"],
+ "].\nPitch[0 Pi/180 //N].Yaw[-140 Pi/180 //N];\nTranspose[TM]//MatrixForm"
+}], "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{-0.7660444431189779, 0.6427876096865396, 
+ 
+    0., 0.}, {-0.6427876096865396, -0.7660444431189779, 
+ 
+    0., 0.}, {0., 0., 1., 0}, 
+ 
+   {-34.88732283464567, -29.27393700787401, 
+ 
+    12.36102362204724, 1}}]\
+\>", "\<\
+-0.766044   0.642788    0.          0.
+
+-0.642788   -0.766044   0.          0.
+
+0.          0.          1.          0
+
+-34.8873    -29.2739    12.361      1\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell["\<\
+a11=TM[[1]][[1]];
+a12=TM[[1]][[2]];
+a13=TM[[1]][[3]];
+X=TM[[1]][[4]];
+a21=TM[[2]][[1]];
+a22=TM[[2]][[2]];
+a23=TM[[2]][[3]];
+Y=TM[[2]][[4]];
+a31=TM[[3]][[1]];
+a32=TM[[3]][[2]];
+a33=TM[[3]][[3]];
+Z=TM[[3]][[4]];\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+theta1;t1=theta1; t1 180/Pi//N
+theta3i;t3=theta3i;
+theta2;t2=theta2;  t2 180/Pi//N
+theta3;t3=theta3; t3 180/Pi//N
+theta4i;t4=theta4i;
+theta5;t5=theta5;
+theta4;t4=theta4; t4 180/Pi//N
+theta5; t5 180/Pi//N
+theta6;t6=theta6; t6 180/Pi//N\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-140.0000026169964\
+\>", "\<\
+-140.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+1.298838286933188\
+\>", "\<\
+1.29884\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+57.03163513432034\
+\>", "\<\
+57.0316\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+0.\
+\>", "\<\
+0.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+-58.33047342125357\
+\>", "\<\
+-58.3305\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+100.0000026169964\
+\>", "\<\
+100.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+th1=t1;
+th2=t2;
+th3=t3;
+th4=t4;
+th5=t5;
+th6=t6;
+TM=T01[th1].T11p[-Pi/2,0].T1p2[th2].T23[th3,d2,0].
+T33p[-Pi/2,0].T3p4[th4].T44p[Pi/2,d5].T4p5[th5].
+T55p[-Pi/2,0].T5p6[th6];MatrixForm[TM//Transpose]//Chop\
+\>", "Input",
+ AspectRatioFixed->True],
+
+Cell[OutputFormData["\<\
+MatrixForm[{{-0.7660444431189779, 0.6427876096865396, 0, 
+ 
+    0}, {-0.6427876096865396, -0.7660444431189779, 0, 
+ 
+    0}, {0, 0, 1., 0}, 
+ 
+   {-34.88732283464566, -29.27393700787402, 
+ 
+    12.36102362204725, 1.}}]\
+\>", "\<\
+-0.766044   0.642788    0           0
+
+-0.642788   -0.766044   0           0
+
+0           0           1.          0
+
+-34.8873    -29.2739    12.361      1.\
+\>"], "Output",
+ Evaluatable->False,
+ AspectRatioFixed->True]
+}, Open  ]]
+},
+WindowToolbars->{},
+Evaluator->"Local",
+CellGrouping->Automatic,
+WindowSize->{520, 600},
+WindowMargins->{{198, Automatic}, {Automatic, 44}},
+PrivateNotebookOptions->{"VersionedStylesheet"->{"Default.nb"[8.] -> False}},
+ShowCellLabel->True,
+ShowCellTags->False,
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb",
+PrivateNotebookOptions -> {"ColorPalette" -> {RGBColor, 128}},
+RenderingOptions -> {"ObjectDithering" -> True},
+RenderingOptions -> {"RasterDithering" -> False},
+CharacterEncoding -> "NeXTAutomaticEncoding"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 129, 5, 65, "Input"],
+Cell[CellGroupData[{
+Cell[712, 29, 61, 1, 31, "Input"],
+Cell[776, 32, 341, 14, 100, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[1132, 49, 235, 6, 68, "Text",
+ Evaluatable->False],
+Cell[1370, 57, 149, 6, 82, "Input"],
+Cell[CellGroupData[{
+Cell[1544, 67, 67, 1, 31, "Input"],
+Cell[1614, 70, 381, 16, 100, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[2010, 89, 143, 4, 49, "Text",
+ Evaluatable->False],
+Cell[2156, 95, 130, 5, 65, "Input"],
+Cell[CellGroupData[{
+Cell[2311, 104, 62, 1, 31, "Input"],
+Cell[2376, 107, 341, 14, 100, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[2732, 124, 142, 4, 70, "Text",
+ Evaluatable->False],
+Cell[2877, 130, 141, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[3043, 139, 67, 1, 70, "Input"],
+Cell[3113, 142, 353, 16, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[3481, 161, 149, 5, 70, "Text",
+ Evaluatable->False],
+Cell[3633, 168, 148, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[3806, 177, 67, 1, 70, "Input"],
+Cell[3876, 180, 381, 16, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[4272, 199, 118, 2, 70, "Text",
+ Evaluatable->False],
+Cell[4393, 203, 130, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[4548, 212, 62, 1, 70, "Input"],
+Cell[4613, 215, 341, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[4969, 232, 118, 2, 70, "Text",
+ Evaluatable->False],
+Cell[5090, 236, 148, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[5263, 245, 67, 1, 70, "Input"],
+Cell[5333, 248, 375, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[5723, 265, 122, 2, 70, "Text",
+ Evaluatable->False],
+Cell[5848, 269, 130, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[6003, 278, 62, 1, 70, "Input"],
+Cell[6068, 281, 341, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[6424, 298, 118, 2, 70, "Text",
+ Evaluatable->False],
+Cell[6545, 302, 148, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[6718, 311, 67, 1, 70, "Input"],
+Cell[6788, 314, 381, 16, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[7184, 333, 122, 2, 70, "Text",
+ Evaluatable->False],
+Cell[7309, 337, 130, 5, 70, "Input"],
+Cell[CellGroupData[{
+Cell[7464, 346, 62, 1, 70, "Input"],
+Cell[7529, 349, 341, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[7885, 366, 107, 7, 70, "Text",
+ Evaluatable->False],
+Cell[7995, 375, 1877, 44, 70, "Input"],
+Cell[9875, 421, 79, 2, 70, "Text",
+ Evaluatable->False],
+Cell[CellGroupData[{
+Cell[9979, 427, 114, 4, 70, "Input"],
+Cell[10096, 433, 258, 10, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10391, 448, 822, 32, 70, "Input"],
+Cell[11216, 482, 621, 26, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[11852, 511, 259, 14, 70, "Input"],
+Cell[CellGroupData[{
+Cell[12136, 529, 285, 12, 70, "Input"],
+Cell[12424, 543, 108, 6, 70, "Output",
+ Evaluatable->False],
+Cell[12535, 551, 123, 6, 70, "Output",
+ Evaluatable->False],
+Cell[12661, 559, 121, 6, 70, "Output",
+ Evaluatable->False],
+Cell[12785, 567, 108, 6, 70, "Output",
+ Evaluatable->False],
+Cell[12896, 575, 121, 6, 70, "Output",
+ Evaluatable->False],
+Cell[13020, 583, 112, 6, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13169, 594, 253, 11, 70, "Input"],
+Cell[13425, 607, 620, 26, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[14060, 636, 157, 13, 70, "Text",
+ Evaluatable->False],
+Cell[14220, 651, 78, 2, 70, "Text",
+ Evaluatable->False],
+Cell[14301, 655, 159, 6, 70, "Input"],
+Cell[CellGroupData[{
+Cell[14485, 665, 168, 6, 70, "Input"],
+Cell[14656, 673, 325, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15018, 692, 155, 6, 70, "Input"],
+Cell[15176, 700, 325, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15538, 719, 152, 6, 70, "Input"],
+Cell[15693, 727, 325, 14, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16055, 746, 239, 6, 70, "Input"],
+Cell[16297, 754, 479, 20, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[16791, 777, 259, 14, 70, "Input"],
+Cell[CellGroupData[{
+Cell[17075, 795, 284, 11, 70, "Input"],
+Cell[17362, 808, 123, 6, 70, "Output",
+ Evaluatable->False],
+Cell[17488, 816, 124, 6, 70, "Output",
+ Evaluatable->False],
+Cell[17615, 824, 124, 6, 70, "Output",
+ Evaluatable->False],
+Cell[17742, 832, 104, 6, 70, "Output",
+ Evaluatable->False],
+Cell[17849, 840, 126, 6, 70, "Output",
+ Evaluatable->False],
+Cell[17978, 848, 121, 6, 70, "Output",
+ Evaluatable->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18136, 859, 253, 11, 70, "Input"],
+Cell[18392, 872, 473, 20, 70, "Output",
+ Evaluatable->False]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
