@@ -415,14 +415,14 @@ rot3[q_]={{Cos[q],Sin[q],0},{-Sin[q],Cos[q],0},{0,0,1}};
 ];
 
 
-RotDefineA[]:=Module[{},
+BodyRotationDef[]:=Module[{},
 rotA=rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
 AtoN=rotA.{n[1],n[2],n[3]};
 TranAtoN[x_]:=x//.{a[1]->AtoN[[1]],a[2]->AtoN[[2]],a[3]->AtoN[[3]]};
 ];
 
 
-RotDefine[i_]:=Module[{qInd1,qInd2,qInd3},
+LegRotationDef[i_]:=Module[{qInd1,qInd2,qInd3},
 qInd1=1+3*i;
 qInd2=2+3*i;
 qInd3=3+3*i;
@@ -453,7 +453,19 @@ TranGN[ind_,x_]:=x//.{Subscript[g, ind][1]->GtoN[ind][[1]],Subscript[g, ind][2]-
 ]
 
 
-PosDefine[i_]:=Module[{},
+BodyPosVectorDef[]:=Module[{},
+OrAo = x[t]n[1]+y[t]n[2]+z[t]n[3];
+
+AorBo={(-cornerXOffset)a[1]+(cornerYOffset)a[2],(-sideXOffset)a[1]+(sideYOffset)a[2],(-cornerXOffset)a[1]+(-cornerYOffset)a[2],
+(cornerXOffset)a[1]+(cornerYOffset)a[2],(sideXOffset)a[1]+(sideYOffset)a[2],(cornerXOffset)a[1]+(-cornerYOffset)a[2]};
+
+xAo=OrAo.n[1]//TranAtoN;
+yAo=OrAo.n[2]//TranAtoN;
+zAo=OrAo.n[3]//TranAtoN;
+];
+
+
+LegPosVectorDef[i_]:=Module[{},
 (*From Body*)
 xBo[i]=(OrAo+AorBo[[i]]).n[1]//TranAtoN//TranBtoN[i];
 yBo[i]=(OrAo+AorBo[[i]]).n[2]//TranAtoN//TranBtoN[i];
