@@ -501,6 +501,36 @@ GorTo[i]=(tarsusOffset)Subscript[g, i][1];
 
 
 (* ::Title:: *)
+(*Inverse Kinematics*)
+
+
+BodyPositionOrientInit[]:=Module[{},
+Subscript[C, des][roll_,pitch_,yaw_]:=rot3[yaw].rot2[pitch].rot1[roll];
+Subscript[C, act]=rotA//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[X, bodycur]=0;
+Subscript[Y, bodycur]=0;
+Subscript[Z, bodycur]=1;
+Subscript[Q, cur]=ConstantArray[0,21];
+OrA=OrAo//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
+];
+
+
+LegPositionOrientInit[i_]:=Module[{},
+OrT[i]=OrAo+AorBo[i]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]+ForGo[i]+GorTo[i]//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
+OrB[i]=OrAo+AorBo[i]//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
+Subscript[X, Tact][i]=((OrT[i].n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[Y, Tact][i]=((OrT[i].n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[Z, Tact][i]=((OrT[i].n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[X, Bact][i]=((OrB[i].n[1]//TranAtoN//TranBtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[Y, Bact][i]=((OrB[i].n[2]//TranAtoN//TranBtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[Z, Bact][i]=((OrB[i].n[3]//TranAtoN//TranBtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+Subscript[X, Tcur][i]=Subscript[X, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[X, body]->0};
+Subscript[Y, Tcur][i]=Subscript[Y, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[Y, body]->0};
+Subscript[Z, Tcur][i]=Subscript[Z, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[Z, body]->0};
+];
+
+
+(* ::Title:: *)
 (*Misc*)
 
 
