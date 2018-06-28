@@ -11,9 +11,8 @@ Print["Package loaded successfully."]
 (*Graphic/Animation Functions*)
 
 
-GetBodyGraphic[]:=Module[{},
-unitLength = 1;
-bodyLength  = 1.5unitLength;
+GetBodyGraphic[uLength_]:=Module[{bodyLength,bodySide,vectorLengthBody,bodyHeight,halfBodyHeight,angledBodyLength,bodyShape,bodyGraphic,bodyGraphicF},
+bodyLength  = 1.5uLength;
 bodySide = 2bodyLength;
 vectorLengthBody = 4 bodyLength;
 bodyHeight= 1.5bodyLength;
@@ -98,192 +97,210 @@ Line[{{0,0,0},{0,0,vectorLengthBody}}]}}};
 bodyGraphic = {bodyShape,{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthBody,0,0}}]},
 {AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthBody,0}}]},{AbsoluteThickness[1],
 RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthBody}}]}};
+
+Return[{bodyGraphicF,bodyGraphic}]
 ];
 
 
-GetEnditeGraphic[]:=Module[{},
-vectorLengthEndite = 1 unitLength;
-enditeHeight = 1.25unitLength;
-enditeRadius = unitLength/1.5;
-enditeTop = {0,0,enditeHeight/2};
-enditeBase = {0,0,-enditeHeight/2};
-enditeShape = Cylinder[{enditeBase,enditeTop},enditeRadius];
-enditeGraphicGeneric = {enditeShape,
-{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthEndite,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthEndite,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthEndite}}]}}};
-enditeGraphicF = {enditeGraphicGeneric,
-{Text[Subscript[\!\(\*OverscriptBox[\(b\), \(^\)]\), 1],{vectorLengthEndite,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(b\), \(^\)]\), 2],{0,vectorLengthEndite,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(b\), \(^\)]\), 3],{0,0,vectorLengthEndite},{0,1}]}};
+GetEnditeGraphic[uLength_]:=Module[{vectorLengthE,eHeight,eRadius,eTop,eBase,eShape,eGraphicGeneric,eGraphicF,eGraphic},
+vectorLengthE = 1 uLength;
+eHeight = 1.25uLength;
+eRadius = uLength/1.5;
+eTop = {0,0,eHeight/2};
+eBase = {0,0,-eHeight/2};
+eShape = Cylinder[{eBase,eTop},eRadius];
+eGraphicGeneric = {eShape,
+{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthE,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthE,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthE}}]}}};
+eGraphicF = {eGraphicGeneric,
+{Text[Subscript[\!\(\*OverscriptBox[\(b\), \(^\)]\), 1],{vectorLengthE,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(b\), \(^\)]\), 2],{0,vectorLengthE,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(b\), \(^\)]\), 3],{0,0,vectorLengthE},{0,1}]}};
 
-enditeGraphic={{RGBColor[1, 0.75, 0.75],enditeShape},
-{RGBColor[1, 0.75, 1],enditeShape},
-{RGBColor[0.75, 0.75, 1],enditeShape},
-{RGBColor[0.75, 1, 1],enditeShape},
-{RGBColor[0.75, 1, 0.75],enditeShape},
-{RGBColor[1, 1, 0.75],enditeShape}};
+eGraphic={{RGBColor[1, 0.75, 0.75],eShape},
+{RGBColor[1, 0.75, 1],eShape},
+{RGBColor[0.75, 0.75, 1],eShape},
+{RGBColor[0.75, 1, 1],eShape},
+{RGBColor[0.75, 1, 0.75],eShape},
+{RGBColor[1, 1, 0.75],eShape}};
+
+Return[{eGraphicF,eGraphic}]
 ];
 
 
-GetCoxaGraphic[]:=Module[{},
-coxaLength = 2unitLength; 
-coxaHeight = 1 unitLength; 
-coxaDepth = 1 unitLength;
-vectorLengthCoxa = 1.5 unitLength; 
-coxaShape = Cuboid[
-{-coxaLength/2,-coxaDepth/2,-coxaHeight/2},
-{coxaLength/2,coxaDepth/2,coxaHeight/2}];
+GetCoxaGraphic[uLength_,getL___]:=Module[{cLength,cHeight,cDepth,vectorLengthC,cShape,cGraphicGeneric,cGraphicF,cGraphic},
+cLength = 2uLength; 
+If[getL>0,Return[cLength]];
+cHeight = 1 uLength; 
+cDepth = 1 uLength;
+vectorLengthC = 1.5 uLength; 
+cShape = Cuboid[
+{-cLength/2,-cDepth/2,-cHeight/2},
+{cLength/2,cDepth/2,cHeight/2}];
 
-coxaGraphicGeneric = {coxaShape,
-{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthCoxa,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthCoxa,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthCoxa}}]}}};
+cGraphicGeneric = {cShape,
+{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthC,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthC,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthC}}]}}};
 
-coxaGraphicF = {coxaGraphicGeneric,
-{Text[Subscript[\!\(\*OverscriptBox[\(c\), \(^\)]\), 1],{vectorLengthCoxa,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(c\), \(^\)]\), 2],{0,vectorLengthCoxa,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(c\), \(^\)]\), 3],{0,0,vectorLengthCoxa},{0,1}]}};
+cGraphicF = {cGraphicGeneric,
+{Text[Subscript[\!\(\*OverscriptBox[\(c\), \(^\)]\), 1],{vectorLengthC,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(c\), \(^\)]\), 2],{0,vectorLengthC,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(c\), \(^\)]\), 3],{0,0,vectorLengthC},{0,1}]}};
 
-coxaGraphic={{RGBColor[1,0.75,0.75],coxaGraphicGeneric},
-{RGBColor[1,0.75,1],coxaGraphicGeneric},
-{RGBColor[0.75, 0.75, 1],coxaGraphicGeneric},
-{RGBColor[0.75, 1, 1],coxaGraphicGeneric},
-{RGBColor[0.75, 1, 0.75],coxaGraphicGeneric},
-{RGBColor[1, 1, 0.75],coxaGraphicGeneric}};
+cGraphic={{RGBColor[1,0.75,0.75],cGraphicGeneric},
+{RGBColor[1,0.75,1],cGraphicGeneric},
+{RGBColor[0.75, 0.75, 1],cGraphicGeneric},
+{RGBColor[0.75, 1, 1],cGraphicGeneric},
+{RGBColor[0.75, 1, 0.75],cGraphicGeneric},
+{RGBColor[1, 1, 0.75],cGraphicGeneric}};
+
+Return[{cGraphicF,cGraphic}]
 ];
 
 
-GetTrochanterGraphic[]:=Module[{},
-vectorLengthTrochanter = 1 unitLength;
-trochanterHeight = 1.25unitLength;
-trochanterRadius = unitLength/1.5;
-trochanterTop = {0,0,trochanterHeight/2};
-trochanterBase = {0,0,-trochanterHeight/2};
-trochanterShape = Rotate[Cylinder[{trochanterBase,trochanterTop},trochanterRadius],Pi/2,{1,0,0}];
+GetTrochanterGraphic[uLength_]:=Module[{vectorLengthTr,trHeight,trRadius,trTop,trBase,trShape,trGraphic,trGraphicF,trGraphicGeneric},
+vectorLengthTr = 1 uLength;
+trHeight = 1.25uLength;
+trRadius = uLength/1.5;
+trTop = {0,0,trHeight/2};
+trBase = {0,0,-trHeight/2};
+trShape = Rotate[Cylinder[{trBase,trTop},trRadius],Pi/2,{1,0,0}];
 
-trochanterGraphicGeneric = {trochanterShape,
-{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthTrochanter,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthTrochanter,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthTrochanter}}]}}};
-trochanterGraphicF = {trochanterGraphicGeneric,
-{Text[Subscript[\!\(\*OverscriptBox[\(d\), \(^\)]\), 1],{vectorLengthTrochanter,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(d\), \(^\)]\), 2],{0,vectorLengthTrochanter,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(d\), \(^\)]\), 3],{0,0,vectorLengthTrochanter},{0,1}]}};
-trochanterGraphic={{RGBColor[1, 0.5, 0.5],trochanterShape},
-{RGBColor[1, 0.5, 1],trochanterShape},
-{RGBColor[0.5, 0.5, 1],trochanterShape},
-{RGBColor[0.5, 1, 1],trochanterShape},
-{RGBColor[0.5, 1, 0.5],trochanterShape},
-{RGBColor[1, 1, 0.5],trochanterShape}};
+trGraphicGeneric = {trShape,
+{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthTr,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthTr,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthTr}}]}}};
+trGraphicF = {trGraphicGeneric,
+{Text[Subscript[\!\(\*OverscriptBox[\(d\), \(^\)]\), 1],{vectorLengthTr,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(d\), \(^\)]\), 2],{0,vectorLengthTr,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(d\), \(^\)]\), 3],{0,0,vectorLengthTr},{0,1}]}};
+trGraphic={{RGBColor[1, 0.5, 0.5],trShape},
+{RGBColor[1, 0.5, 1],trShape},
+{RGBColor[0.5, 0.5, 1],trShape},
+{RGBColor[0.5, 1, 1],trShape},
+{RGBColor[0.5, 1, 0.5],trShape},
+{RGBColor[1, 1, 0.5],trShape}};
+
+Return[{trGraphicF,trGraphic}]
 ];
 
 
-GetFemurGraphic[]:=Module[{},
-femurLength = 3 unitLength; 
-femurHeight = 1 unitLength; 
-femurDepth = 1 unitLength;
-vectorLengthFemur = 2 unitLength; 
-femurShape = Cuboid[
-{-femurLength/2,-femurDepth/2,-femurHeight/2},
-{femurLength/2,femurDepth/2,femurHeight/2}];
+GetFemurGraphic[uLength_,getL___]:=Module[{fLength,fHeight,fDepth,vectorLengthF,fShape,fGraphicGeneric,fGraphicF,fGraphic},
+fLength = 3 uLength; 
+If[getL>0,Return[fLength]];
+fHeight = 1 uLength; 
+fDepth = 1 uLength;
+vectorLengthF = 2 uLength; 
+fShape = Cuboid[
+{-fLength/2,-fDepth/2,-fHeight/2},
+{fLength/2,fDepth/2,fHeight/2}];
 
 
-femurGraphicGeneric = {femurShape,
-{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthFemur,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthFemur,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthFemur}}]}}};
+fGraphicGeneric = {fShape,
+{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthF,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthF,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthF}}]}}};
 
-femurGraphicF = {femurGraphicGeneric,
-{Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 1],{vectorLengthFemur,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 2],{0,vectorLengthFemur,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 3],{0,0,vectorLengthFemur},{0,1}]}};
+fGraphicF = {fGraphicGeneric,
+{Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 1],{vectorLengthF,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 2],{0,vectorLengthF,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 3],{0,0,vectorLengthF},{0,1}]}};
 
-femurGraphic = {{RGBColor[1,0.5,0.5],femurGraphicGeneric},{RGBColor[1,0.5,1],femurGraphicGeneric},{RGBColor[0.5, 0.5, 1],femurGraphicGeneric},
-{RGBColor[0.5, 1, 1],femurGraphicGeneric},{RGBColor[0.5, 1, 0.5],femurGraphicGeneric},{RGBColor[1, 1, 0.5],femurGraphicGeneric}};
+fGraphic = {{RGBColor[1,0.5,0.5],fGraphicGeneric},{RGBColor[1,0.5,1],fGraphicGeneric},{RGBColor[0.5, 0.5, 1],fGraphicGeneric},
+{RGBColor[0.5, 1, 1],fGraphicGeneric},{RGBColor[0.5, 1, 0.5],fGraphicGeneric},{RGBColor[1, 1, 0.5],fGraphicGeneric}};
+
+Return[{fGraphicF,fGraphic}]
 ];
 
 
-GetPatellaGraphic[]:=Module[{},
-vectorLengthPatella = 1 unitLength;
-patellaHeight = 1.25unitLength;
-patellaRadius = unitLength/1.5;
-patellaTop = {0,0,patellaHeight/2};
-patellaBase = {0,0,-patellaHeight/2};
-patellaShape = Rotate[Cylinder[{patellaBase,patellaTop},patellaRadius],Pi/2,{1,0,0}];
+GetPatellaGraphic[uLength_]:=Module[{vectorLengthP,pHeight,pRadius,pTop,pBase,pShape,pGraphicGeneric,pGraphicF,pGraphic},
+vectorLengthP = 1 uLength;
+pHeight = 1.25uLength;
+pRadius = uLength/1.5;
+pTop = {0,0,pHeight/2};
+pBase = {0,0,-pHeight/2};
+pShape = Rotate[Cylinder[{pBase,pTop},pRadius],Pi/2,{1,0,0}];
 
-patellaGraphicGeneric= {patellaShape,
-{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthPatella,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthPatella,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthPatella}}]}}};
-patellaGraphicF = {patellaGraphicGeneric,
-{Text[Subscript[\!\(\*OverscriptBox[\(f\), \(^\)]\), 1],{vectorLengthPatella,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(f\), \(^\)]\), 2],{0,vectorLengthPatella,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(f\), \(^\)]\), 3],{0,0,vectorLengthPatella},{0,1}]}};
+pGraphicGeneric= {pShape,
+{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthP,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthP,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthP}}]}}};
+pGraphicF = {pGraphicGeneric,
+{Text[Subscript[\!\(\*OverscriptBox[\(f\), \(^\)]\), 1],{vectorLengthP,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(f\), \(^\)]\), 2],{0,vectorLengthP,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(f\), \(^\)]\), 3],{0,0,vectorLengthP},{0,1}]}};
 
-patellaGraphic= {{RGBColor[1, 0.25, 0.25],patellaShape},
-{RGBColor[0.75, 0.25, 0.75],patellaShape},
-{RGBColor[0.25, 0.25, 1],patellaShape},
-{RGBColor[0.25, 0.75, 0.75],patellaShape},
-{RGBColor[0.25, 1, 0.25],patellaShape},
-{RGBColor[0.75, 0.75, 0.25],patellaShape}};
+pGraphic= {{RGBColor[1, 0.25, 0.25],pShape},
+{RGBColor[0.75, 0.25, 0.75],pShape},
+{RGBColor[0.25, 0.25, 1],pShape},
+{RGBColor[0.25, 0.75, 0.75],pShape},
+{RGBColor[0.25, 1, 0.25],pShape},
+{RGBColor[0.75, 0.75, 0.25],pShape}};
+
+Return[{pGraphicF,pGraphic}]
 ];
 
 
-GetTarsusGraphic[]:=Module[{},
-vectorLengthTarsus = 3 unitLength;
-tarsusLength = 5 unitLength;
-halfTarsus = tarsusLength/2;
-tarsusWidth = 1unitLength;
-tarsusDepth = 1unitLength;
-tarsusShape = {Polygon[{
-{-halfTarsus,-tarsusDepth/2,tarsusWidth/2},
-{halfTarsus,-tarsusDepth/2,tarsusWidth/4},
-{halfTarsus,-tarsusDepth/2,-tarsusWidth/4},
-{-halfTarsus,-tarsusDepth/2,-tarsusWidth/2}}],
+GetTarsusGraphic[uLength_,getL___]:=Module[{vectorLengthTa,taLength,halfTa,taWidth,taDepth,taShape,taGraphicGeneric,taGraphicF,taGraphic},
+vectorLengthTa = 3 uLength;
+taLength = 5 uLength;
+If[getL>0,Return[taLength]];
+halfTa = taLength/2;
+taWidth = 1uLength;
+taDepth = 1uLength;
+taShape = {Polygon[{
+{-halfTa,-taDepth/2,taWidth/2},
+{halfTa,-taDepth/2,taWidth/4},
+{halfTa,-taDepth/2,-taWidth/4},
+{-halfTa,-taDepth/2,-taWidth/2}}],
 
 Polygon[{
-{-halfTarsus,tarsusDepth/2,tarsusWidth/2},
-{halfTarsus,tarsusDepth/2,tarsusWidth/4},
-{halfTarsus,tarsusDepth/2,-tarsusWidth/4},
-{-halfTarsus,tarsusDepth/2,-tarsusWidth/2}}],
+{-halfTa,taDepth/2,taWidth/2},
+{halfTa,taDepth/2,taWidth/4},
+{halfTa,taDepth/2,-taWidth/4},
+{-halfTa,taDepth/2,-taWidth/2}}],
 
 Polygon[{
-{-halfTarsus,-tarsusDepth/2,tarsusWidth/2},
-{halfTarsus,-tarsusDepth/2,tarsusWidth/4},
-{halfTarsus,tarsusDepth/2,tarsusWidth/4},
-{-halfTarsus,tarsusDepth/2,tarsusWidth/2}}],
+{-halfTa,-taDepth/2,taWidth/2},
+{halfTa,-taDepth/2,taWidth/4},
+{halfTa,taDepth/2,taWidth/4},
+{-halfTa,taDepth/2,taWidth/2}}],
 
 Polygon[{
-{-halfTarsus,-tarsusDepth/2,-tarsusWidth/2},
-{halfTarsus,-tarsusDepth/2,-tarsusWidth/4},
-{halfTarsus,tarsusDepth/2,-tarsusWidth/4},
-{-halfTarsus,tarsusDepth/2,-tarsusWidth/2}}],
+{-halfTa,-taDepth/2,-taWidth/2},
+{halfTa,-taDepth/2,-taWidth/4},
+{halfTa,taDepth/2,-taWidth/4},
+{-halfTa,taDepth/2,-taWidth/2}}],
 
 Polygon[{
-{-halfTarsus,-tarsusDepth/2,tarsusWidth/2},
-{-halfTarsus,-tarsusDepth/2,-tarsusWidth/2},
-{-halfTarsus,tarsusDepth/2,-tarsusWidth/2},
-{-halfTarsus,tarsusDepth/2,tarsusWidth/2}}],
+{-halfTa,-taDepth/2,taWidth/2},
+{-halfTa,-taDepth/2,-taWidth/2},
+{-halfTa,taDepth/2,-taWidth/2},
+{-halfTa,taDepth/2,taWidth/2}}],
 
 Polygon[{
-{halfTarsus,-tarsusDepth/2,tarsusWidth/4},
-{halfTarsus,-tarsusDepth/2,-tarsusWidth/4},
-{halfTarsus,tarsusDepth/2,-tarsusWidth/4},
-{halfTarsus,tarsusDepth/2,tarsusWidth/4}}]};
-tarsusGraphicGeneric= {tarsusShape,
-{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthTarsus,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthTarsus,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthTarsus}}]}}};
+{halfTa,-taDepth/2,taWidth/4},
+{halfTa,-taDepth/2,-taWidth/4},
+{halfTa,taDepth/2,-taWidth/4},
+{halfTa,taDepth/2,taWidth/4}}]};
+taGraphicGeneric= {taShape,
+{{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthTa,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthTa,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthTa}}]}}};
 
-tarsusGraphicF= {tarsusGraphicGeneric,
-{Text[Subscript[\!\(\*OverscriptBox[\(g\), \(^\)]\), 1],{vectorLengthTarsus,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(g\), \(^\)]\), 2],{0,vectorLengthTarsus,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(g\), \(^\)]\), 3],{0,0,vectorLengthTarsus},{0,1}]}};
+taGraphicF= {taGraphicGeneric,
+{Text[Subscript[\!\(\*OverscriptBox[\(g\), \(^\)]\), 1],{vectorLengthTa,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(g\), \(^\)]\), 2],{0,vectorLengthTa,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(g\), \(^\)]\), 3],{0,0,vectorLengthTa},{0,1}]}};
 
-tarsusGraphic = {{RGBColor[1, 0.25, 0.25],tarsusGraphicGeneric},
-{RGBColor[0.75, 0.25, 0.75],tarsusGraphicGeneric},
-{RGBColor[0.25, 0.25, 1],tarsusGraphicGeneric},
-{RGBColor[0.25, 0.75, 0.75],tarsusGraphicGeneric},
-{RGBColor[0.25, 1, 0.25],tarsusGraphicGeneric},
-{RGBColor[0.75, 0.75, 0.25],tarsusGraphicGeneric}};
+taGraphic = {{RGBColor[1, 0.25, 0.25],taGraphicGeneric},
+{RGBColor[0.75, 0.25, 0.75],taGraphicGeneric},
+{RGBColor[0.25, 0.25, 1],taGraphicGeneric},
+{RGBColor[0.25, 0.75, 0.75],taGraphicGeneric},
+{RGBColor[0.25, 1, 0.25],taGraphicGeneric},
+{RGBColor[0.75, 0.75, 0.25],taGraphicGeneric}};
+
+Return[{taGraphicF,taGraphic}]
 ];
 
 
-LegGraphic[enditeGraphic_,coxaGraphic_,trochanterGraphic_,femurGraphic_,patellaGraphic_,tarsusGraphic_,index_]:=
-{
-Translate[enditeGraphic,{0,0,0}],
-Translate[coxaGraphic,{coxaOffset,0,0}],
-Translate[trochanterGraphic,{2coxaOffset,0,0}],
-Translate[femurGraphic,{2coxaOffset+femurOffset,0,0}],
-Translate[patellaGraphic,{2coxaOffset+2femurOffset,0,0}],
-Translate[tarsusGraphic,{2coxaOffset+2femurOffset+tarsusOffset,0,0}],
-Text[index]}
-
-
-
+LegGraphic[uL_,eGraphic_,cGraphic_,trGraphic_,fGraphic_,pGraphic_,taGraphic_,index_]:=Module[{coxaOffset,femurOffset,tarsusOffset,lGraphic},
+coxaOffset=GetCoxaGraphic[uL,1]/2;
+femurOffset = GetFemurGraphic[uL,1]/2;
+tarsusOffset = GetTarsusGraphic[uL,1]/2;
+lGraphic={Translate[eGraphic,{0,0,0}],
+Translate[cGraphic,{coxaOffset,0,0}],
+Translate[trGraphic,{2coxaOffset,0,0}],
+Translate[fGraphic,{2coxaOffset+femurOffset,0,0}],
+Translate[pGraphic,{2coxaOffset+2femurOffset,0,0}],
+Translate[taGraphic,{2coxaOffset+2femurOffset+tarsusOffset,0,0}],
+Text[index]};
+Return[lGraphic]
+];
 
 
 AnimateLeg[i_]:={
@@ -515,7 +532,7 @@ OrA=OrAo//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z,
 ];
 
 
-LegPositionOrientInit[i_]:=Module[{},
+LegPositionOrientInit[i_]:=(
 OrT[i]=OrAo+AorBo[i]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]+ForGo[i]+GorTo[i]//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
 OrB[i]=OrAo+AorBo[i]//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
 Subscript[X, Tact][i]=((OrT[i].n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
@@ -527,14 +544,53 @@ Subscript[Z, Bact][i]=((OrB[i].n[3]//TranAtoN//TranBtoN[i])//distributeScalars)/
 Subscript[X, Tcur][i]=Subscript[X, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[X, body]->0};
 Subscript[Y, Tcur][i]=Subscript[Y, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[Y, body]->0};
 Subscript[Z, Tcur][i]=Subscript[Z, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[Z, body]->0};
+);
+
+
+GetBodyKinEquations[]:={
+Subscript[X, body]-Subscript[X, des],
+Subscript[Y, body]-Subscript[Y, des],
+Subscript[Z, body]-Subscript[Z, des],
+
+Subscript[C, act][[1]][[1]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[1]][[1]],
+Subscript[C, act][[1]][[2]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[1]][[2]],
+Subscript[C, act][[1]][[3]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[1]][[3]],
+
+Subscript[C, act][[2]][[1]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[2]][[1]],
+Subscript[C, act][[2]][[2]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[2]][[2]],
+Subscript[C, act][[2]][[3]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[2]][[3]],
+
+Subscript[C, act][[3]][[1]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[3]][[1]],
+Subscript[C, act][[3]][[2]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[3]][[2]],
+Subscript[C, act][[3]][[3]]- Subscript[C, des][Subscript[\[Theta], r],Subscript[\[Theta], p],Subscript[\[Theta], y]][[3]][[3]]};
+
+
+
+GetLegKinEquations[i_,OrT_]:=Module[{eqXT,eqYT,eqZT,eqXC,eqYC,eqZC,eqXB,eqYB,eqZB,eqXOrT,eqYOrT,footPlacer,shoulderRadius,bodyRadius},
+eqXT=Subscript[X, Tact]-Subscript[X, Tdes];
+eqYT=Subscript[Y, Tact]-Subscript[Y, Tdes];
+eqZT=Subscript[Z, Tact]-Subscript[Z, Tdes];
+eqXC=Subscript[X, Tcur]-Subscript[X, Tdes];
+eqYC=Subscript[Y, Tcur]-Subscript[Y, Tdes];
+eqZC=Subscript[Z, Tcur]-Subscript[Z, Tdes];
+eqXB=Subscript[X, Bact]-Subscript[X, Tdes];
+eqYB=Subscript[Y, Bact]-Subscript[Y, Tdes];
+eqZB=Subscript[Z, Bact]-Subscript[Z, Tdes];
+eqXOrT=((OrT[i].a[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+eqYOrT=((OrT[i].a[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
+footPlacer=(eqXT)^2+(eqYT)^2+(eqZT)^2+(eqXC)^2+(eqYC)^2+(eqZC)^2;
+shoulderRadius=(eqXB)^2+(eqYB)^2 (eqZB)^2;
+bodyRadius=(eqXOrT)^2+(eqYOrT)^2;
+{{eqXT,eqYT,eqZT},{eqXC,eqYC,eqZC},{eqXB,eqYB,eqZB},{eqXOrT,eqYOrT},footPlacer,shoulderRadius,bodyRadius}
 ];
+
 
 
 (* ::Title:: *)
 (*Misc*)
 
 
-RefreshXYZQ[]:=Module[{},
+RefreshXYZQ[]:=(
 x[t_]=.;
 y[t_]=.;
 z[t_]=.;
@@ -558,4 +614,4 @@ Subscript[q, 17][t_]=.;
 Subscript[q, 18][t_]=.;
 Subscript[q, 19][t_]=.;
 Subscript[q, 20][t_]=.;
-Subscript[q, 21][t_]=.;];
+Subscript[q, 21][t_]=.;);
