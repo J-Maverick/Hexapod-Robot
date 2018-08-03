@@ -11,101 +11,101 @@ Print["Package loaded successfully."]
 (*Graphic/Animation Functions*)
 
 
-GetBodyGraphic[uLength_]:=Module[{bodyLength,bodySide,vectorLengthBody,bodyHeight,halfBodyHeight,angledBodyLength,bodyShape,bodyGraphic,bodyGraphicF},
-bodyLength  = 1.5uLength;
-bodySide = 2bodyLength;
-vectorLengthBody = 4 bodyLength;
-bodyHeight= 1.5bodyLength;
-halfBodyHeight=bodyHeight/2;
-angledBodyLength = (1+Sqrt[3])(bodyLength);
-bodyShape = {Polygon[{
-{bodySide,bodyLength,-halfBodyHeight},
-{bodySide,-bodyLength,-halfBodyHeight},
-{bodyLength,-angledBodyLength,-halfBodyHeight},
-{-bodyLength,-angledBodyLength,-halfBodyHeight},
-{-bodySide,-bodyLength,-halfBodyHeight},
-{-bodySide,bodyLength,-halfBodyHeight},
-{-bodyLength,angledBodyLength,-halfBodyHeight},
-{bodyLength,angledBodyLength,-halfBodyHeight}}],
+GetBodyGraphic[CONST_Association]:=Module[{bLength,bSide,vectorLengthB,bHeight,halfBHeight,angledBLength,bShape,bGraphic,bGraphicF},
+bLength  = CONST["Body Unit Length"];
+bSide = CONST["Body Side Length"];
+vectorLengthB = CONST["Body Vector Length"];
+bHeight= CONST["Body Height"];
+halfBHeight=bHeight/2;
+angledBLength = (1+Sqrt[3])(bLength);
+bShape = {Polygon[{
+{bSide,bLength,-halfBHeight},
+{bSide,-bLength,-halfBHeight},
+{bLength,-angledBLength,-halfBHeight},
+{-bLength,-angledBLength,-halfBHeight},
+{-bSide,-bLength,-halfBHeight},
+{-bSide,bLength,-halfBHeight},
+{-bLength,angledBLength,-halfBHeight},
+{bLength,angledBLength,-halfBHeight}}],
 
 Polygon[{
-{bodySide,bodyLength,halfBodyHeight},
-{bodySide,-bodyLength,halfBodyHeight},
-{bodyLength,-angledBodyLength,halfBodyHeight},
-{-bodyLength,-angledBodyLength,halfBodyHeight},
-{-bodySide,-bodyLength,halfBodyHeight},
-{-bodySide,bodyLength,halfBodyHeight},
-{-bodyLength,angledBodyLength,halfBodyHeight},
-{bodyLength,angledBodyLength,halfBodyHeight}}],
+{bSide,bLength,halfBHeight},
+{bSide,-bLength,halfBHeight},
+{bLength,-angledBLength,halfBHeight},
+{-bLength,-angledBLength,halfBHeight},
+{-bSide,-bLength,halfBHeight},
+{-bSide,bLength,halfBHeight},
+{-bLength,angledBLength,halfBHeight},
+{bLength,angledBLength,halfBHeight}}],
 
 Polygon[
-{{bodySide,bodyLength,-halfBodyHeight},
-{bodySide,-bodyLength,-halfBodyHeight},
-{bodySide,-bodyLength,halfBodyHeight},
-{bodySide,bodyLength,halfBodyHeight}}],
+{{bSide,bLength,-halfBHeight},
+{bSide,-bLength,-halfBHeight},
+{bSide,-bLength,halfBHeight},
+{bSide,bLength,halfBHeight}}],
 
 Polygon[
-{{-bodySide,bodyLength,-halfBodyHeight},
-{-bodySide,-bodyLength,-halfBodyHeight},
-{-bodySide,-bodyLength,halfBodyHeight},
-{-bodySide,bodyLength,halfBodyHeight}}],
+{{-bSide,bLength,-halfBHeight},
+{-bSide,-bLength,-halfBHeight},
+{-bSide,-bLength,halfBHeight},
+{-bSide,bLength,halfBHeight}}],
 
 Polygon[
-{{-bodyLength,angledBodyLength,-halfBodyHeight},
-{bodyLength,angledBodyLength,-halfBodyHeight},
-{bodyLength,angledBodyLength,halfBodyHeight},
-{-bodyLength,angledBodyLength,halfBodyHeight}}],
+{{-bLength,angledBLength,-halfBHeight},
+{bLength,angledBLength,-halfBHeight},
+{bLength,angledBLength,halfBHeight},
+{-bLength,angledBLength,halfBHeight}}],
 
 Polygon[
-{{-bodyLength,-angledBodyLength,-halfBodyHeight},
-{bodyLength,-angledBodyLength,-halfBodyHeight},
-{bodyLength,-angledBodyLength,halfBodyHeight},
-{-bodyLength,-angledBodyLength,halfBodyHeight}}],
+{{-bLength,-angledBLength,-halfBHeight},
+{bLength,-angledBLength,-halfBHeight},
+{bLength,-angledBLength,halfBHeight},
+{-bLength,-angledBLength,halfBHeight}}],
 
 Polygon[
-{{bodyLength,angledBodyLength,-halfBodyHeight},
-{bodySide,bodyLength,-halfBodyHeight},
-{bodySide,bodyLength,halfBodyHeight},
-{bodyLength,angledBodyLength,halfBodyHeight}}],
+{{bLength,angledBLength,-halfBHeight},
+{bSide,bLength,-halfBHeight},
+{bSide,bLength,halfBHeight},
+{bLength,angledBLength,halfBHeight}}],
 
 Polygon[
-{{bodyLength,-angledBodyLength,-halfBodyHeight},
-{bodySide,-bodyLength,-halfBodyHeight},
-{bodySide,-bodyLength,halfBodyHeight},
-{bodyLength,-angledBodyLength,halfBodyHeight}}],
+{{bLength,-angledBLength,-halfBHeight},
+{bSide,-bLength,-halfBHeight},
+{bSide,-bLength,halfBHeight},
+{bLength,-angledBLength,halfBHeight}}],
 
 Polygon[
-{{-bodyLength,-angledBodyLength,-halfBodyHeight},
-{-bodySide,-bodyLength,-halfBodyHeight},
-{-bodySide,-bodyLength,halfBodyHeight},
-{-bodyLength,-angledBodyLength,halfBodyHeight}}],
+{{-bLength,-angledBLength,-halfBHeight},
+{-bSide,-bLength,-halfBHeight},
+{-bSide,-bLength,halfBHeight},
+{-bLength,-angledBLength,halfBHeight}}],
 
 Polygon[
-{{-bodyLength,angledBodyLength,-halfBodyHeight},
-{-bodySide,bodyLength,-halfBodyHeight},
-{-bodySide,bodyLength,halfBodyHeight},
-{-bodyLength,angledBodyLength,halfBodyHeight}}]
+{{-bLength,angledBLength,-halfBHeight},
+{-bSide,bLength,-halfBHeight},
+{-bSide,bLength,halfBHeight},
+{-bLength,angledBLength,halfBHeight}}]
 };
 
-bodyGraphicF= {bodyShape,
-{Text[Subscript[\!\(\*OverscriptBox[\(a\), \(^\)]\), 1],{vectorLengthBody,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(a\), \(^\)]\), 2],{0,vectorLengthBody,0},{0,1}],
-Text[Subscript[\!\(\*OverscriptBox[\(a\), \(^\)]\), 3],{0,0,vectorLengthBody},{0,1}],{AbsoluteThickness[1],RGBColor[1,0,0],
-Line[{{0,0,0},{vectorLengthBody,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],
-Line[{{0,0,0},{0,vectorLengthBody,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],
-Line[{{0,0,0},{0,0,vectorLengthBody}}]}}};
+bGraphicF= {bShape,
+{Text[Subscript[\!\(\*OverscriptBox[\(a\), \(^\)]\), 1],{vectorLengthB,0,0},{0,1}],Text[Subscript[\!\(\*OverscriptBox[\(a\), \(^\)]\), 2],{0,vectorLengthB,0},{0,1}],
+Text[Subscript[\!\(\*OverscriptBox[\(a\), \(^\)]\), 3],{0,0,vectorLengthB},{0,1}],{AbsoluteThickness[1],RGBColor[1,0,0],
+Line[{{0,0,0},{vectorLengthB,0,0}}]},{AbsoluteThickness[1],RGBColor[0,1,0],
+Line[{{0,0,0},{0,vectorLengthB,0}}]},{AbsoluteThickness[1],RGBColor[0,0,1],
+Line[{{0,0,0},{0,0,vectorLengthB}}]}}};
 
-bodyGraphic = {bodyShape,{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthBody,0,0}}]},
-{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthBody,0}}]},{AbsoluteThickness[1],
-RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthBody}}]}};
+bGraphic = {bShape,{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLengthB,0,0}}]},
+{AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthB,0}}]},{AbsoluteThickness[1],
+RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthB}}]}};
 
-Return[{bodyGraphicF,bodyGraphic}]
+Return[{bGraphicF,bGraphic}]
 ];
 
 
-GetEnditeGraphic[uLength_]:=Module[{vectorLengthE,eHeight,eRadius,eTop,eBase,eShape,eGraphicGeneric,eGraphicF,eGraphic},
-vectorLengthE = 1 uLength;
-eHeight = 1.25uLength;
-eRadius = uLength/1.5;
+GetEnditeGraphic[CONST_Association]:=Module[{vectorLengthE,eHeight,eRadius,eTop,eBase,eShape,eGraphicGeneric,eGraphicF,eGraphic},
+vectorLengthE=CONST["Endite Vector Length"];
+eHeight = CONST["Endite Height"];
+eRadius = CONST["Endite Radius"];
 eTop = {0,0,eHeight/2};
 eBase = {0,0,-eHeight/2};
 eShape = Cylinder[{eBase,eTop},eRadius];
@@ -126,12 +126,11 @@ Return[{eGraphicF,eGraphic}]
 ];
 
 
-GetCoxaGraphic[uLength_,getL___]:=Module[{cLength,cHeight,cDepth,vectorLengthC,cShape,cGraphicGeneric,cGraphicF,cGraphic},
-cLength = 2uLength; 
-If[getL>0,Return[cLength]];
-cHeight = 1 uLength; 
-cDepth = 1 uLength;
-vectorLengthC = 1.5 uLength; 
+GetCoxaGraphic[CONST_Association]:=Module[{cLength,cHeight,cDepth,vectorLengthC,cShape,cGraphicGeneric,cGraphicF,cGraphic},
+cLength = CONST["Coxa Length"];
+cHeight = CONST["Coxa Height"]; 
+cDepth = CONST["Coxa Depth"];
+vectorLengthC = CONST["Coxa Vector Length"]; 
 cShape = Cuboid[
 {-cLength/2,-cDepth/2,-cHeight/2},
 {cLength/2,cDepth/2,cHeight/2}];
@@ -154,10 +153,10 @@ Return[{cGraphicF,cGraphic}]
 ];
 
 
-GetTrochanterGraphic[uLength_]:=Module[{vectorLengthTr,trHeight,trRadius,trTop,trBase,trShape,trGraphic,trGraphicF,trGraphicGeneric},
-vectorLengthTr = 1 uLength;
-trHeight = 1.25uLength;
-trRadius = uLength/1.5;
+GetTrochanterGraphic[CONST_Association]:=Module[{vectorLengthTr,trHeight,trRadius,trTop,trBase,trShape,trGraphic,trGraphicF,trGraphicGeneric},
+vectorLengthTr=CONST["Trochanter Vector Length"];
+trHeight = CONST["Trochanter Height"];
+trRadius = CONST["Trochanter Radius"];
 trTop = {0,0,trHeight/2};
 trBase = {0,0,-trHeight/2};
 trShape = Rotate[Cylinder[{trBase,trTop},trRadius],Pi/2,{1,0,0}];
@@ -178,12 +177,11 @@ Return[{trGraphicF,trGraphic}]
 ];
 
 
-GetFemurGraphic[uLength_,getL___]:=Module[{fLength,fHeight,fDepth,vectorLengthF,fShape,fGraphicGeneric,fGraphicF,fGraphic},
-fLength = 3 uLength; 
-If[getL>0,Return[fLength]];
-fHeight = 1 uLength; 
-fDepth = 1 uLength;
-vectorLengthF = 2 uLength; 
+GetFemurGraphic[CONST_Association]:=Module[{fLength,fHeight,fDepth,vectorLengthF,fShape,fGraphicGeneric,fGraphicF,fGraphic},
+fLength = CONST["Femur Length"];
+fHeight = CONST["Femur Height"]; 
+fDepth = CONST["Femur Depth"];
+vectorLengthF = CONST["Femur Vector Length"]; 
 fShape = Cuboid[
 {-fLength/2,-fDepth/2,-fHeight/2},
 {fLength/2,fDepth/2,fHeight/2}];
@@ -203,10 +201,10 @@ Return[{fGraphicF,fGraphic}]
 ];
 
 
-GetPatellaGraphic[uLength_]:=Module[{vectorLengthP,pHeight,pRadius,pTop,pBase,pShape,pGraphicGeneric,pGraphicF,pGraphic},
-vectorLengthP = 1 uLength;
-pHeight = 1.25uLength;
-pRadius = uLength/1.5;
+GetPatellaGraphic[CONST_Association]:=Module[{vectorLengthP,pHeight,pRadius,pTop,pBase,pShape,pGraphicGeneric,pGraphicF,pGraphic},
+vectorLengthP=CONST["Patella Vector Length"];
+pHeight = CONST["Patella Height"];
+pRadius = CONST["Patella Radius"];
 pTop = {0,0,pHeight/2};
 pBase = {0,0,-pHeight/2};
 pShape = Rotate[Cylinder[{pBase,pTop},pRadius],Pi/2,{1,0,0}];
@@ -228,13 +226,12 @@ Return[{pGraphicF,pGraphic}]
 ];
 
 
-GetTarsusGraphic[uLength_,getL___]:=Module[{vectorLengthTa,taLength,halfTa,taWidth,taDepth,taShape,taGraphicGeneric,taGraphicF,taGraphic},
-vectorLengthTa = 3 uLength;
-taLength = 5 uLength;
-If[getL>0,Return[taLength]];
+GetTarsusGraphic[CONST_Association]:=Module[{vectorLengthTa,taLength,halfTa,taWidth,taDepth,taShape,taGraphicGeneric,taGraphicF,taGraphic},
+taLength = CONST["Tarsus Length"];
+taWidth = CONST["Tarsus Width"]; 
+taDepth = CONST["Tarsus Depth"];
+vectorLengthTa = CONST["Tarsus Vector Length"]; 
 halfTa = taLength/2;
-taWidth = 1uLength;
-taDepth = 1uLength;
 taShape = {Polygon[{
 {-halfTa,-taDepth/2,taWidth/2},
 {halfTa,-taDepth/2,taWidth/4},
@@ -288,16 +285,16 @@ Return[{taGraphicF,taGraphic}]
 ];
 
 
-LegGraphic[uL_,eGraphic_,cGraphic_,trGraphic_,fGraphic_,pGraphic_,taGraphic_,index_]:=Module[{coxaOffset,femurOffset,tarsusOffset,lGraphic},
-coxaOffset=GetCoxaGraphic[uL,1]/2;
-femurOffset = GetFemurGraphic[uL,1]/2;
-tarsusOffset = GetTarsusGraphic[uL,1]/2;
+LegGraphic[CONST_Association][eGraphic_,cGraphic_,trGraphic_,fGraphic_,pGraphic_,taGraphic_,index_]:=Module[{cOffset,fOffset,tOffset,lGraphic},
+cOffset=CONST["Coxa Length"]/2;
+fOffset = CONST["Femur Length"]/2;
+tOffset = CONST["Tarsus Length"]/2;
 lGraphic={Translate[eGraphic,{0,0,0}],
-Translate[cGraphic,{coxaOffset,0,0}],
-Translate[trGraphic,{2coxaOffset,0,0}],
-Translate[fGraphic,{2coxaOffset+femurOffset,0,0}],
-Translate[pGraphic,{2coxaOffset+2femurOffset,0,0}],
-Translate[taGraphic,{2coxaOffset+2femurOffset+tarsusOffset,0,0}],
+Translate[cGraphic,{cOffset,0,0}],
+Translate[trGraphic,{2cOffset,0,0}],
+Translate[fGraphic,{2cOffset+fOffset,0,0}],
+Translate[pGraphic,{2cOffset+2fOffset,0,0}],
+Translate[taGraphic,{2cOffset+2fOffset+tOffset,0,0}],
 Text[index]};
 Return[lGraphic]
 ];
@@ -322,198 +319,112 @@ Translate[GeometricTransformation[tarsusGraphic[[i]],Transpose[rotG[i]]],{xGo[i]
 (*Vectors, Rotation/Position*)
 
 
-UnitVecDyadInit[]:=Module[{},
-a[x_]:=unitVector[A,a,x];
-
-Subscript[b, 1][x_]:=unitVector[Subscript[B, 1],Subscript[b, 1_],x];
-Subscript[b, 2][x_]:=unitVector[Subscript[B, 2],Subscript[b, 2_],x];
-Subscript[b, 3][x_]:=unitVector[Subscript[B, 3],Subscript[b, 3_],x];
-Subscript[b, 4][x_]:=unitVector[Subscript[B, 4],Subscript[b, 4_],x];
-Subscript[b, 5][x_]:=unitVector[Subscript[B, 5],Subscript[b, 5_],x];
-Subscript[b, 6][x_]:=unitVector[Subscript[B, 6],Subscript[b, 6_],x];
-
-Subscript[c, 1][x_]:=unitVector[Subscript[C, 1],Subscript[c, 1_],x];
-Subscript[c, 2][x_]:=unitVector[Subscript[C, 2],Subscript[c, 2_],x];
-Subscript[c, 3][x_]:=unitVector[Subscript[C, 3],Subscript[c, 3_],x];
-Subscript[c, 4][x_]:=unitVector[Subscript[C, 4],Subscript[c, 4_],x];
-Subscript[c, 5][x_]:=unitVector[Subscript[C, 5],Subscript[c, 5_],x];
-Subscript[c, 6][x_]:=unitVector[Subscript[C, 6],Subscript[c, 6_],x];
-
-Subscript[d, 1][x_]:=unitVector[Subscript[D, 1],Subscript[d, 1_],x];
-Subscript[d, 2][x_]:=unitVector[Subscript[D, 2],Subscript[d, 2_],x];
-Subscript[d, 3][x_]:=unitVector[Subscript[D, 3],Subscript[d, 3_],x];
-Subscript[d, 4][x_]:=unitVector[Subscript[D, 4],Subscript[d, 4_],x];
-Subscript[d, 5][x_]:=unitVector[Subscript[D, 5],Subscript[d, 5_],x];
-Subscript[d, 6][x_]:=unitVector[Subscript[D, 6],Subscript[d, 6_],x];
-
-Subscript[e, 1][x_]:=unitVector[Subscript[E, 1],Subscript[e, 1_],x];
-Subscript[e, 2][x_]:=unitVector[Subscript[E, 2],Subscript[e, 2_],x];
-Subscript[e, 3][x_]:=unitVector[Subscript[E, 3],Subscript[e, 3_],x];
-Subscript[e, 4][x_]:=unitVector[Subscript[E, 4],Subscript[e, 4_],x];
-Subscript[e, 5][x_]:=unitVector[Subscript[E, 5],Subscript[e, 5_],x];
-Subscript[e, 6][x_]:=unitVector[Subscript[E, 6],Subscript[e, 6_],x];
-
-Subscript[f, 1][x_]:=unitVector[Subscript[F, 1],Subscript[f, 1_],x];
-Subscript[f, 2][x_]:=unitVector[Subscript[F, 2],Subscript[f, 2_],x];
-Subscript[f, 3][x_]:=unitVector[Subscript[F, 3],Subscript[f, 3_],x];
-Subscript[f, 4][x_]:=unitVector[Subscript[F, 4],Subscript[f, 4_],x];
-Subscript[f, 5][x_]:=unitVector[Subscript[F, 5],Subscript[f, 5_],x];
-Subscript[f, 6][x_]:=unitVector[Subscript[F, 6],Subscript[f, 6_],x];
-
-Subscript[g, 1][x_]:=unitVector[Subscript[G, 1],Subscript[g, 1_],x];
-Subscript[g, 2][x_]:=unitVector[Subscript[G, 2],Subscript[g, 2_],x];
-Subscript[g, 3][x_]:=unitVector[Subscript[G, 3],Subscript[g, 3_],x];
-Subscript[g, 4][x_]:=unitVector[Subscript[G, 4],Subscript[g, 4_],x];
-Subscript[g, 5][x_]:=unitVector[Subscript[G, 5],Subscript[g, 5_],x];
-Subscript[g, 6][x_]:=unitVector[Subscript[G, 6],Subscript[g, 6_],x];
-
-Subscript[t, 1][x_]:=unitVector[Subscript[T, 1],Subscript[t, 1_],x];
-Subscript[t, 2][x_]:=unitVector[Subscript[T, 2],Subscript[t, 2_],x];
-Subscript[t, 3][x_]:=unitVector[Subscript[T, 3],Subscript[t, 3_],x];
-Subscript[t, 4][x_]:=unitVector[Subscript[T, 4],Subscript[t, 4_],x];
-Subscript[t, 5][x_]:=unitVector[Subscript[T, 5],Subscript[t, 5_],x];
-Subscript[t, 6][x_]:=unitVector[Subscript[T, 6],Subscript[t, 6_],x];
-
-
-n[x_]:=unitVector[N,n,x];
-
-aa[x_,y_]:=unitDyad[a[x],a[y]];
-
-Subscript[bb, 1][x_,y_]:=unitDyad[Subscript[b, 1][x],Subscript[b, 1][y]];
-Subscript[bb, 2][x_,y_]:=unitDyad[Subscript[b, 2][x],Subscript[b, 2][y]];
-Subscript[bb, 3][x_,y_]:=unitDyad[Subscript[b, 3][x],Subscript[b, 3][y]];
-Subscript[bb, 4][x_,y_]:=unitDyad[Subscript[b, 4][x],Subscript[b, 4][y]];
-Subscript[bb, 5][x_,y_]:=unitDyad[Subscript[b, 5][x],Subscript[b, 5][y]];
-Subscript[bb, 6][x_,y_]:=unitDyad[Subscript[b, 6][x],Subscript[b, 6][y]];
-
-Subscript[cc, 1][x_,y_]:=unitDyad[Subscript[c, 1][x],Subscript[c, 1][y]];
-Subscript[cc, 2][x_,y_]:=unitDyad[Subscript[c, 2][x],Subscript[c, 2][y]];
-Subscript[cc, 3][x_,y_]:=unitDyad[Subscript[c, 3][x],Subscript[c, 3][y]];
-Subscript[cc, 4][x_,y_]:=unitDyad[Subscript[c, 4][x],Subscript[c, 4][y]];
-Subscript[cc, 5][x_,y_]:=unitDyad[Subscript[c, 5][x],Subscript[c, 5][y]];
-Subscript[cc, 6][x_,y_]:=unitDyad[Subscript[c, 6][x],Subscript[c, 6][y]];
-
-Subscript[dd, 1][x_,y_]:=unitDyad[Subscript[d, 1][x],Subscript[d, 1][y]];
-Subscript[dd, 2][x_,y_]:=unitDyad[Subscript[d, 2][x],Subscript[d, 2][y]];
-Subscript[dd, 3][x_,y_]:=unitDyad[Subscript[d, 3][x],Subscript[d, 3][y]];
-Subscript[dd, 4][x_,y_]:=unitDyad[Subscript[d, 4][x],Subscript[d, 4][y]];
-Subscript[dd, 5][x_,y_]:=unitDyad[Subscript[d, 5][x],Subscript[d, 5][y]];
-Subscript[dd, 6][x_,y_]:=unitDyad[Subscript[d, 6][x],Subscript[d, 6][y]];
-
-Subscript[ee, 1][x_,y_]:=unitDyad[Subscript[e, 1][x],Subscript[e, 1][y]];
-Subscript[ee, 2][x_,y_]:=unitDyad[Subscript[e, 2][x],Subscript[e, 2][y]];
-Subscript[ee, 3][x_,y_]:=unitDyad[Subscript[e, 3][x],Subscript[e, 3][y]];
-Subscript[ee, 4][x_,y_]:=unitDyad[Subscript[e, 4][x],Subscript[e, 4][y]];
-Subscript[ee, 5][x_,y_]:=unitDyad[Subscript[e, 5][x],Subscript[e, 5][y]];
-Subscript[ee, 6][x_,y_]:=unitDyad[Subscript[e, 6][x],Subscript[e, 6][y]];
-
-Subscript[ff, 1][x_,y_]:=unitDyad[Subscript[f, 1][x],Subscript[f, 1][y]];
-Subscript[ff, 2][x_,y_]:=unitDyad[Subscript[f, 2][x],Subscript[f, 2][y]];
-Subscript[ff, 3][x_,y_]:=unitDyad[Subscript[f, 3][x],Subscript[f, 3][y]];
-Subscript[ff, 4][x_,y_]:=unitDyad[Subscript[f, 4][x],Subscript[f, 4][y]];
-Subscript[ff, 5][x_,y_]:=unitDyad[Subscript[f, 5][x],Subscript[f, 5][y]];
-Subscript[ff, 6][x_,y_]:=unitDyad[Subscript[f, 6][x],Subscript[f, 6][y]];
-
-Subscript[gg, 1][x_,y_]:=unitDyad[Subscript[g, 1][x],Subscript[g, 1][y]];
-Subscript[gg, 2][x_,y_]:=unitDyad[Subscript[g, 2][x],Subscript[g, 2][y]];
-Subscript[gg, 3][x_,y_]:=unitDyad[Subscript[g, 3][x],Subscript[g, 3][y]];
-Subscript[gg, 4][x_,y_]:=unitDyad[Subscript[g, 4][x],Subscript[g, 4][y]];
-Subscript[gg, 5][x_,y_]:=unitDyad[Subscript[g, 5][x],Subscript[g, 5][y]];
-Subscript[gg, 6][x_,y_]:=unitDyad[Subscript[g, 6][x],Subscript[g, 6][y]];
+LegRotationDefB[CONST_Association][gRot_,rA_][i_]:=Module[{qInd,rB,BtN,rotOffset},
+qInd=1+3*i;
+rotOffset=CONST["Leg Rotational Offsets"][[i]];
+rB=gRot[[3]][Subscript[q, qInd][t]+rotOffset].rA;
+BtN=rB.{n[1],n[2],n[3]};
+Return[{rB,BtN}];
 ];
 
+TranslateBtoN[ind_,x_,BtoN_]:=x//.{Subscript[b, ind][1]->BtoN[[ind]][[1]],Subscript[b, ind][2]->BtoN[[ind]][[2]],Subscript[b, ind][3]->BtoN[[ind]][[3]]};
 
 
-GenericRot[]:=Module[{},
-rot0[q_:1]={{1,0,0},{0,1,0},{0,0,1}};
-rot1[q_]={{1,0,0},{0,Cos[q],Sin[q]},{0,-Sin[q],Cos[q]}};
-rot2[q_]={{Cos[q],0,-Sin[q]},{0,1,0},{Sin[q],0,Cos[q]}};
-rot3[q_]={{Cos[q],Sin[q],0},{-Sin[q],Cos[q],0},{0,0,1}};
+
+LegRotationDefC[gRot_][i_,rB_]:=Module[{qInd,rC,CtN},
+qInd=1+3*i;
+rC=gRot[[4]][].rB;
+CtN=rC.{n[1],n[2],n[3]};
+Return[{rC,CtN}]
 ];
 
+TranslateCtoN[ind_,x_,CtoN_]:=x//.{Subscript[c, ind][1]->CtoN[[ind]][[1]],Subscript[c, ind][2]->CtoN[[ind]][[2]],Subscript[c, ind][3]->CtoN[[ind]][[3]]};
 
-BodyRotationDef[]:=Module[{},
-rotA=rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-AtoN=rotA.{n[1],n[2],n[3]};
-TranAtoN[x_]:=x//.{a[1]->AtoN[[1]],a[2]->AtoN[[2]],a[3]->AtoN[[3]]};
+
+LegRotationDefD[gRot_][i_,rC_]:=Module[{qInd1,qInd2,rD,DtN},
+qInd1=1+3*i;
+qInd2=2+3*i;
+rD=gRot[[2]][Subscript[q, qInd2][t]].rC;
+DtN=rD.{n[1],n[2],n[3]};
+Return[{rD,DtN}]
 ];
 
+TranslateDtoN[ind_,x_,DtoN_]:=x//.{Subscript[d, ind][1]->DtoN[[ind]][[1]],Subscript[d, ind][2]->DtoN[[ind]][[2]],Subscript[d, ind][3]->DtoN[[ind]][[3]]};
 
-LegRotationDef[i_]:=Module[{qInd1,qInd2,qInd3},
+
+LegRotationDefE[gRot_][i_,rD_]:=Module[{qInd1,qInd2,rE,EtN},
+qInd1=1+3*i;
+qInd2=2+3*i;
+rE[i]=gRot[[4]][].rD;
+EtN=rE.{n[1],n[2],n[3]};
+Return[{rE,EtN}]
+];
+
+TranslateEtoN[ind_,x_,EtoN_]:=x//.{Subscript[e, ind][1]->EtoN[[ind]][[1]],Subscript[e, ind][2]->EtoN[[ind]][[2]],Subscript[e, ind][3]->EtoN[[ind]][[3]]};
+
+
+LegRotationDefF[gRot_][i_,rE_]:=Module[{qInd1,qInd2,qInd3,rF,FtN},
 qInd1=1+3*i;
 qInd2=2+3*i;
 qInd3=3+3*i;
-rotB[i]=rot3[Subscript[q, qInd1][t]+legRotOffset[[i]]].rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-BtoN[i]=rotB[i].{n[1],n[2],n[3]};
-TranBtoN[in_][xx_]:=TranBN[in,xx];
-TranBN[ind_,x_]:=x//.{Subscript[b, ind][1]->BtoN[ind][[1]],Subscript[b, ind][2]->BtoN[ind][[2]],Subscript[b, ind][3]->BtoN[ind][[3]]};
-rotC[i]=rot0[].rot3[Subscript[q, qInd1][t]+legRotOffset[[i]]].rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-CtoN[i]=rotC[i].{n[1],n[2],n[3]};
-TranCtoN[in_][xx_]:=TranCN[in,xx];
-TranCN[ind_,x_]:=x//.{Subscript[c, ind][1]->CtoN[ind][[1]],Subscript[c, ind][2]->CtoN[ind][[2]],Subscript[c, ind][3]->CtoN[ind][[3]]};
-rotD[i]=rot2[Subscript[q, qInd2][t]].rot0[].rot3[Subscript[q, qInd1][t]+legRotOffset[[i]]].rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-DtoN[i]=rotD[i].{n[1],n[2],n[3]};
-TranDtoN[in_][xx_]:=TranDN[in,xx];
-TranDN[ind_,x_]:=x//.{Subscript[d, ind][1]->DtoN[ind][[1]],Subscript[d, ind][2]->DtoN[ind][[2]],Subscript[d, ind][3]->DtoN[ind][[3]]};
-rotE[i]=rot0[].rot2[Subscript[q, qInd2][t]].rot0[].rot3[Subscript[q, qInd1][t]+legRotOffset[[i]]].rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-EtoN[i]=rotE[i].{n[1],n[2],n[3]};
-TranEtoN[in_][xx_]:=TranEN[in,xx];
-TranEN[ind_,x_]:=x//.{Subscript[e, ind][1]->EtoN[ind][[1]],Subscript[e, ind][2]->EtoN[ind][[2]],Subscript[e, ind][3]->EtoN[ind][[3]]};
-rotF[i]=rot2[Subscript[q, qInd3][t]].rot0[].rot2[Subscript[q, qInd2][t]].rot0[].rot3[Subscript[q, qInd1][t]+legRotOffset[[i]]].rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-FtoN[i]=rotF[i].{n[1],n[2],n[3]};
-TranFtoN[in_][xx_]:=TranFN[in,xx];
-TranFN[ind_,x_]:=x//.{Subscript[f, ind][1]->FtoN[ind][[1]],Subscript[f, ind][2]->FtoN[ind][[2]],Subscript[f, ind][3]->FtoN[ind][[3]]};
-rotG[i]=rot0[].rot2[Subscript[q, qInd3][t]].rot0[].rot2[Subscript[q, qInd2][t]].rot0[].rot3[Subscript[q, qInd1][t]+legRotOffset[[i]]].rot3[Subscript[q, 3][t]].rot2[Subscript[q, 2][t]].rot1[Subscript[q, 1][t]];
-GtoN[i]=rotG[i].{n[1],n[2],n[3]};
-TranGtoN[in_][xx_]:=TranGN[in,xx];
-TranGN[ind_,x_]:=x//.{Subscript[g, ind][1]->GtoN[ind][[1]],Subscript[g, ind][2]->GtoN[ind][[2]],Subscript[g, ind][3]->GtoN[ind][[3]]};
-]
-
-
-BodyPosVectorDef[]:=Module[{},
-OrAo = x[t]n[1]+y[t]n[2]+z[t]n[3];
-
-AorBo={(-cornerXOffset)a[1]+(cornerYOffset)a[2],(-sideXOffset)a[1]+(sideYOffset)a[2],(-cornerXOffset)a[1]+(-cornerYOffset)a[2],
-(cornerXOffset)a[1]+(cornerYOffset)a[2],(sideXOffset)a[1]+(sideYOffset)a[2],(cornerXOffset)a[1]+(-cornerYOffset)a[2]};
-
-xAo=OrAo.n[1]//TranAtoN;
-yAo=OrAo.n[2]//TranAtoN;
-zAo=OrAo.n[3]//TranAtoN;
+rF=gRot[[2]][Subscript[q, qInd3][t]].rE;
+FtN=rF.{n[1],n[2],n[3]};
+Return[{rF,FtN}]
 ];
 
+TranslateFtoN[ind_,x_,FtoN_]:=x//.{Subscript[f, ind][1]->FtoN[[ind]][[1]],Subscript[f, ind][2]->FtoN[[ind]][[2]],Subscript[f, ind][3]->FtoN[[ind]][[3]]};
 
-LegPosVectorDef[i_]:=Module[{},
+
+LegRotationDefG[gRot_][i_,rF_]:=Module[{qInd1,qInd2,qInd3,rG,GtN},
+qInd1=1+3*i;
+qInd2=2+3*i;
+qInd3=3+3*i;
+rG=gRot[[4]][].rF;
+GtN=rG.{n[1],n[2],n[3]};
+Return[{rG,GtN}]
+];
+
+TranslateGtoN[ind_,x_,GtoN_]:=x//.{Subscript[g, ind][1]->GtoN[[ind]][[1]],Subscript[g, ind][2]->GtoN[[ind]][[2]],Subscript[g, ind][3]->GtoN[[ind]][[3]]};
+
+
+LegPosVectors[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOffset,x,y,z,BrC,CrD,DrE,ErF,FrG,GrT,xB,yB,zB},
+cOffset=CONST["Coxa Length"]/2;
+fOffset=CONST["Femur Length"]/2;
+tOffset=CONST["Tarsus Length"]/2;
+
 (*From Body*)
-xBo[i]=(OrAo+AorBo[[i]]).n[1]//TranAtoN//TranBtoN[i];
-yBo[i]=(OrAo+AorBo[[i]]).n[2]//TranAtoN//TranBtoN[i];
-zBo[i]=(OrAo+AorBo[[i]]).n[3]//TranAtoN//TranBtoN[i];
+xB=(OrA+ArB).n[1]//TranAtoN//TranBtoN[i];
+yB=(OrA+ArB).n[2]//TranAtoN//TranBtoN[i];
+zB=(OrA+ArB).n[3]//TranAtoN//TranBtoN[i];
 (*Coxa*)
-BorCo[i]=(coxaOffset)Subscript[b, i][1];
-xCo[i]=(OrAo+AorBo[[i]]+BorCo[i]).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i];
-yCo[i]=(OrAo+AorBo[[i]]+BorCo[i]).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i];
-zCo[i]=(OrAo+AorBo[[i]]+BorCo[i]).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i];
+BrC=(cOffset)Subscript[b, i][1];
+x[[2]]=(OrA+ArB+BrC).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i];
+y[[2]]=(OrA+ArB+BrC).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i];
+z[[2]]=(OrA+ArB+BrC).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i];
 (*Trochanter*)
-CorDo[i]=(coxaOffset)Subscript[c, i][1];
-xDo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
-yDo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
-zDo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
+CrD=(cOffset)Subscript[c, i][1];
+x[[3]]=(OrA+ArB+BrC+CrD).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
+y[[3]]=(OrA+ArB+BrC+CrD).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
+z[[3]]=(OrA+ArB+BrC+CrD).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
 (*Femur*)
-DorEo[i]=(femurOffset)Subscript[d, i][1];
-xEo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
-yEo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
-zEo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
+DrE=(fOffset)Subscript[d, i][1];
+x[[4]]=(OrA+ArB+BrC+CrD+DrE).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
+y[[4]]=(OrA+ArB+BrC+CrD+DrE).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
+z[[4]]=(OrA+ArB+BrC+CrD+DrE).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
 (*Patella*)
-EorFo[i]=(femurOffset)Subscript[e, i][1];
-xFo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
-yFo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
-zFo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
+ErF=(fOffset)Subscript[e, i][1];
+x[[5]]=(OrA+ArB+BrC+CrD+DrE+ErF).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
+y[[5]]=(OrA+ArB+BrC+CrD+DrE+ErF).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
+z[[5]]=(OrA+ArB+BrC+CrD+DrE+ErF).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
 (*Tarsus*)
-ForGo[i]=(tarsusOffset)Subscript[f, i][1];
-xGo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]+ForGo[i]).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
-yGo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]+ForGo[i]).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
-zGo[i]=(OrAo+AorBo[[i]]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]+ForGo[i]).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
+FrG=(tOffset)Subscript[f, i][1];
+x[[6]]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
+y[[6]]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
+z[[6]]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
 (*Tarsal Tip*)
-GorTo[i]=(tarsusOffset)Subscript[g, i][1];
+GrT=(tOffset)Subscript[g, i][1];
+
+Return[{{xB,yB,zB}{x,y,z},BrC,CrD,DrE,ErF,FrG,GrT}]
 ]
 
 
