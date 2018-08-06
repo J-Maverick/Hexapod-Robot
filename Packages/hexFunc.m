@@ -98,7 +98,7 @@ bGraphic = {bShape,{AbsoluteThickness[1],RGBColor[1,0,0],Line[{{0,0,0},{vectorLe
 {AbsoluteThickness[1],RGBColor[0,1,0],Line[{{0,0,0},{0,vectorLengthB,0}}]},{AbsoluteThickness[1],
 RGBColor[0,0,1],Line[{{0,0,0},{0,0,vectorLengthB}}]}};
 
-Return[{bGraphicF,bGraphic}]
+{bGraphicF,bGraphic}
 ];
 
 
@@ -122,7 +122,7 @@ eGraphic={{RGBColor[1, 0.75, 0.75],eShape},
 {RGBColor[0.75, 1, 0.75],eShape},
 {RGBColor[1, 1, 0.75],eShape}};
 
-Return[{eGraphicF,eGraphic}]
+{eGraphicF,eGraphic}
 ];
 
 
@@ -149,7 +149,7 @@ cGraphic={{RGBColor[1,0.75,0.75],cGraphicGeneric},
 {RGBColor[0.75, 1, 0.75],cGraphicGeneric},
 {RGBColor[1, 1, 0.75],cGraphicGeneric}};
 
-Return[{cGraphicF,cGraphic}]
+{cGraphicF,cGraphic}
 ];
 
 
@@ -173,7 +173,7 @@ trGraphic={{RGBColor[1, 0.5, 0.5],trShape},
 {RGBColor[0.5, 1, 0.5],trShape},
 {RGBColor[1, 1, 0.5],trShape}};
 
-Return[{trGraphicF,trGraphic}]
+{trGraphicF,trGraphic}
 ];
 
 
@@ -197,7 +197,7 @@ Text[Subscript[\!\(\*OverscriptBox[\(e\), \(^\)]\), 3],{0,0,vectorLengthF},{0,1}
 fGraphic = {{RGBColor[1,0.5,0.5],fGraphicGeneric},{RGBColor[1,0.5,1],fGraphicGeneric},{RGBColor[0.5, 0.5, 1],fGraphicGeneric},
 {RGBColor[0.5, 1, 1],fGraphicGeneric},{RGBColor[0.5, 1, 0.5],fGraphicGeneric},{RGBColor[1, 1, 0.5],fGraphicGeneric}};
 
-Return[{fGraphicF,fGraphic}]
+{fGraphicF,fGraphic}
 ];
 
 
@@ -222,7 +222,7 @@ pGraphic= {{RGBColor[1, 0.25, 0.25],pShape},
 {RGBColor[0.25, 1, 0.25],pShape},
 {RGBColor[0.75, 0.75, 0.25],pShape}};
 
-Return[{pGraphicF,pGraphic}]
+{pGraphicF,pGraphic}
 ];
 
 
@@ -281,7 +281,7 @@ taGraphic = {{RGBColor[1, 0.25, 0.25],taGraphicGeneric},
 {RGBColor[0.25, 1, 0.25],taGraphicGeneric},
 {RGBColor[0.75, 0.75, 0.25],taGraphicGeneric}};
 
-Return[{taGraphicF,taGraphic}]
+{taGraphicF,taGraphic}
 ];
 
 
@@ -295,24 +295,23 @@ Translate[trGraphic,{2cOffset,0,0}],
 Translate[fGraphic,{2cOffset+fOffset,0,0}],
 Translate[pGraphic,{2cOffset+2fOffset,0,0}],
 Translate[taGraphic,{2cOffset+2fOffset+tOffset,0,0}],
-Text[index]};
-Return[lGraphic]
+Text[index]}
 ];
 
 
 AnimateLeg[i_]:={
 (*Endite*)
-Translate[GeometricTransformation[enditeGraphic[[i]],Transpose[rotB[i]]],{xBo[i],yBo[i],zBo[i]}],
+Translate[GeometricTransformation[enditeGraphic[[i]],Transpose[rotB[[i]]]],{xBo[[i]],yBo[[i]],zBo[[i]]}],
 (*Coxa*)
-Translate[GeometricTransformation[coxaGraphic[[i]],Transpose[rotC[i]]],{xCo[i],yCo[i],zCo[i]}],
+Translate[GeometricTransformation[coxaGraphic[[i]],Transpose[rotC[[i]]]],{xCo[[i]],yCo[[i]],zCo[[i]]}],
 (*Trochanter*)
-Translate[GeometricTransformation[trochanterGraphic[[i]],Transpose[rotD[i]]],{xDo[i],yDo[i],zDo[i]}],
+Translate[GeometricTransformation[trochanterGraphic[[i]],Transpose[rotD[[i]]]],{xDo[[i]],yDo[[i]],zDo[[i]]}],
 (*Femur*)
-Translate[GeometricTransformation[femurGraphic[[i]],Transpose[rotE[i]]],{xEo[i],yEo[i],zEo[i]}],
+Translate[GeometricTransformation[femurGraphic[[i]],Transpose[rotE[[i]]]],{xEo[[i]],yEo[[i]],zEo[[i]]}],
 (*Patella*)
-Translate[GeometricTransformation[patellaGraphic[[i]],Transpose[rotF[i]]],{xFo[i],yFo[i],zFo[i]}],
+Translate[GeometricTransformation[patellaGraphic[[i]],Transpose[rotF[[i]]]],{xFo[[i]],yFo[[i]],zFo[[i]]}],
 (*Tarsus*)
-Translate[GeometricTransformation[tarsusGraphic[[i]],Transpose[rotG[i]]],{xGo[i],yGo[i],zGo[i]}]}
+Translate[GeometricTransformation[tarsusGraphic[[i]],Transpose[rotG[[i]]]],{xGo[[i]],yGo[[i]],zGo[[i]]}]}
 
 
 (* ::Title:: *)
@@ -355,7 +354,7 @@ TranslateDtoN[ind_,x_,DtoN_]:=x//.{Subscript[d, ind][1]->DtoN[[ind]][[1]],Subscr
 LegRotationDefE[gRot_][i_,rD_]:=Module[{qInd1,qInd2,rE,EtN},
 qInd1=1+3*i;
 qInd2=2+3*i;
-rE[i]=gRot[[4]][].rD;
+rE=gRot[[4]][].rD;
 EtN=rE.{n[1],n[2],n[3]};
 Return[{rE,EtN}]
 ];
@@ -387,44 +386,88 @@ Return[{rG,GtN}]
 TranslateGtoN[ind_,x_,GtoN_]:=x//.{Subscript[g, ind][1]->GtoN[[ind]][[1]],Subscript[g, ind][2]->GtoN[[ind]][[2]],Subscript[g, ind][3]->GtoN[[ind]][[3]]};
 
 
-LegPosVectors[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOffset,x,y,z,BrC,CrD,DrE,ErF,FrG,GrT,xB,yB,zB},
+LegPosVectors[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOffset,BrC,CrD,DrE,ErF,FrG,GrT,xyzo},
+cOffset=CONST["Coxa Length"]/2;
+fOffset=CONST["Femur Length"]/2;
+tOffset=CONST["Tarsus Length"]/2;
+
+xyzo=Flatten[Delete[Reap[
+(*From Body*)
+Sow[((OrA+ArB[[i]]).n[1]//TranAtoN//TranBtoN[i]),b];
+Sow[((OrA+ArB[[i]]).n[2]//TranAtoN//TranBtoN[i]),b];
+Sow[((OrA+ArB[[i]]).n[3]//TranAtoN//TranBtoN[i]),b];
+(*Coxa*)
+BrC=(cOffset)Subscript[b, i][1];
+Sow[((OrA+ArB[[i]]+BrC).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]),c];
+Sow[((OrA+ArB[[i]]+BrC).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]),c];
+Sow[((OrA+ArB[[i]]+BrC).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]),c];
+(*Trochanter*)
+CrD=(cOffset)Subscript[c, i][1];
+Sow[((OrA+ArB[[i]]+BrC+CrD).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]),d];
+Sow[((OrA+ArB[[i]]+BrC+CrD).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]),d];
+Sow[((OrA+ArB[[i]]+BrC+CrD).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]),d];
+(*Femur*)
+DrE=(fOffset)Subscript[d, i][1];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars),e];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars),e];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars),e];
+(*Patella*)
+ErF=(fOffset)Subscript[e, i][1];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars),f];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars),f];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars),f];
+(*Tarsus*)
+FrG=(tOffset)Subscript[f, i][1];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars),g];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars),g];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars),g];
+(*Tarsal Tip*)
+GrT=(tOffset)Subscript[g, i][1];
+],1],1];
+(*If[i\[Equal]1,Print[xyzo]];*)
+{xyzo,BrC,CrD,DrE,ErF,FrG,GrT}
+]
+
+
+LegPosVectorsBAK[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOffset,x,y,z,BrC,CrD,DrE,ErF,FrG,GrT,xyzo},
 cOffset=CONST["Coxa Length"]/2;
 fOffset=CONST["Femur Length"]/2;
 tOffset=CONST["Tarsus Length"]/2;
 
 (*From Body*)
-xB=(OrA+ArB).n[1]//TranAtoN//TranBtoN[i];
-yB=(OrA+ArB).n[2]//TranAtoN//TranBtoN[i];
-zB=(OrA+ArB).n[3]//TranAtoN//TranBtoN[i];
+x[1]:=(OrA+ArB).n[1]//TranAtoN//TranBtoN[i];
+y[1]:=(OrA+ArB).n[2]//TranAtoN//TranBtoN[i];
+z[1]:=(OrA+ArB).n[3]//TranAtoN//TranBtoN[i];
+Print[x[1]]
 (*Coxa*)
 BrC=(cOffset)Subscript[b, i][1];
-x[[2]]=(OrA+ArB+BrC).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i];
-y[[2]]=(OrA+ArB+BrC).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i];
-z[[2]]=(OrA+ArB+BrC).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i];
+x[2]=(OrA+ArB+BrC).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i];
+y[2]=(OrA+ArB+BrC).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i];
+z[2]=(OrA+ArB+BrC).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i];
 (*Trochanter*)
 CrD=(cOffset)Subscript[c, i][1];
-x[[3]]=(OrA+ArB+BrC+CrD).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
-y[[3]]=(OrA+ArB+BrC+CrD).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
-z[[3]]=(OrA+ArB+BrC+CrD).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
+x[3]=(OrA+ArB+BrC+CrD).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
+y[3]=(OrA+ArB+BrC+CrD).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
+z[3]=(OrA+ArB+BrC+CrD).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i];
 (*Femur*)
 DrE=(fOffset)Subscript[d, i][1];
-x[[4]]=(OrA+ArB+BrC+CrD+DrE).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
-y[[4]]=(OrA+ArB+BrC+CrD+DrE).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
-z[[4]]=(OrA+ArB+BrC+CrD+DrE).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
+x[4]=(OrA+ArB+BrC+CrD+DrE).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
+y[4]=(OrA+ArB+BrC+CrD+DrE).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
+z[4]=(OrA+ArB+BrC+CrD+DrE).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars;
 (*Patella*)
 ErF=(fOffset)Subscript[e, i][1];
-x[[5]]=(OrA+ArB+BrC+CrD+DrE+ErF).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
-y[[5]]=(OrA+ArB+BrC+CrD+DrE+ErF).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
-z[[5]]=(OrA+ArB+BrC+CrD+DrE+ErF).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
+x[5]=(OrA+ArB+BrC+CrD+DrE+ErF).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
+y[5]=(OrA+ArB+BrC+CrD+DrE+ErF).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
+z[5]=(OrA+ArB+BrC+CrD+DrE+ErF).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars;
 (*Tarsus*)
 FrG=(tOffset)Subscript[f, i][1];
-x[[6]]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
-y[[6]]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
-z[[6]]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
+x[6]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
+y[6]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
+z[6]=(OrA+ArB+BrC+CrD+DrE+ErF+FrG).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars;
 (*Tarsal Tip*)
 GrT=(tOffset)Subscript[g, i][1];
-
-Return[{{xB,yB,zB}{x,y,z},BrC,CrD,DrE,ErF,FrG,GrT}]
+xyzo = {x,y,z};
+{xyzo,BrC,CrD,DrE,ErF,FrG,GrT}
 ]
 
 
