@@ -299,21 +299,6 @@ Text[index]}
 ];
 
 
-AnimateLeg[i_]:={
-(*Endite*)
-Translate[GeometricTransformation[enditeGraphic[[i]],Transpose[rotB[[i]]]],{xBo[[i]],yBo[[i]],zBo[[i]]}],
-(*Coxa*)
-Translate[GeometricTransformation[coxaGraphic[[i]],Transpose[rotC[[i]]]],{xCo[[i]],yCo[[i]],zCo[[i]]}],
-(*Trochanter*)
-Translate[GeometricTransformation[trochanterGraphic[[i]],Transpose[rotD[[i]]]],{xDo[[i]],yDo[[i]],zDo[[i]]}],
-(*Femur*)
-Translate[GeometricTransformation[femurGraphic[[i]],Transpose[rotE[[i]]]],{xEo[[i]],yEo[[i]],zEo[[i]]}],
-(*Patella*)
-Translate[GeometricTransformation[patellaGraphic[[i]],Transpose[rotF[[i]]]],{xFo[[i]],yFo[[i]],zFo[[i]]}],
-(*Tarsus*)
-Translate[GeometricTransformation[tarsusGraphic[[i]],Transpose[rotG[[i]]]],{xGo[[i]],yGo[[i]],zGo[[i]]}]}
-
-
 (* ::Title:: *)
 (*Vectors, Rotation/Position*)
 
@@ -475,18 +460,7 @@ xyzo = {x,y,z};
 (*Inverse Kinematics*)
 
 
-BodyPositionOrientInit[]:=Module[{},
-Subscript[C, des][roll_,pitch_,yaw_]:=rot3[yaw].rot2[pitch].rot1[roll];
-Subscript[C, act]=rotA//.{Subscript[q, n_][t]->Subscript[Q, n]};
-Subscript[X, bodycur]=0;
-Subscript[Y, bodycur]=0;
-Subscript[Z, bodycur]=1;
-Subscript[Q, cur]=ConstantArray[0,21];
-OrA=OrAo//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
-];
-
-
-LegPositionOrientInit[i_]:=(
+LegPositionOrientInit[OrA_,ArB_][i_]:=Module[{OrT,OrB},
 OrT[i]=OrAo+AorBo[i]+BorCo[i]+CorDo[i]+DorEo[i]+EorFo[i]+ForGo[i]+GorTo[i]//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
 OrB[i]=OrAo+AorBo[i]//.{x[t]->Subscript[X, body],y[t]->Subscript[Y, body],z[t]->Subscript[Z, body]};
 Subscript[X, Tact][i]=((OrT[i].n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i])//distributeScalars)//.{Subscript[q, n_][t]->Subscript[Q, n]};
@@ -498,7 +472,7 @@ Subscript[Z, Bact][i]=((OrB[i].n[3]//TranAtoN//TranBtoN[i])//distributeScalars)/
 Subscript[X, Tcur][i]=Subscript[X, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[X, body]->0};
 Subscript[Y, Tcur][i]=Subscript[Y, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[Y, body]->0};
 Subscript[Z, Tcur][i]=Subscript[Z, Tact][i]//.{Subscript[Q, n_]->n*0,Subscript[Z, body]->0};
-);
+];
 
 
 GetBodyKinEquations[]:={
@@ -542,30 +516,3 @@ bodyRadius=(eqXOrT)^2+(eqYOrT)^2;
 
 (* ::Title:: *)
 (*Misc*)
-
-
-RefreshXYZQ[]:=(
-x[t_]=.;
-y[t_]=.;
-z[t_]=.;
-Subscript[q, 1][t_]=.;
-Subscript[q, 2][t_]=.;
-Subscript[q, 3][t_]=.;
-Subscript[q, 4][t_]=.;
-Subscript[q, 5][t_]=.;
-Subscript[q, 6][t_]=.;
-Subscript[q, 7][t_]=.;
-Subscript[q, 8][t_]=.;
-Subscript[q, 9][t_]=.;
-Subscript[q, 10][t_]=.;
-Subscript[q, 11][t_]=.;
-Subscript[q, 12][t_]=.;
-Subscript[q, 13][t_]=.;
-Subscript[q, 14][t_]=.;
-Subscript[q, 15][t_]=.;
-Subscript[q, 16][t_]=.;
-Subscript[q, 17][t_]=.;
-Subscript[q, 18][t_]=.;
-Subscript[q, 19][t_]=.;
-Subscript[q, 20][t_]=.;
-Subscript[q, 21][t_]=.;);
