@@ -303,7 +303,7 @@ Text[index]}
 (*Vectors, Rotation/Position*)
 
 
-LegRotationDefB[CONST_Association][gRot_,rA_][i_]:=Module[{qInd,rB,BtN,rotOffset},
+LegRotationDefB[CONST_Association][gRot_,rA_,n_][i_]:=Module[{qInd,rB,BtN,rotOffset},
 qInd=1+3*i;
 rotOffset=CONST["Leg Rotational Offsets"][[i]];
 rB=gRot[[3]][Subscript[q, qInd][t]+rotOffset].rA;
@@ -315,7 +315,7 @@ TranslateBtoN[ind_,x_,BtoN_]:=x//.{Subscript[b, ind][1]->BtoN[[ind]][[1]],Subscr
 
 
 
-LegRotationDefC[gRot_][i_,rB_]:=Module[{qInd,rC,CtN},
+LegRotationDefC[gRot_,n_][i_,rB_]:=Module[{qInd,rC,CtN},
 qInd=1+3*i;
 rC=gRot[[4]][].rB;
 CtN=rC.{n[1],n[2],n[3]};
@@ -325,7 +325,7 @@ Return[{rC,CtN}]
 TranslateCtoN[ind_,x_,CtoN_]:=x//.{Subscript[c, ind][1]->CtoN[[ind]][[1]],Subscript[c, ind][2]->CtoN[[ind]][[2]],Subscript[c, ind][3]->CtoN[[ind]][[3]]};
 
 
-LegRotationDefD[gRot_][i_,rC_]:=Module[{qInd1,qInd2,rD,DtN},
+LegRotationDefD[gRot_,n_][i_,rC_]:=Module[{qInd1,qInd2,rD,DtN},
 qInd1=1+3*i;
 qInd2=2+3*i;
 rD=gRot[[2]][Subscript[q, qInd2][t]].rC;
@@ -336,7 +336,7 @@ Return[{rD,DtN}]
 TranslateDtoN[ind_,x_,DtoN_]:=x//.{Subscript[d, ind][1]->DtoN[[ind]][[1]],Subscript[d, ind][2]->DtoN[[ind]][[2]],Subscript[d, ind][3]->DtoN[[ind]][[3]]};
 
 
-LegRotationDefE[gRot_][i_,rD_]:=Module[{qInd1,qInd2,rE,EtN},
+LegRotationDefE[gRot_,n_][i_,rD_]:=Module[{qInd1,qInd2,rE,EtN},
 qInd1=1+3*i;
 qInd2=2+3*i;
 rE=gRot[[4]][].rD;
@@ -347,7 +347,7 @@ Return[{rE,EtN}]
 TranslateEtoN[ind_,x_,EtoN_]:=x//.{Subscript[e, ind][1]->EtoN[[ind]][[1]],Subscript[e, ind][2]->EtoN[[ind]][[2]],Subscript[e, ind][3]->EtoN[[ind]][[3]]};
 
 
-LegRotationDefF[gRot_][i_,rE_]:=Module[{qInd1,qInd2,qInd3,rF,FtN},
+LegRotationDefF[gRot_,n_][i_,rE_]:=Module[{qInd1,qInd2,qInd3,rF,FtN},
 qInd1=1+3*i;
 qInd2=2+3*i;
 qInd3=3+3*i;
@@ -359,7 +359,7 @@ Return[{rF,FtN}]
 TranslateFtoN[ind_,x_,FtoN_]:=x//.{Subscript[f, ind][1]->FtoN[[ind]][[1]],Subscript[f, ind][2]->FtoN[[ind]][[2]],Subscript[f, ind][3]->FtoN[[ind]][[3]]};
 
 
-LegRotationDefG[gRot_][i_,rF_]:=Module[{qInd1,qInd2,qInd3,rG,GtN},
+LegRotationDefG[gRot_,n_][i_,rF_]:=Module[{qInd1,qInd2,qInd3,rG,GtN},
 qInd1=1+3*i;
 qInd2=2+3*i;
 qInd3=3+3*i;
@@ -454,6 +454,16 @@ GrT=(tOffset)Subscript[g, i][1];
 xyzo = {x,y,z};
 {xyzo,BrC,CrD,DrE,ErF,FrG,GrT}
 ]
+VecLoopRotationM[n_][i_,rB_]:=Module[{rM,MtN,rNorm,rTheta,rThetaSign},
+rNorm=Sqrt[(rB[1].n[1])^2+(rB[1].n[2])^2];
+rTheta=ArcTan[(rB[1].n[1]*rB[2].n[1]+rB[1].n[2]*rB[2].n[2]),(rB[1].n[1]*rB[2].n[2]-rB[2].n[1]*rB[1].n[2])];
+rThetaSign=rTheta/Abs[rTheta];
+rM={(((rB[1].n[1])/rNorm)n[1]+((rB[1].n[2])/rNorm)n[2]),rThetaSign(((rB[1].n[2])/rNorm)n[1]+((rB[1].n[1])/rNorm)n[2]),n[3]};
+MtN=rM.{n[1],n[2],n[3]};
+Return[{rM,MtN}]
+];
+
+TranslateMtoN[ind_,x_,MtoN_]:=x//.{Subscript[m, ind][1]->MtoN[[ind]][[1]],Subscript[m, ind][2]->MtoN[[ind]][[2]],Subscript[m, ind][3]->MtoN[[ind]][[3]]};
 
 
 (* ::Title:: *)
