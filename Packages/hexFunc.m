@@ -303,72 +303,104 @@ Text[index]}
 (*Vectors, Rotation/Position*)
 
 
-LegRotationDefB[CONST_Association][gRot_,rA_,n_][i_]:=Module[{qInd,rB,BtN,rotOffset},
+(*DEFINE UNIT VECTORS AND DYADS*)
+rot0[q_:1]={{1,0,0},{0,1,0},{0,0,1}};
+rot1[q_]={{1,0,0},{0,Cos[q],Sin[q]},{0,-Sin[q],Cos[q]}};
+rot2[q_]={{Cos[q],0,-Sin[q]},{0,1,0},{Sin[q],0,Cos[q]}};
+rot3[q_]={{Cos[q],Sin[q],0},{-Sin[q],Cos[q],0},{0,0,1}};
+
+a[x_]:=unitVector[A,a,x]
+
+b[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[B, n],Subscript[b, n],x],unitVector[Subscript[B, #],Subscript[b, #],x]&/@n]]
+c[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[C, n],Subscript[c, n],x],unitVector[Subscript[C, #],Subscript[c, #],x]&/@n]]
+d[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[D, n],Subscript[d, n],x],unitVector[Subscript[D, #],Subscript[d, #],x]&/@n]]
+e[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[E, n],Subscript[e, n],x],unitVector[Subscript[E, #],Subscript[e, #],x]&/@n]]
+f[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[F, n],Subscript[f, n],x],unitVector[Subscript[F, #],Subscript[f, #],x]&/@n]]
+g[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[G, n],Subscript[g, n],x],unitVector[Subscript[G, #],Subscript[g, #],x]&/@n]]
+t[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[T, n],Subscript[t, n],x],unitVector[Subscript[T, #],Subscript[t, #],x]&/@n]]
+m[n__:Range[6]][x_]:=Module[{},If[Length[n]==0,unitVector[Subscript[M, n],Subscript[m, n],x],unitVector[Subscript[M, #],Subscript[m, #],x]&/@n]]
+
+n[x_]:=unitVector[N,n,x]
+
+aa[x_,y_]:=unitDyad[a[x],a[y]]
+
+bb[n_,x_,y_]:=unitDyad[Subscript[b, n][x],Subscript[b, n][y]]
+cc[n_,x_,y_]:=unitDyad[Subscript[c, n][x],Subscript[c, n][y]]
+dd[n_,x_,y_]:=unitDyad[Subscript[d, n][x],Subscript[d, n][y]]
+ee[n_,x_,y_]:=unitDyad[Subscript[e, n][x],Subscript[e, n][y]]
+ff[n_,x_,y_]:=unitDyad[Subscript[f, n][x],Subscript[f, n][y]]
+gg[n_,x_,y_]:=unitDyad[Subscript[g, n][x],Subscript[g, n][y]]
+tt[n_,x_,y_]:=unitDyad[Subscript[t, n][x],Subscript[t, n][y]]
+mm[n_,x_,y_]:=unitDyad[Subscript[m, n][x],Subscript[m, n][y]]
+
+
+
+LegRotationDefB[CONST_Association][rA_][i_]:=Module[{qInd,rB,BtN,rotOffset},
 qInd=1+3*i;
 rotOffset=CONST["Leg Rotational Offsets"][[i]];
-rB=gRot[[3]][Subscript[q, qInd][t]+rotOffset].rA;
+rB=rot3[Subscript[q, qInd][t]+rotOffset].rA;
 BtN=rB.{n[1],n[2],n[3]};
-Return[{rB,BtN}];
+{rB,BtN}
 ];
 
-TranslateBtoN[ind_,x_,BtoN_]:=x//.{Subscript[b, ind][1]->BtoN[[ind]][[1]],Subscript[b, ind][2]->BtoN[[ind]][[2]],Subscript[b, ind][3]->BtoN[[ind]][[3]]};
+TransformBtoN[ind_,x_,BtoN_]:=x//.{b[ind][1]->BtoN[[ind]][[1]],b[ind][2]->BtoN[[ind]][[2]],b[ind][3]->BtoN[[ind]][[3]]};
 
 
 
-LegRotationDefC[gRot_,n_][i_,rB_]:=Module[{qInd,rC,CtN},
-qInd=1+3*i;
-rC=gRot[[4]][].rB;
+LegRotationDefC[i_,rB_]:=Module[{rC,CtN},
+rC=rot0[].rB;
 CtN=rC.{n[1],n[2],n[3]};
 Return[{rC,CtN}]
 ];
 
-TranslateCtoN[ind_,x_,CtoN_]:=x//.{Subscript[c, ind][1]->CtoN[[ind]][[1]],Subscript[c, ind][2]->CtoN[[ind]][[2]],Subscript[c, ind][3]->CtoN[[ind]][[3]]};
+TransformCtoN[ind_,x_,CtoN_]:=x//.{c[ind][1]->CtoN[[ind]][[1]],c[ind][2]->CtoN[[ind]][[2]],c[ind][3]->CtoN[[ind]][[3]]};
 
 
-LegRotationDefD[gRot_,n_][i_,rC_]:=Module[{qInd1,qInd2,rD,DtN},
-qInd1=1+3*i;
-qInd2=2+3*i;
-rD=gRot[[2]][Subscript[q, qInd2][t]].rC;
+LegRotationDefD[i_,rC_]:=Module[{qInd,rD,DtN},
+qInd=2+3*i;
+rD=rot2[Subscript[q, qInd][t]].rC;
 DtN=rD.{n[1],n[2],n[3]};
 Return[{rD,DtN}]
 ];
 
-TranslateDtoN[ind_,x_,DtoN_]:=x//.{Subscript[d, ind][1]->DtoN[[ind]][[1]],Subscript[d, ind][2]->DtoN[[ind]][[2]],Subscript[d, ind][3]->DtoN[[ind]][[3]]};
+TransformDtoN[ind_,x_,DtoN_]:=x//.{d[ind][1]->DtoN[[ind]][[1]],d[ind][2]->DtoN[[ind]][[2]],d[ind][3]->DtoN[[ind]][[3]]};
 
 
-LegRotationDefE[gRot_,n_][i_,rD_]:=Module[{qInd1,qInd2,rE,EtN},
-qInd1=1+3*i;
-qInd2=2+3*i;
-rE=gRot[[4]][].rD;
+LegRotationDefE[i_,rD_]:=Module[{rE,EtN},
+rE=rot0[].rD;
 EtN=rE.{n[1],n[2],n[3]};
 Return[{rE,EtN}]
 ];
 
-TranslateEtoN[ind_,x_,EtoN_]:=x//.{Subscript[e, ind][1]->EtoN[[ind]][[1]],Subscript[e, ind][2]->EtoN[[ind]][[2]],Subscript[e, ind][3]->EtoN[[ind]][[3]]};
+TransformEtoN[ind_,x_,EtoN_]:=x//.{e[ind][1]->EtoN[[ind]][[1]],e[ind][2]->EtoN[[ind]][[2]],e[ind][3]->EtoN[[ind]][[3]]};
 
 
-LegRotationDefF[gRot_,n_][i_,rE_]:=Module[{qInd1,qInd2,qInd3,rF,FtN},
-qInd1=1+3*i;
-qInd2=2+3*i;
-qInd3=3+3*i;
-rF=gRot[[2]][Subscript[q, qInd3][t]].rE;
+LegRotationDefF[i_,rE_]:=Module[{qInd,rF,FtN},
+qInd=3+3*i;
+rF=rot2[Subscript[q, qInd][t]].rE;
 FtN=rF.{n[1],n[2],n[3]};
 Return[{rF,FtN}]
 ];
 
-TranslateFtoN[ind_,x_,FtoN_]:=x//.{Subscript[f, ind][1]->FtoN[[ind]][[1]],Subscript[f, ind][2]->FtoN[[ind]][[2]],Subscript[f, ind][3]->FtoN[[ind]][[3]]};
+TransformFtoN[ind_,x_,FtoN_]:=x//.{f[ind][1]->FtoN[[ind]][[1]],f[ind][2]->FtoN[[ind]][[2]],f[ind][3]->FtoN[[ind]][[3]]};
 
 
-LegRotationDefG[gRot_,n_][i_,rF_]:=Module[{qInd1,qInd2,qInd3,rG,GtN},
-qInd1=1+3*i;
-qInd2=2+3*i;
-qInd3=3+3*i;
-rG=gRot[[4]][].rF;
+LegRotationDefG[i_,rF_]:=Module[{rG,GtN},
+rG=rot0[].rF;
 GtN=rG.{n[1],n[2],n[3]};
 Return[{rG,GtN}]
 ];
 
-TranslateGtoN[ind_,x_,GtoN_]:=x//.{Subscript[g, ind][1]->GtoN[[ind]][[1]],Subscript[g, ind][2]->GtoN[[ind]][[2]],Subscript[g, ind][3]->GtoN[[ind]][[3]]};
+TransformGtoN[ind_,x_,GtoN_]:=x//.{g[ind][1]->GtoN[[ind]][[1]],g[ind][2]->GtoN[[ind]][[2]],g[ind][3]->GtoN[[ind]][[3]]};
+
+
+LegRotationDefT[i_,rG_]:=Module[{rT,TtN},
+rT=rot0[].rG;
+TtN=rT.{n[1],n[2],n[3]};
+Return[{rT,TtN}]
+];
+
+TransformTtoN[ind_,x_,TtoN_]:=x//.{t[ind][1]->TtoN[[ind]][[1]],t[ind][2]->TtoN[[ind]][[2]],t[ind][3]->TtoN[[ind]][[3]]};
 
 
 LegPosVectors[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOffset,BrC,CrD,DrE,ErF,FrG,GrT,xyzo},
@@ -382,34 +414,41 @@ Sow[((OrA+ArB[[i]]).n[1]//TranAtoN//TranBtoN[i]),b];
 Sow[((OrA+ArB[[i]]).n[2]//TranAtoN//TranBtoN[i]),b];
 Sow[((OrA+ArB[[i]]).n[3]//TranAtoN//TranBtoN[i]),b];
 (*Coxa*)
-BrC=(cOffset)Subscript[b, i][1];
+BrC=(cOffset)b[i][1];
 Sow[((OrA+ArB[[i]]+BrC).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]),c];
 Sow[((OrA+ArB[[i]]+BrC).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]),c];
 Sow[((OrA+ArB[[i]]+BrC).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]),c];
 (*Trochanter*)
-CrD=(cOffset)Subscript[c, i][1];
+CrD=(cOffset)c[i][1];
 Sow[((OrA+ArB[[i]]+BrC+CrD).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]),d];
 Sow[((OrA+ArB[[i]]+BrC+CrD).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]),d];
 Sow[((OrA+ArB[[i]]+BrC+CrD).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]),d];
 (*Femur*)
-DrE=(fOffset)Subscript[d, i][1];
+DrE=(fOffset)d[i][1];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars),e];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars),e];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//distributeScalars),e];
 (*Patella*)
-ErF=(fOffset)Subscript[e, i][1];
+ErF=(fOffset)e[i][1];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars),f];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars),f];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//distributeScalars),f];
 (*Tarsus*)
-FrG=(tOffset)Subscript[f, i][1];
+FrG=(tOffset)f[i][1];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars),g];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars),g];
 Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//distributeScalars),g];
 (*Tarsal Tip*)
-GrT=(tOffset)Subscript[g, i][1];
+GrT=(tOffset)g[i][1];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG+GrT).n[1]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//TranTtoN[i]//distributeScalars),t];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG+GrT).n[2]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//TranTtoN[i]//distributeScalars),t];
+Sow[((OrA+ArB[[i]]+BrC+CrD+DrE+ErF+FrG+GrT).n[3]//TranAtoN//TranBtoN[i]//TranCtoN[i]//TranDtoN[i]//TranEtoN[i]//TranFtoN[i]//TranGtoN[i]//TranTtoN[i]//distributeScalars),t];
+
+Sow[((OrA+ArB[[i]]).n[1]//TranAtoN//TranBtoN[i]//distributeScalars),m];
+Sow[((OrA+ArB[[i]]).n[2]//TranAtoN//TranBtoN[i]//distributeScalars),m];
+Sow[(0.n[3]),m];
 ],1],1];
-(*If[i\[Equal]1,Print[xyzo]];*)
+
 {xyzo,BrC,CrD,DrE,ErF,FrG,GrT}
 ]
 
@@ -418,7 +457,7 @@ LegPosVectorsBAK[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOff
 cOffset=CONST["Coxa Length"]/2;
 fOffset=CONST["Femur Length"]/2;
 tOffset=CONST["Tarsus Length"]/2;
-
+\[AliasDelimiter]
 (*From Body*)
 x[1]:=(OrA+ArB).n[1]//TranAtoN//TranBtoN[i];
 y[1]:=(OrA+ArB).n[2]//TranAtoN//TranBtoN[i];
@@ -454,16 +493,87 @@ GrT=(tOffset)Subscript[g, i][1];
 xyzo = {x,y,z};
 {xyzo,BrC,CrD,DrE,ErF,FrG,GrT}
 ]
-VecLoopRotationM[n_][i_,rB_]:=Module[{rM,MtN,rNorm,rTheta,rThetaSign},
-rNorm=Sqrt[(rB[1].n[1])^2+(rB[1].n[2])^2];
-rTheta=ArcTan[(rB[1].n[1]*rB[2].n[1]+rB[1].n[2]*rB[2].n[2]),(rB[1].n[1]*rB[2].n[2]-rB[2].n[1]*rB[1].n[2])];
+
+
+VecLoopRotationMBAK[n_][i_,rB_]:=Module[{rM,MtN,rNorm,rTheta,rThetaSign},
+rNorm=Sqrt[(rB[[1]].n[1])^2+(rB[[1]].n[2])^2];
+rTheta=ArcTan[rB[[1]].n[1]*rB[[2]].n[1]+rB[[1]].n[2]*rB[[2]].n[2],rB[[1]].n[1]*rB[[2]].n[2]-rB[[2]].n[1]*rB[[1]].n[2]];
 rThetaSign=rTheta/Abs[rTheta];
-rM={(((rB[1].n[1])/rNorm)n[1]+((rB[1].n[2])/rNorm)n[2]),rThetaSign(((rB[1].n[2])/rNorm)n[1]+((rB[1].n[1])/rNorm)n[2]),n[3]};
+rM={((rB[[1]].n[1])/rNorm)n[1]+((rB[[1]].n[2])/rNorm)n[2],((-rB[[1]].n[2])/rNorm)n[1]+((rB[[1]].n[1])/rNorm)n[2],n[3]}//gatherDots2//gatherDivisors;
 MtN=rM.{n[1],n[2],n[3]};
 Return[{rM,MtN}]
 ];
 
-TranslateMtoN[ind_,x_,MtoN_]:=x//.{Subscript[m, ind][1]->MtoN[[ind]][[1]],Subscript[m, ind][2]->MtoN[[ind]][[2]],Subscript[m, ind][3]->MtoN[[ind]][[3]]};
+TransformMtoNBAK[ind_,x_,MtoN_]:=x//.{Subscript[m, ind][1]->MtoN[[ind]][[1]],Subscript[m, ind][2]->MtoN[[ind]][[2]],Subscript[m, ind][3]->MtoN[[ind]][[3]]};
+
+
+VecLoopRotationM[i_,rB_]:=Module[{qmInd,rM,MtN},
+qmInd=2i-1;
+rM=rot2[Subscript[mq,qmInd+1][t]].rot1[Subscript[mq,qmInd][t]].rB;
+MtN=rM.{n[1],n[2],n[3]};
+Return[{rM,MtN}]
+];
+
+TransformMtoN[ind_,x_,MtoN_]:=x//.{m[ind][1]->MtoN[[ind]][[1]],m[ind][2]->MtoN[[ind]][[2]],m[ind][3]->MtoN[[ind]][[3]]};
+
+
+
+TransformBtoM[ind_,x_,BtoM_]:=x//.{b[ind][1]->BtoM[[ind]][[1]],b[ind][2]->BtoM[[ind]][[2]],b[ind][3]->BtoM[[ind]][[3]]};
+TransformCtoM[ind_,x_,CtoM_]:=x//.{c[ind][1]->CtoM[[ind]][[1]],c[ind][2]->CtoM[[ind]][[2]],c[ind][3]->CtoM[[ind]][[3]]};
+TransformDtoM[ind_,x_,DtoM_]:=x//.{d[ind][1]->DtoM[[ind]][[1]],d[ind][2]->DtoM[[ind]][[2]],d[ind][3]->DtoM[[ind]][[3]]};
+TransformEtoM[ind_,x_,EtoM_]:=x//.{e[ind][1]->EtoM[[ind]][[1]],e[ind][2]->EtoM[[ind]][[2]],e[ind][3]->EtoM[[ind]][[3]]};
+TransformFtoM[ind_,x_,FtoM_]:=x//.{f[ind][1]->FtoM[[ind]][[1]],f[ind][2]->FtoM[[ind]][[2]],f[ind][3]->FtoM[[ind]][[3]]};
+TransformGtoM[ind_,x_,GtoM_]:=x//.{g[ind][1]->GtoM[[ind]][[1]],g[ind][2]->GtoM[[ind]][[2]],g[ind][3]->GtoM[[ind]][[3]]};
+TransformTtoM[ind_,x_,TtoM_]:=x//.{t[ind][1]->TtoM[[ind]][[1]],t[ind][2]->TtoM[[ind]][[2]],t[ind][3]->TtoM[[ind]][[3]]};
+
+
+LegPosVectorsM[CONST_Association][i_,zB_]:=Module[{cOffset,fOffset,tOffset,MrB,BrC,CrD,DrE,ErF,FrG,GrT,TrM,xyzoM},
+cOffset=CONST["Coxa Length"]/2;
+fOffset=CONST["Femur Length"]/2;
+tOffset=CONST["Tarsus Length"]/2;
+
+xyzoM=Flatten[Delete[Reap[
+(*From Body*)
+MrB=(zB)m[i][1];
+Sow[((MrB).m[i][1]//TranBtoM[i]),b];
+Sow[((MrB).m[i][2]//TranBtoM[i]),b];
+Sow[((MrB).m[i][3]//TranBtoM[i]),b];
+(*Coxa*)
+BrC=(cOffset)b[i][1];
+Sow[((BrC).m[i][1]//TranBtoM[i]//TranCtoM[i]),c];
+Sow[((BrC).m[i][2]//TranBtoM[i]//TranCtoM[i]),c];
+Sow[((BrC).m[i][3]//TranBtoM[i]//TranCtoM[i]),c];
+(*Trochanter*)
+CrD=(cOffset)c[i][1];
+Sow[((BrC+CrD).m[i][1]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]),d];
+Sow[((BrC+CrD).m[i][2]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]),d];
+Sow[((BrC+CrD).m[i][3]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]),d];
+(*Femur*)
+DrE=(fOffset)d[i][1];
+Sow[((BrC+CrD+DrE).m[i][1]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//distributeScalars),e];
+Sow[((BrC+CrD+DrE).m[i][2]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//distributeScalars),e];
+Sow[((BrC+CrD+DrE).m[i][3]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//distributeScalars),e];
+(*Patella*)
+ErF=(fOffset)e[i][1];
+Sow[((BrC+CrD+DrE+ErF).m[i][1]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//distributeScalars),f];
+Sow[((BrC+CrD+DrE+ErF).m[i][2]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//distributeScalars),f];
+Sow[((BrC+CrD+DrE+ErF).m[i][3]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//distributeScalars),f];
+(*Tarsus*)
+FrG=(tOffset)f[i][1];
+Sow[((BrC+CrD+DrE+ErF+FrG).m[i][1]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//distributeScalars),g];
+Sow[((BrC+CrD+DrE+ErF+FrG).m[i][2]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//distributeScalars),g];
+Sow[((BrC+CrD+DrE+ErF+FrG).m[i][3]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//distributeScalars),g];
+(*Tarsal Tip*)
+GrT=(tOffset)g[i][1];
+Sow[((BrC+CrD+DrE+ErF+FrG+GrT).m[i][1]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//TranTtoM[i]//distributeScalars),t];
+Sow[((BrC+CrD+DrE+ErF+FrG+GrT).m[i][2]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//TranTtoM[i]//distributeScalars),t];
+Sow[((BrC+CrD+DrE+ErF+FrG+GrT).m[i][3]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//TranTtoM[i]//distributeScalars),t];
+
+TrM=-2(cOffset+fOffset+tOffset)m[i][1]-(zB)m[i][3];
+],1],1];
+(*If[i\[Equal]1,Print[xyzo]];*)
+{xyzoM,MrB,BrC,CrD,DrE,ErF,FrG,GrT,TrM}
+]
 
 
 (* ::Title:: *)
