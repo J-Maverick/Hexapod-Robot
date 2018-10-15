@@ -457,7 +457,7 @@ LegPosVectorsBAK[CONST_Association][OrA_,ArB_][i_]:=Module[{cOffset,fOffset,tOff
 cOffset=CONST["Coxa Length"]/2;
 fOffset=CONST["Femur Length"]/2;
 tOffset=CONST["Tarsus Length"]/2;
-\[AliasDelimiter]
+
 (*From Body*)
 x[1]:=(OrA+ArB).n[1]//TranAtoN//TranBtoN[i];
 y[1]:=(OrA+ArB).n[2]//TranAtoN//TranBtoN[i];
@@ -514,10 +514,15 @@ MtN=rM.{n[1],n[2],n[3]};
 Return[{rM,MtN}]
 ];
 
+
+VecLoopRotationM[i_,rB_]:=Module[{qmInd,rM,MtN},
+qmInd=2i-1;
+rM=rot2[Subscript[mq,qmInd+1][t]].rot1[Subscript[mq,qmInd][t]].rB;
+MtN=rM.{n[1],n[2],n[3]};
+Return[{rM,MtN}]
+];
+
 TransformMtoN[ind_,x_,MtoN_]:=x//.{m[ind][1]->MtoN[[ind]][[1]],m[ind][2]->MtoN[[ind]][[2]],m[ind][3]->MtoN[[ind]][[3]]};
-
-
-
 TransformBtoM[ind_,x_,BtoM_]:=x//.{b[ind][1]->BtoM[[ind]][[1]],b[ind][2]->BtoM[[ind]][[2]],b[ind][3]->BtoM[[ind]][[3]]};
 TransformCtoM[ind_,x_,CtoM_]:=x//.{c[ind][1]->CtoM[[ind]][[1]],c[ind][2]->CtoM[[ind]][[2]],c[ind][3]->CtoM[[ind]][[3]]};
 TransformDtoM[ind_,x_,DtoM_]:=x//.{d[ind][1]->DtoM[[ind]][[1]],d[ind][2]->DtoM[[ind]][[2]],d[ind][3]->DtoM[[ind]][[3]]};
@@ -569,7 +574,7 @@ Sow[((BrC+CrD+DrE+ErF+FrG+GrT).m[i][1]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//T
 Sow[((BrC+CrD+DrE+ErF+FrG+GrT).m[i][2]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//TranTtoM[i]//distributeScalars),t];
 Sow[((BrC+CrD+DrE+ErF+FrG+GrT).m[i][3]//TranBtoM[i]//TranCtoM[i]//TranDtoM[i]//TranEtoM[i]//TranFtoM[i]//TranGtoM[i]//TranTtoM[i]//distributeScalars),t];
 
-TrM=-2(cOffset+fOffset+tOffset)m[i][1]-(zB)m[i][3];
+TrM=-(Subscript[xM,i][t])m[i][1]-(Subscript[yM,i][t])m[i][2]-(Subscript[zM,i][t])m[i][3];
 ],1],1];
 (*If[i\[Equal]1,Print[xyzo]];*)
 {xyzoM,MrB,BrC,CrD,DrE,ErF,FrG,GrT,TrM}
@@ -636,3 +641,23 @@ bodyRadius=(eqXOrT)^2+(eqYOrT)^2;
 
 (* ::Title:: *)
 (*Misc*)
+
+
+EqualizeRoots[root_]:=Module[{newRoot,tempRoot},
+If[root<0,
+tempRoot=Mod[root,-2Pi];
+If[tempRoot<-Pi,
+newRoot=tempRoot+2Pi,
+newRoot=tempRoot
+],
+tempRoot=Mod[root,2Pi];
+If[tempRoot>Pi,
+newRoot=tempRoot-2Pi,
+newRoot=tempRoot
+],
+newRoot=root
+]];
+
+
+joinStr[str__String]:=StringJoin[str]
+SetAttributes[joinStr,Listable]
