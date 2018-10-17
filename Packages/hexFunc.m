@@ -539,7 +539,7 @@ tOffset=CONST["Tarsus Length"]/2;
 
 xyzoM=Flatten[Delete[Reap[
 (*From Body*)
-MrB=(zB)m[i][1];
+MrB=(zB)m[i][3];
 Sow[((MrB).m[i][1]//TranBtoM[i]),b];
 Sow[((MrB).m[i][2]//TranBtoM[i]),b];
 Sow[((MrB).m[i][3]//TranBtoM[i]),b];
